@@ -67,3 +67,35 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# ===== Visual Studio 本地缓存 =====
+.vs/
+*.user
+*.suo
+*.ipch
+*.aps
+
+# ===== CMake 构建输出 =====
+out/
+build/
+CMakeCache.txt
+CMakeFiles/
+
+# ===== 编译产物 =====
+*.exe
+*.obj
+*.o
+*.lib
+*.dll
+*.pdb
+*.ilk
+*.exp
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+
+# ===== 系统杂项 =====
+.DS_Store
+Thumbs.db
