@@ -4,38 +4,37 @@
 
 namespace wakeai {
 
-    // ¶¯×÷½×¶Î£¨×´Ì¬»ú£©£ºREADY ¡ú DOWN ¡ú UP ¡ú ¼ÆÊı£¬Ñ­»·
-    enum class ExerciseState {
-        Ready,  // ×¼±¸£º»Øµ½ÆğÊ¼×ËÊÆ£¬µÈ´ıÏÂÒ»´Î¶¯×÷
-        Down,   // µÚÒ»½×¶Î£ºÏÂ¶× / µÅÍÈÇüÏ¥ / Ë«ÊÖÕ¹¿ª
-        Up,     // µÚ¶ş½×¶Î£ºÆğÉí / µÅÍÈÉìÖ± / Ë«ÊÖÊÕ»Ø
-    };
+// ç¬¬ä¸€è½®ä¿æŒåŸæœ‰çŠ¶æ€æšä¸¾ï¼Œé¿å…åç»­ UI / å…¶ä»–åˆ†æ”¯å¤§é¢ç§¯æ”¹æ¥å£ã€‚
+// Readyï¼šç­‰å¾…åŠ¨ä½œå¼€å§‹ï¼›Downï¼šåŠ¨ä½œå·²è¿›å…¥â€œå±•å¼€/ä¸‹è¹²/å¯¹ä¾§ç›¸ä½â€ï¼›Up æš‚æ—¶ä¿ç•™ã€‚
+enum class ExerciseState {
+    Ready,
+    Down,
+    Up,
+};
 
-    // ËùÓĞ¶¯×÷ÀàµÄÍ³Ò»½Ó¿Ú
-    class ExerciseBase {
-    public:
-        virtual ~ExerciseBase() = default;
+class ExerciseBase {
+public:
+    virtual ~ExerciseBase() = default;
 
-        // Ã¿Ö¡µ÷ÓÃÒ»´Î£º´«Èë×îĞÂ¹Ø¼üµã£¬ÄÚ²¿ÍÆ½ø×´Ì¬»ú
-        virtual void update(const PoseLandmarks& pose) = 0;
+    // æ¯å¸§è°ƒç”¨ä¸€æ¬¡ã€‚è‹¥å…³é”®ç‚¹æ— æ•ˆï¼Œæ´¾ç”Ÿç±»åº”åœæ­¢æ¨è¿›çŠ¶æ€æœºã€‚
+    virtual void update(const PoseLandmarks& pose) = 0;
 
-        // ÒÑÍê³É´ÎÊı
-        virtual int count() const = 0;
+    virtual int count() const = 0;
 
-        // µ±Ç°¹Ø¼ü½Ç¶È£¨¶È£©£¬¹© UI ÏÔÊ¾
-        virtual double angle() const = 0;
+    // ä¸ºå…¼å®¹ç°æœ‰å·¥ç¨‹ä¿ç•™ angle()ã€‚
+    // Squatï¼šè†è§’ï¼›JumpingJackï¼šåŒè‡‚æŠ¬å‡å½’ä¸€åŒ–å€¼ï¼›Cyclingï¼šè¾ƒå¼¯æ›²è…¿çš„è†è§’ã€‚
+    virtual double angle() const = 0;
 
-        // µ±Ç°×´Ì¬
-        virtual ExerciseState state() const = 0;
+    virtual ExerciseState state() const = 0;
 
-        // µ±Ç°½ø¶È 0~1£¬ÓÃÓÚÈÈÁ¦Í¼/½ø¶ÈÌõ
-        virtual float progress() const = 0;
+    // 0~1ï¼Œå¯ä¾› UI / çƒ­åŠ›æ˜¾ç¤ºä½¿ç”¨ã€‚
+    virtual float progress() const = 0;
 
-        // ¸´Î»£º¼ÆÊıÇåÁã£¬»Øµ½ Ready
-        virtual void reset() = 0;
+    // å½“å‰å¸§æ˜¯å¦æœ‰è¶³å¤Ÿå¯é çš„å…³é”®ç‚¹ç”¨äºåŠ¨ä½œåˆ¤æ–­ã€‚
+    virtual bool valid() const = 0;
 
-        // ¶¯×÷Ãû³Æ£¨ÖĞÎÄ£©£¬¹© UI ÏÔÊ¾
-        virtual const char* name() const = 0;
-    };
+    virtual void reset() = 0;
+    virtual const char* name() const = 0;
+};
 
 } // namespace wakeai

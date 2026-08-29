@@ -4,37 +4,74 @@
 
 namespace wakeai {
 
-    // ¿ÕÖĞ×ÔĞĞ³µ / ´²ÉÏµÅÍÈ
-    // ×´Ì¬»ú£ºÍÈÉìÖ±(Ready) ¡ú ÇüÏ¥(Down) ¡ú µÅÖ±(¼ÆÊı) ¡ú Ñ­»·
-    // Í¬Ê±ÓÃ"¹Ç÷À³¤¶È±ÈÀı"Ìá¹©ÈÈÁ¦Í¼½ø¶È£¨¶ÔÓ¦ÎÄµµ·½°¸Ò»£©
-    class Cycling : public ExerciseBase {
-    public:
-        Cycling();
+enum class CyclingPhase {
+    Unknown,
+    LeftBentRightExtended,
+    LeftExtendedRightBent,
+};
 
-        void update(const PoseLandmarks& pose) override;
-        int count() const override;
-        double angle() const override;
-        ExerciseState state() const override;
-        float progress() const override;
-        void reset() override;
-        const char* name() const override;
+class Cycling : public ExerciseBase {
+public:
+    Cycling();
 
-    private:
-        double kneeAngle(const PoseLandmarks& pose) const;
-        float extensionRatio(const PoseLandmarks& pose) const;  // ¹Ç÷À³¤¶È±ÈÀı 0~1
+    void update(const PoseLandmarks& pose) override;
+    int count() const override;
+    double angle() const override;
+    ExerciseState state() const override;
+    float progress() const override;
+    bool valid() const override;
+    void reset() override;
+    const char* name() const override;
 
-        double curAngle_ = 180.0;
-        float curRatio_ = 1.0f;
-        int count_ = 0;
-        ExerciseState state_ = ExerciseState::Ready;
+    void setThresholds(double bendAngle,
+                       double extendAngle,
+                       int confirmFrames);
 
-        // ãĞÖµ£¬¿Éµ÷
-        double kBendAngle_ = 100.0;   // µÍÓÚ´Ë½Ç ¡ú ÇüÏ¥
-        double kExtendAngle_ = 150.0;   // ¸ßÓÚ´Ë½Ç ¡ú µÅÖ±
+    double leftKneeAngle() const { return leftAngle_; }
+    double rightKneeAngle() const { return rightAngle_; }
 
-        // ·ÀÖ¹ÔëÉùµ¼ÖÂÎó¼Æ£¬ÔÚ Down ×´Ì¬ÀïÒªÇó¡¸Á¬Ğø N Ö¡¶¼³¬¹ıãĞÖµ¡¹²Å¼ÆÊı
-        int upFrames_ = 0;      // Á¬Ğø³¬¹ıãĞÖµµÄÖ¡Êı
-        int kDebounce_ = 2;     // ĞèÒªÁ¬Ğø2Ö¡È·ÈÏ
-    };
+    // 0~1ï¼Œè¡¨ç¤ºäºŒç»´å‡ ä½•ä¸Šçš„â€œè…¿éƒ¨ä¼¸å±•ç¨‹åº¦â€ï¼Œä¸æ˜¯ç»å¯¹æ·±åº¦ã€‚
+    float leftExtension() const { return leftExtension_; }
+    float rightExtension() const { return rightExtension_; }
+
+    CyclingPhase phase() const { return phase_; }
+    double bendThreshold() const { return kBendAngle_; }
+    double extendThreshold() const { return kExtendAngle_; }
+    int confirmFrames() const { return kConfirmFrames_; }
+
+private:
+    bool computeLegMetrics(const PoseLandmarks& pose,
+                           int hipIndex,
+                           int kneeIndex,
+                           int ankleIndex,
+                           double& angle,
+                           float& extension) const;
+
+    CyclingPhase classifyPhase() const;
+
+    double leftAngle_ = -1.0;
+    double rightAngle_ = -1.0;
+    float leftExtension_ = 0.0f;
+    float rightExtension_ = 0.0f;
+
+    double curAngle_ = 180.0;
+    float curProgress_ = 0.0f;
+
+    int count_ = 0;
+    ExerciseState state_ = ExerciseState::Ready;
+    bool valid_ = false;
+
+    double kBendAngle_ = 115.0;
+    double kExtendAngle_ = 145.0;
+    int kConfirmFrames_ = 3;
+    float kVisibility_ = 0.45f;
+
+    CyclingPhase phase_ = CyclingPhase::Unknown;
+    CyclingPhase candidatePhase_ = CyclingPhase::Unknown;
+    CyclingPhase startPhase_ = CyclingPhase::Unknown;
+
+    int candidateFrames_ = 0;
+    bool seenOpposite_ = false;
+};
 
 } // namespace wakeai

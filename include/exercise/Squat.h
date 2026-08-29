@@ -4,35 +4,55 @@
 
 namespace wakeai {
 
-    // Éî¶×£ºÍ¨¹ıÏ¥¹Ø½Ú½Ç¶È(÷Å-Ï¥-õ×)ÅĞ¶ÏÏÂ¶×/ÆğÉí
-    class Squat : public ExerciseBase {
-    public:
-        Squat();
+class Squat : public ExerciseBase {
+public:
+    Squat();
 
-        void update(const PoseLandmarks& pose) override;
-        int count() const override;
-        double angle() const override;
-        ExerciseState state() const override;
-        float progress() const override;
-        void reset() override;
-        const char* name() const override;
+    void update(const PoseLandmarks& pose) override;
+    int count() const override;
+    double angle() const override;
+    ExerciseState state() const override;
+    float progress() const override;
+    bool valid() const override;
+    void reset() override;
+    const char* name() const override;
 
-    private:
-        // µ±Ç°Ï¥¹Ø½Ú½Ç¶È£¨¶È£©£¬×Ô¶¯´¦Àí×óÓÒÍÈ¿É¼û¶È
-        double kneeAngle(const PoseLandmarks& pose) const;
+    // ç¬¬ä¸€è½®è°ƒå‚å…¥å£ï¼šå»ºè®®ä» 120 / 155 / 3 å¼€å§‹ã€‚
+    void setThresholds(double downAngle, double upAngle, int confirmFrames);
 
-        double curAngle_ = 180.0;
-        int count_ = 0;
-        ExerciseState state_ = ExerciseState::Ready;
+    double leftKneeAngle() const { return leftAngle_; }
+    double rightKneeAngle() const { return rightAngle_; }
+    bool armed() const { return armed_; }
+    double downThreshold() const { return kDownAngle_; }
+    double upThreshold() const { return kUpAngle_; }
+    int confirmFrames() const { return kConfirmFrames_; }
 
-        // ãĞÖµ£¨¶È£©£¬¿Éµ÷
-        double kDownAngle_ = 90.0;    // µÍÓÚ´Ë½Ç ¡ú ÅĞ¶¨"¶×ÏÂ"
-        double kUpAngle_ = 150.0;   // ¸ßÓÚ´Ë½Ç ¡ú ÅĞ¶¨"Õ¾Æğ"
+private:
+    bool computeKneeAngle(const PoseLandmarks& pose,
+                          double& selectedAngle,
+                          double& leftAngle,
+                          double& rightAngle) const;
 
-        // ·ÀÖ¹ÔëÉùµ¼ÖÂÎó¼Æ£¬ÔÚ Down ×´Ì¬ÀïÒªÇó¡¸Á¬Ğø N Ö¡¶¼³¬¹ıãĞÖµ¡¹²Å¼ÆÊı
-        int upFrames_ = 0;      // Á¬Ğø³¬¹ıãĞÖµµÄÖ¡Êı
-        int kDebounce_ = 2;     // ĞèÒªÁ¬Ğø2Ö¡È·ÈÏ
+    double curAngle_ = 180.0;
+    double leftAngle_ = -1.0;
+    double rightAngle_ = -1.0;
 
-    };
+    int count_ = 0;
+    ExerciseState state_ = ExerciseState::Ready;
+    bool valid_ = false;
+
+    // å…ˆç¡®è®¤â€œç«™ç›´â€ï¼Œå†å…è®¸è¿›å…¥ä¸€æ¬¡æ·±è¹²ï¼Œé¿å…ç¨‹åºåˆšå¯åŠ¨å°±åœ¨è¹²å§¿æ—¶è¯¯è®¡æ•°ã€‚
+    bool armed_ = false;
+
+    double kDownAngle_ = 120.0;
+    double kUpAngle_ = 155.0;
+    int kConfirmFrames_ = 3;
+
+    int standFrames_ = 0;
+    int downFrames_ = 0;
+    int upFrames_ = 0;
+
+    float kVisibility_ = 0.45f;
+};
 
 } // namespace wakeai

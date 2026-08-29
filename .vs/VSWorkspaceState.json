@@ -12,8 +12,9 @@
     "\\include",
     "\\include\\exercise",
     "\\src",
+    "\\src\\core",
     "\\src\\exercise"
   ],
-  "SelectedNode": "\\include\\exercise\\ExerciseBase.h",
+  "SelectedNode": "\\src\\main.cpp",
   "PreviewInSolutionExplorer": false
 }
