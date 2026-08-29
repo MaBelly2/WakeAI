@@ -56,13 +56,16 @@ namespace wakeai {
             break;
         case ExerciseState::Down:
             if (curAngle_ > kExtendAngle_) {
-                count_++;
-                state_ = ExerciseState::Up;
+                upFrames_++;
+                if (upFrames_ >= kDebounce_) {
+                    count_++;
+                    upFrames_ = 0;
+                    state_ = ExerciseState::Ready;
+                }
             }
-            break;
-        case ExerciseState::Up:
-            state_ = (curAngle_ < kBendAngle_) ? ExerciseState::Down
-                : ExerciseState::Ready;
+            else {
+                upFrames_ = 0;
+            }
             break;
         }
     }

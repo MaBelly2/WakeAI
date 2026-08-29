@@ -38,14 +38,16 @@ namespace wakeai {
             break;
         case ExerciseState::Down:
             if (curAngle_ > kUpAngle_) {
-                count_++;
-                state_ = ExerciseState::Up;
+                upFrames_++;
+                if (upFrames_ >= kDebounce_) {
+                    count_++;
+                    upFrames_ = 0;
+                    state_ = ExerciseState::Ready;
+                }
             }
-            break;
-        case ExerciseState::Up:
-            // Up 是"刚完成"的瞬间状态，立即判断下一次
-            state_ = (curAngle_ < kDownAngle_) ? ExerciseState::Down
-                : ExerciseState::Ready;
+            else {
+                upFrames_ = 0;
+            }
             break;
         }
     }

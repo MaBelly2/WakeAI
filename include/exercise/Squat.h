@@ -28,6 +28,11 @@ namespace wakeai {
         // 阈值（度），可调
         double kDownAngle_ = 90.0;    // 低于此角 → 判定"蹲下"
         double kUpAngle_ = 150.0;   // 高于此角 → 判定"站起"
+
+        // 防止噪声导致误计，在 Down 状态里要求「连续 N 帧都超过阈值」才计数
+        int upFrames_ = 0;      // 连续超过阈值的帧数
+        int kDebounce_ = 2;     // 需要连续2帧确认
+
     };
 
 } // namespace wakeai

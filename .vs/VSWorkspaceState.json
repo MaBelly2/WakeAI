@@ -9,9 +9,11 @@
   },
   "ExpandedNodes": [
     "",
+    "\\include",
+    "\\include\\exercise",
     "\\src",
     "\\src\\exercise"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\include\\exercise\\ExerciseBase.h",
   "PreviewInSolutionExplorer": false
 }

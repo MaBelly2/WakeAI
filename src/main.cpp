@@ -48,6 +48,16 @@ int main() {
     std::cout << "模型加载成功" << std::endl;
 
     cv::VideoCapture cap(0);
+    // 新增：降低采集分辨率
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
+    // 新增：FPS 计时变量
+    auto last = std::chrono::steady_clock::now();
+    int frameCnt = 0;
+    double fps = 0;
+
+    
     if (!cap.isOpened()) {
         std::cerr << "摄像头打不开" << std::endl;
         return -1;
@@ -62,6 +72,16 @@ int main() {
         cap >> frame;
         if (frame.empty()) break;
 
+        // 新增：统计 FPS
+        frameCnt++;
+        auto now = std::chrono::steady_clock::now();
+        double elapsed = std::chrono::duration<double>(now - last).count();
+        if (elapsed >= 1.0) {
+            fps = frameCnt / elapsed;
+            frameCnt = 0;
+            last = now;
+        }
+
         PoseLandmarks pose;
         if (detector.detect(frame, pose)) {
             //  测试时只保留一个动作，注释掉另外两个！
@@ -73,7 +93,8 @@ int main() {
 
         std::string text = "Squat:" + std::to_string(squat.count())
             + "  Cycling:" + std::to_string(cycling.count())
-            + "  Jack:" + std::to_string(jj.count());
+            + "  Jack:" + std::to_string(jj.count())
+            + "  FPS:" + std::to_string((int)fps);  // 显示 FPS
         cv::putText(frame, text, cv::Point(10, 30),
             cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(0, 255, 0), 2);
 
