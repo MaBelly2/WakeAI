@@ -10,7 +10,7 @@
 using namespace wakeai;
 
 //  改成你电脑上的实际路径！
-const std::string MODEL_PATH = "F:/Git/WakeAI/models/yolov8n-pose.onnx";
+const std::string MODEL_PATH = "C:/Users/Lenovo/Desktop/暑期学校课设/wakeai/models/yolov8n-pose.onnx";
 
 // 画骨架（用 MediaPipe 索引）
 void drawPose(cv::Mat& img, const PoseLandmarks& p) {

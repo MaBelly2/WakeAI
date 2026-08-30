@@ -99,3 +99,6 @@ __pycache__/
 # ===== œµÕ≥‘”œÓ =====
 .DS_Store
 Thumbs.db
+
+# SQLite database
+*.db
