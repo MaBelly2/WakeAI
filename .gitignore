@@ -102,3 +102,6 @@ Thumbs.db
 
 # SQLite database
 *.db
+
+# CSV test output
+*.csv
