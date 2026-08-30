@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "F:\\Git\\WakeAI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Git\\WakeAI\\CMakeSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Git\\WakeAI\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -53,11 +57,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "CMakeSettings.json",
+              "DocumentMoniker": "F:\\Git\\WakeAI\\CMakeSettings.json",
+              "RelativeDocumentMoniker": "CMakeSettings.json",
+              "ToolTip": "F:\\Git\\WakeAI\\CMakeSettings.json",
+              "RelativeToolTip": "CMakeSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-30T08:37:31.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Squat.h",
               "DocumentMoniker": "F:\\Git\\WakeAI\\include\\exercise\\Squat.h",
               "RelativeDocumentMoniker": "include\\exercise\\Squat.h",
@@ -69,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "launch.vs.json",
               "DocumentMoniker": "F:\\Git\\WakeAI\\.vs\\launch.vs.json",
               "RelativeDocumentMoniker": ".vs\\launch.vs.json",
@@ -82,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Cycling.h",
               "DocumentMoniker": "F:\\Git\\WakeAI\\include\\exercise\\Cycling.h",
               "RelativeDocumentMoniker": "include\\exercise\\Cycling.h",
@@ -95,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Cycling.cpp",
               "DocumentMoniker": "F:\\Git\\WakeAI\\src\\exercise\\Cycling.cpp",
               "RelativeDocumentMoniker": "src\\exercise\\Cycling.cpp",
@@ -108,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ExerciseBase.h",
               "DocumentMoniker": "F:\\Git\\WakeAI\\include\\exercise\\ExerciseBase.h",
               "RelativeDocumentMoniker": "include\\exercise\\ExerciseBase.h",
@@ -120,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "JumpingJack.h",
               "DocumentMoniker": "F:\\Git\\WakeAI\\include\\exercise\\JumpingJack.h",
               "RelativeDocumentMoniker": "include\\exercise\\JumpingJack.h",
@@ -132,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Squat.cpp",
               "DocumentMoniker": "F:\\Git\\WakeAI\\src\\exercise\\Squat.cpp",
               "RelativeDocumentMoniker": "src\\exercise\\Squat.cpp",
@@ -144,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "JumpingJack.cpp",
               "DocumentMoniker": "F:\\Git\\WakeAI\\src\\exercise\\JumpingJack.cpp",
               "RelativeDocumentMoniker": "src\\exercise\\JumpingJack.cpp",
@@ -156,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "F:\\Git\\WakeAI\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
@@ -169,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PoseDetector.h",
               "DocumentMoniker": "F:\\Git\\WakeAI\\include\\core\\PoseDetector.h",
               "RelativeDocumentMoniker": "include\\core\\PoseDetector.h",
@@ -181,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CMake \u6982\u8FF0\u9875",
               "DocumentMoniker": "CMake \u6982\u8FF0\u9875",
               "ToolTip": "CMake \u6982\u8FF0\u9875",

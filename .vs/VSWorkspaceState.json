@@ -12,9 +12,12 @@
     "\\database",
     "\\include",
     "\\include\\exercise",
+    "\\include\\ui",
     "\\src",
     "\\src\\core",
-    "\\src\\exercise"
+    "\\src\\exercise",
+    "\\src\\ui"
   ],
+  "SelectedNode": "\\src\\main.cpp",
   "PreviewInSolutionExplorer": false
 }
