@@ -44,15 +44,15 @@ private:
     // 先确认“站直”，再允许进入一次深蹲，避免程序刚启动就在蹲姿时误计数。
     bool armed_ = false;
 
-    double kDownAngle_ = 120.0;
+    double kDownAngle_ = 140.0;
     double kUpAngle_ = 155.0;
-    int kConfirmFrames_ = 3;
+    int kConfirmFrames_ = 2;
 
     int standFrames_ = 0;
     int downFrames_ = 0;
     int upFrames_ = 0;
 
-    float kVisibility_ = 0.45f;
+    float kVisibility_ = 0.30f;
 };
 
 } // namespace wakeai

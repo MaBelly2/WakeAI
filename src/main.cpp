@@ -60,10 +60,22 @@ const char* phaseName(CyclingPhase phase) {
     switch (phase) {
     case CyclingPhase::Unknown:
         return "UNKNOWN";
-    case CyclingPhase::LeftBentRightExtended:
-        return "L_BENT_R_EXT";
-    case CyclingPhase::LeftExtendedRightBent:
-        return "L_EXT_R_BENT";
+    case CyclingPhase::LeftDominant:
+        return "LEFT_PHASE";
+    case CyclingPhase::RightDominant:
+        return "RIGHT_PHASE";
+    }
+    return "UNKNOWN";
+}
+
+const char* signalSourceName(CyclingSignalSource source) {
+    switch (source) {
+    case CyclingSignalSource::Unknown:
+        return "UNKNOWN";
+    case CyclingSignalSource::ShinScale:
+        return "SHIN_SCALE";
+    case CyclingSignalSource::KneeVertical:
+        return "KNEE_Y";
     }
     return "UNKNOWN";
 }
@@ -382,22 +394,36 @@ void drawDebugOverlay(cv::Mat& frame,
     }
     else {
         putLine(frame,
-                "Knee L=" + format1(cycling.leftKneeAngle()) +
-                "  R=" + format1(cycling.rightKneeAngle()) +
+                std::string("CALIB: ") + (cycling.calibrated() ? "YES" : "NO") +
+                "  src=" + signalSourceName(cycling.signalSource()) +
                 "  phase=" + phaseName(cycling.phase()),
-                2);
+                2,
+                cycling.calibrated() ? cv::Scalar(0, 255, 0) : cv::Scalar(0, 165, 255));
 
         putLine(frame,
-                "Extension L=" + format2(cycling.leftExtension()) +
-                "  R=" + format2(cycling.rightExtension()) +
-                "   bend<" + format1(cycling.bendThreshold()) +
-                " extend>" + format1(cycling.extendThreshold()),
+                "signal=" + format2(cycling.signal()) +
+                "  base=" + format2(cycling.signalBaseline()) +
+                "  trig=" + format2(cycling.signalTrigger()) +
+                "  frames=" + std::to_string(cycling.calibrationFrames()),
                 3);
+
+        putLine(frame,
+                "shin L=" + format1(cycling.leftShinLength()) +
+                " R=" + format1(cycling.rightShinLength()) +
+                "  scaleSig=" + format2(cycling.rawScaleSignal()) +
+                " kneeYSig=" + format2(cycling.rawKneeYSignal()),
+                4);
+
+        putLine(frame,
+                "vis H=" + format2(cycling.leftHipVisibility()) + "/" + format2(cycling.rightHipVisibility()) +
+                " K=" + format2(cycling.leftKneeVisibility()) + "/" + format2(cycling.rightKneeVisibility()) +
+                " A=" + format2(cycling.leftAnkleVisibility()) + "/" + format2(cycling.rightAnkleVisibility()),
+                5);
     }
 
     putLine(frame,
             "Keys: 1 Squat | 2 Jack | 3 Cycling | R Reset | B Restart video | ESC Exit",
-            4,
+            mode == ActiveMode::Cycling ? 6 : 4,
             cv::Scalar(255, 255, 255));
 }
 
@@ -407,7 +433,14 @@ void writeCsvHeader(std::ofstream& csv) {
         << "squat_angle,squat_left_knee,squat_right_knee,"
         << "jack_left_arm_lift,jack_right_arm_lift,jack_leg_spread,"
         << "cycling_left_knee,cycling_right_knee,"
-        << "cycling_left_extension,cycling_right_extension,cycling_phase\n";
+        << "cycling_left_extension,cycling_right_extension,cycling_phase,"
+        << "cycling_calibrated,cycling_signal_source,cycling_signal,"
+        << "cycling_signal_baseline,cycling_signal_trigger,"
+        << "cycling_scale_signal,cycling_knee_y_signal,"
+        << "cycling_left_shin,cycling_right_shin,"
+        << "cycling_left_hip_vis,cycling_right_hip_vis,"
+        << "cycling_left_knee_vis,cycling_right_knee_vis,"
+        << "cycling_left_ankle_vis,cycling_right_ankle_vis\n";
 }
 
 void writeCsvRow(std::ofstream& csv,
@@ -436,7 +469,22 @@ void writeCsvRow(std::ofstream& csv,
         << cycling.rightKneeAngle() << ','
         << cycling.leftExtension() << ','
         << cycling.rightExtension() << ','
-        << phaseName(cycling.phase()) << '\n';
+        << phaseName(cycling.phase()) << ','
+        << (cycling.calibrated() ? 1 : 0) << ','
+        << signalSourceName(cycling.signalSource()) << ','
+        << cycling.signal() << ','
+        << cycling.signalBaseline() << ','
+        << cycling.signalTrigger() << ','
+        << cycling.rawScaleSignal() << ','
+        << cycling.rawKneeYSignal() << ','
+        << cycling.leftShinLength() << ','
+        << cycling.rightShinLength() << ','
+        << cycling.leftHipVisibility() << ','
+        << cycling.rightHipVisibility() << ','
+        << cycling.leftKneeVisibility() << ','
+        << cycling.rightKneeVisibility() << ','
+        << cycling.leftAnkleVisibility() << ','
+        << cycling.rightAnkleVisibility() << '\n';
 }
 
 void resetForMode(ActiveMode mode,
@@ -514,11 +562,37 @@ int main(int argc, char** argv) {
     );
 
     Cycling cycling;
-    cycling.setThresholds(
-        115.0,  // 屈膝阈值
-        145.0,  // 伸腿阈值
-        3       // 相位连续确认帧数
+
+    // ===== 床上蹬腿 V2：专门针对“手机只拍胯以下”的局部人体场景 =====
+    // 主计数不再依赖髋点和膝角，而是只要求左右膝+左右踝，
+    // 自动从“小腿二维投影尺度差”和“左右膝相对 y 位移”中选更稳定的信号。
+    cycling.setPartialBodyConfig(
+        0.22f,  // 膝/踝最低置信度
+        2,      // 连续 2 个有效帧确认相位
+        5,      // 最多容忍约 0.17 s 的短暂丢点（30 FPS）
+        8       // 两个稳定相位至少间隔 8 帧
     );
+
+    cycling.setCalibrationConfig(
+        8,      // 仍保留快速标定；V3 用 trigger floor 防止早标定阈值过小
+        0.10f,
+        0.30f,
+        0.28f
+    );
+
+    // debug_log(2) 中旧值 baseline=0.017、trigger=0.035。
+    // 真实动作 SHIN_SCALE 可达约 ±1.2，而误触发段只有约 0.05~0.14，
+    // 因此把 SHIN_SCALE 的绝对 trigger 下限设为 0.10。
+    cycling.setSignalTriggerFloor(0.10f, 0.12f);
+
+    // 同一次伸腿中的骨骼抖动即使偶然形成相位，也不能短时间连续加分。
+    cycling.setMinCountIntervalFrames(10);
+
+    // WakeAI 闹钟模式：每次稳定左右相位切换算 1 次。
+    cycling.setCountMode(CyclingCountMode::EachPedal);
+
+    // 保留辅助膝角参数，仅用于髋点偶尔可见时的 debug；不作为主计数条件。
+    cycling.setThresholds(115.0, 145.0, 2);
     // ===== 调参区结束 =====
 
     PoseSmoother smoother(
@@ -636,7 +710,17 @@ int main(int argc, char** argv) {
                         cycling);
         }
 
-        cv::imshow("WakeAI - First Round Exercise Test", frame);
+        // ===== 显示前缩小，避免窗口过大（保持宽高比） =====
+        cv::Mat display = frame;
+        const int kMaxSide = 720;                 // 显示帧的最长边不超过720像素，可按需调
+        const int side = std::max(display.cols, display.rows);
+        if (side > kMaxSide) {
+            const double s = static_cast<double>(kMaxSide) / side;
+            cv::resize(display, display,
+                cv::Size(static_cast<int>(display.cols * s),
+                    static_cast<int>(display.rows * s)));
+        }
+        cv::imshow("WakeAI - First Round Exercise Test", display);
 
         const int key = cv::waitKey(1) & 0xFF;
 

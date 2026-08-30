@@ -31,11 +31,10 @@ bool Squat::computeKneeAngle(const PoseLandmarks& pose,
     }
 
     if (leftOk && rightOk) {
-        const float leftConf = (lh.visibility + lk.visibility + la.visibility) / 3.0f;
-        const float rightConf = (rh.visibility + rk.visibility + ra.visibility) / 3.0f;
-
-        // 不再简单平均左右腿：优先使用整体可见度更高的一侧。
-        selectedAngle = (leftConf >= rightConf) ? leftAngle : rightAngle;
+        // 取「更弯」（角度更小）的一侧。
+        // 2D 投影下，靠近镜头的一条腿会被测得更弯；取 min 最稳健，
+        // 也能兼容 YOLO 偶尔把左右腿标反的情况。
+        selectedAngle = std::min(leftAngle, rightAngle);
     }
     else {
         selectedAngle = leftOk ? leftAngle : rightAngle;
