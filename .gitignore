@@ -99,3 +99,20 @@ __pycache__/
 # ===== 系统杂项 =====
 .DS_Store
 Thumbs.db
+
+
+
+
+# Visual Studio缓存
+.vs/
+*.suo
+*.db
+*.sqlite
+*.vsidx
+
+# 编译输出
+build/
+Debug/
+Release/
+cmake-build-*
+
