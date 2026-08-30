@@ -4,28 +4,64 @@
 
 namespace wakeai {
 
-    // ¿ªºÏÌø£ºÍ¨¹ıÊÖÍóÏà¶Ô¼ç°òµÄ¸ß¶ÈÅĞ¶Ï"Ë«ÊÖÉÏ¾Ù/·ÅÏÂ"
-    class JumpingJack : public ExerciseBase {
-    public:
-        JumpingJack();
+class JumpingJack : public ExerciseBase {
+public:
+    JumpingJack();
 
-        void update(const PoseLandmarks& pose) override;
-        int count() const override;
-        double angle() const override;
-        ExerciseState state() const override;
-        float progress() const override;
-        void reset() override;
-        const char* name() const override;
+    void update(const PoseLandmarks& pose) override;
+    int count() const override;
+    double angle() const override;
+    ExerciseState state() const override;
+    float progress() const override;
+    bool valid() const override;
+    void reset() override;
+    const char* name() const override;
 
-    private:
-        // ÊÖÍó¸ßÓÚ¼ç°òµÄÏñËØ¾àÀë£¨Õı=¾Ù¹ı¼ç£¬¸º=ÔÚ¼çÏÂ·½£©
-        double wristLift(const PoseLandmarks& pose) const;
+    // armOpen / armCloseï¼šæ‰‹è…•ç›¸å¯¹è‚©éƒ¨çš„â€œè‚©å®½å½’ä¸€åŒ–é«˜åº¦â€ã€‚
+    // spreadOpen / spreadCloseï¼šè„šè¸é—´è· / è‚©å®½ã€‚
+    void setThresholds(float armOpen,
+                       float armClose,
+                       float spreadOpen,
+                       float spreadClose,
+                       int confirmFrames);
 
-        double curLift_ = 0.0;
-        int count_ = 0;
-        ExerciseState state_ = ExerciseState::Ready;
+    float leftArmLift() const { return leftArmLift_; }
+    float rightArmLift() const { return rightArmLift_; }
+    float legSpread() const { return curSpread_; }
+    bool armed() const { return armed_; }
+    float armOpenThreshold() const { return kArmOpen_; }
+    float armCloseThreshold() const { return kArmClose_; }
+    float spreadOpenThreshold() const { return kSpreadOpen_; }
+    float spreadCloseThreshold() const { return kSpreadClose_; }
+    int confirmFrames() const { return kConfirmFrames_; }
 
-        double kLiftMargin_ = 30.0;   // ÏñËØãĞÖµ£¬³¬¹ı²ÅËã"¾ÙÆğ"
-    };
+private:
+    bool computeMetrics(const PoseLandmarks& pose,
+                        float& leftArmLift,
+                        float& rightArmLift,
+                        float& legSpread) const;
+
+    float leftArmLift_ = 0.0f;
+    float rightArmLift_ = 0.0f;
+    float curSpread_ = 0.0f;
+
+    int count_ = 0;
+    ExerciseState state_ = ExerciseState::Ready;
+    bool valid_ = false;
+    bool armed_ = false;
+
+    // æ¨èç¬¬ä¸€è½®åˆå€¼ã€‚
+    float kArmOpen_ = 0.45f;
+    float kArmClose_ = -0.25f;
+    float kSpreadOpen_ = 1.25f;
+    float kSpreadClose_ = 0.75f;
+    int kConfirmFrames_ = 3;
+
+    int initialCloseFrames_ = 0;
+    int openFrames_ = 0;
+    int closeFrames_ = 0;
+
+    float kVisibility_ = 0.45f;
+};
 
 } // namespace wakeai

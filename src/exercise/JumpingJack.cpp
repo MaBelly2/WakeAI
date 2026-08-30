@@ -1,70 +1,201 @@
 #include "exercise/JumpingJack.h"
 
+#include <algorithm>
+#include <cmath>
+
 namespace wakeai {
 
-    JumpingJack::JumpingJack() = default;
+JumpingJack::JumpingJack() = default;
 
-    double JumpingJack::wristLift(const PoseLandmarks& pose) const {
-        // ÊÖÍóÏà¶Ô¼ç°òµÄ¸ß¶È£º¼ç.y - Íó.y£¨Í¼Ïñ y ÏòÏÂ£¬Õı=¾Ù¹ı¼ç£©
-        const Keypoint& ls = pose[LeftShoulder];
-        const Keypoint& lw = pose[LeftWrist];
-        const Keypoint& rs = pose[RightShoulder];
-        const Keypoint& rw = pose[RightWrist];
+bool JumpingJack::computeMetrics(const PoseLandmarks& pose,
+                                 float& leftArmLift,
+                                 float& rightArmLift,
+                                 float& legSpread) const {
+    const Keypoint& ls = pose[LeftShoulder];
+    const Keypoint& rs = pose[RightShoulder];
+    const Keypoint& lw = pose[LeftWrist];
+    const Keypoint& rw = pose[RightWrist];
+    const Keypoint& la = pose[LeftAnkle];
+    const Keypoint& ra = pose[RightAnkle];
 
-        bool leftOk = ls.visible() && lw.visible();
-        bool rightOk = rs.visible() && rw.visible();
+    const bool allOk =
+        ls.visible(kVisibility_) &&
+        rs.visible(kVisibility_) &&
+        lw.visible(kVisibility_) &&
+        rw.visible(kVisibility_) &&
+        la.visible(kVisibility_) &&
+        ra.visible(kVisibility_);
 
-        if (leftOk && rightOk) {
-            return ((ls.y - lw.y) + (rs.y - rw.y)) / 2.0;
-        }
-        else if (leftOk) {
-            return ls.y - lw.y;
-        }
-        else if (rightOk) {
-            return rs.y - rw.y;
-        }
-        return curLift_;
+    if (!allOk) {
+        return false;
     }
 
-    void JumpingJack::update(const PoseLandmarks& pose) {
-        curLift_ = wristLift(pose);
+    const float shoulderWidth = PoseLandmarks::dist(ls, rs);
+    if (shoulderWidth < 10.0f) {
+        return false;
+    }
 
-        switch (state_) {
-        case ExerciseState::Ready:
-            if (curLift_ > kLiftMargin_)      // Ë«ÊÖ¾ÙÆğ ¡ú ½øÈëÕ¹¿ª
-                state_ = ExerciseState::Down;
-            break;
-        case ExerciseState::Down:
-            if (curLift_ < -kLiftMargin_) {   // Ë«ÊÖ·ÅÏÂ ¡ú Íê³ÉÒ»´Î
-                count_++;
-                state_ = ExerciseState::Up;
+    // å›¾åƒ y è½´å‘ä¸‹ï¼Œæ‰€ä»¥â€œè‚© y - è…• yâ€è¶Šå¤§ï¼Œæ‰‹ä¸¾å¾—è¶Šé«˜ã€‚
+    leftArmLift = (ls.y - lw.y) / shoulderWidth;
+    rightArmLift = (rs.y - rw.y) / shoulderWidth;
+    legSpread = std::abs(la.x - ra.x) / shoulderWidth;
+
+    return true;
+}
+
+void JumpingJack::update(const PoseLandmarks& pose) {
+    float leftLift = leftArmLift_;
+    float rightLift = rightArmLift_;
+    float spread = curSpread_;
+
+    valid_ = computeMetrics(pose, leftLift, rightLift, spread);
+
+    if (!valid_) {
+        initialCloseFrames_ = 0;
+        openFrames_ = 0;
+        closeFrames_ = 0;
+        return;
+    }
+
+    leftArmLift_ = leftLift;
+    rightArmLift_ = rightLift;
+    curSpread_ = spread;
+
+    const bool open =
+        (leftArmLift_ > kArmOpen_) &&
+        (rightArmLift_ > kArmOpen_) &&
+        (curSpread_ > kSpreadOpen_);
+
+    const bool close =
+        (leftArmLift_ < kArmClose_) &&
+        (rightArmLift_ < kArmClose_) &&
+        (curSpread_ < kSpreadClose_);
+
+    // å¯åŠ¨ä¿æŠ¤ï¼šå…ˆçœ‹åˆ°ç¨³å®šçš„å¹¶æ‹¢ç«™å§¿ã€‚
+    if (!armed_) {
+        if (close) {
+            ++initialCloseFrames_;
+            if (initialCloseFrames_ >= kConfirmFrames_) {
+                armed_ = true;
+                initialCloseFrames_ = 0;
+                state_ = ExerciseState::Ready;
             }
-            break;
-        case ExerciseState::Up:
-            state_ = (curLift_ > kLiftMargin_) ? ExerciseState::Down
-                : ExerciseState::Ready;
-            break;
         }
+        else {
+            initialCloseFrames_ = 0;
+        }
+        return;
     }
 
-    int JumpingJack::count() const { return count_; }
-    double JumpingJack::angle() const { return curLift_; }  // ¿ªºÏÌøÎŞ½Ç¶È£¬·µ»Ø¸ß¶È²î
-    ExerciseState JumpingJack::state() const { return state_; }
+    switch (state_) {
+    case ExerciseState::Ready:
+        if (open) {
+            ++openFrames_;
+            if (openFrames_ >= kConfirmFrames_) {
+                state_ = ExerciseState::Down; // Down åœ¨è¿™é‡Œè¡¨ç¤ºâ€œå®Œå…¨å±•å¼€â€
+                openFrames_ = 0;
+                closeFrames_ = 0;
+            }
+        }
+        else {
+            openFrames_ = 0;
+        }
+        break;
 
-    float JumpingJack::progress() const {
-        float p = static_cast<float>((curLift_ + kLiftMargin_) /
-            (2.0 * kLiftMargin_));
-        if (p < 0.0f) p = 0.0f;
-        if (p > 1.0f) p = 1.0f;
-        return p;
-    }
+    case ExerciseState::Down:
+        if (close) {
+            ++closeFrames_;
+            if (closeFrames_ >= kConfirmFrames_) {
+                ++count_;
+                state_ = ExerciseState::Ready;
+                closeFrames_ = 0;
+                openFrames_ = 0;
+            }
+        }
+        else {
+            closeFrames_ = 0;
+        }
+        break;
 
-    void JumpingJack::reset() {
-        curLift_ = 0.0;
-        count_ = 0;
+    case ExerciseState::Up:
         state_ = ExerciseState::Ready;
+        break;
+    }
+}
+
+int JumpingJack::count() const {
+    return count_;
+}
+
+double JumpingJack::angle() const {
+    // ä¸ºå…¼å®¹ç°æœ‰ ExerciseBase æ¥å£ï¼Œè¿”å›ä¸¤è‡‚æŠ¬å‡å½’ä¸€åŒ–å€¼çš„å¹³å‡å€¼ã€‚
+    // æ³¨æ„å®ƒä¸æ˜¯â€œè§’åº¦â€ã€‚
+    return (static_cast<double>(leftArmLift_) +
+            static_cast<double>(rightArmLift_)) / 2.0;
+}
+
+ExerciseState JumpingJack::state() const {
+    return state_;
+}
+
+float JumpingJack::progress() const {
+    if (!valid_) {
+        return 0.0f;
     }
 
-    const char* JumpingJack::name() const { return "¿ªºÏÌø"; }
+    const float armDen = kArmOpen_ - kArmClose_;
+    const float legDen = kSpreadOpen_ - kSpreadClose_;
+    if (armDen <= 1e-6f || legDen <= 1e-6f) {
+        return 0.0f;
+    }
+
+    const float leftP = std::clamp((leftArmLift_ - kArmClose_) / armDen, 0.0f, 1.0f);
+    const float rightP = std::clamp((rightArmLift_ - kArmClose_) / armDen, 0.0f, 1.0f);
+    const float armP = std::min(leftP, rightP); // ä¸¤åªæ‰‹éƒ½è¦è¾¾æ ‡
+
+    const float legP = std::clamp(
+        (curSpread_ - kSpreadClose_) / legDen, 0.0f, 1.0f);
+
+    return 0.5f * armP + 0.5f * legP;
+}
+
+bool JumpingJack::valid() const {
+    return valid_;
+}
+
+void JumpingJack::reset() {
+    leftArmLift_ = 0.0f;
+    rightArmLift_ = 0.0f;
+    curSpread_ = 0.0f;
+
+    count_ = 0;
+    state_ = ExerciseState::Ready;
+    valid_ = false;
+    armed_ = false;
+
+    initialCloseFrames_ = 0;
+    openFrames_ = 0;
+    closeFrames_ = 0;
+}
+
+void JumpingJack::setThresholds(float armOpen,
+                                float armClose,
+                                float spreadOpen,
+                                float spreadClose,
+                                int confirmFrames) {
+    if (armClose >= armOpen || spreadClose >= spreadOpen) {
+        return;
+    }
+
+    kArmOpen_ = armOpen;
+    kArmClose_ = armClose;
+    kSpreadOpen_ = spreadOpen;
+    kSpreadClose_ = spreadClose;
+    kConfirmFrames_ = std::max(1, confirmFrames);
+}
+
+const char* JumpingJack::name() const {
+    return "å¼€åˆè·³";
+}
 
 } // namespace wakeai

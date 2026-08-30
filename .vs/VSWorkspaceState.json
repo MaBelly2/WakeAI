@@ -9,9 +9,12 @@
   },
   "ExpandedNodes": [
     "",
+    "\\database",
+    "\\include",
+    "\\include\\exercise",
     "\\src",
+    "\\src\\core",
     "\\src\\exercise"
   ],
-  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

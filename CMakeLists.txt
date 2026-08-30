@@ -6,6 +6,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# MSVC 默认按系统代码页(GBK/936)读源码，中文注释会乱码。
+# 加 /utf-8 强制按 UTF-8 读取。
+if (MSVC)
+    add_compile_options(/utf-8)
+endif()
+
 # ============ 依赖查找 ============
 # OpenCV：通过系统环境变量 OpenCV_DIR 自动定位（不再硬编码路径）
 # 说明：OpenCV 4.12 预编译库为 vc16（MSVC2019 工具集）；当前 MSVC 19.51（VS2026）
