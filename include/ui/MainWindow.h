@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QMainWindow>
 #include <QLabel>
@@ -38,7 +38,7 @@ namespace wakeai {
         QImage matToQImage(const cv::Mat& mat) const;
         ExerciseBase* currentExercise();
 
-        // ½çÃæ¿Ø¼ş
+        // ç•Œé¢æ§ä»¶
         QLabel* previewLabel_ = nullptr;
         QComboBox* modeBox_ = nullptr;
         QSpinBox* targetBox_ = nullptr;
@@ -48,7 +48,7 @@ namespace wakeai {
         QProgressBar* progressBar_ = nullptr;
         QLabel* statusLabel_ = nullptr;
 
-        // Ëã·¨×é¼ş
+        // ç®—æ³•ç»„ä»¶
         cv::VideoCapture cap_;
         PoseDetector detector_;
         PoseSmoother smoother_;

@@ -1,4 +1,4 @@
-#include "ui/MainWindow.h"
+ï»¿#include "ui/MainWindow.h"
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -13,63 +13,63 @@ namespace wakeai {
         setupUi();
 
         if (!detector_.load(modelPath_)) {
-            statusLabel_->setText("Ä£ÐÍ¼ÓÔØÊ§°Ü£¡Çë¼ì²é models/yolov8n-pose.onnx");
+            statusLabel_->setText("æ¨¡åž‹åŠ è½½å¤±è´¥ï¼è¯·æ£€æŸ¥ models/yolov8n-pose.onnx");
             startBtn_->setEnabled(false);
         }
 
-        // Èý¸ö¶¯×÷µÄÄ¬ÈÏ²ÎÊý£¨Óë²âÊÔ¹¤¾ßÒ»ÖÂ£¬ÒÔºó¿ÉÔÚÕâÀïµ÷£©
+        // ä¸‰ä¸ªåŠ¨ä½œçš„é»˜è®¤å‚æ•°ï¼ˆä¸Žæµ‹è¯•å·¥å…·ä¸€è‡´ï¼Œä»¥åŽå¯åœ¨è¿™é‡Œè°ƒï¼‰
         squat_.setThresholds(140.0, 155.0, 2);
         jumpingJack_.setThresholds(0.45f, -0.25f, 1.25f, 0.75f, 3);
         cycling_.setPartialBodyConfig(0.22f, 2, 5, 4);
         cycling_.setCalibrationConfig(15, 0.10f, 0.30f, 0.30f);
         cycling_.setCountMode(CyclingCountMode::EachPedal);
 
-        active_ = &squat_;  // Ä¬ÈÏÉî¶×
+        active_ = &squat_;  // é»˜è®¤æ·±è¹²
 
         timer_ = new QTimer(this);
         connect(timer_, &QTimer::timeout, this, &MainWindow::tick);
     }
 
     void MainWindow::setupUi() {
-        setWindowTitle("WakeAI - ÖÇÄÜÔË¶¯»½ÐÑ");
+        setWindowTitle("WakeAI - æ™ºèƒ½è¿åŠ¨å”¤é†’");
 
         auto* central = new QWidget(this);
         auto* vbox = new QVBoxLayout(central);
 
-        // ÉãÏñÍ·Ô¤ÀÀ
-        previewLabel_ = new QLabel("ÉãÏñÍ·Î´¿ªÆô", central);
+        // æ‘„åƒå¤´é¢„è§ˆ
+        previewLabel_ = new QLabel("æ‘„åƒå¤´æœªå¼€å¯", central);
         previewLabel_->setAlignment(Qt::AlignCenter);
         previewLabel_->setMinimumSize(640, 480);
         previewLabel_->setStyleSheet("background-color: black; color: white;");
         vbox->addWidget(previewLabel_);
 
-        // ¿ØÖÆÐÐ
+        // æŽ§åˆ¶è¡Œ
         auto* hbox = new QHBoxLayout();
-        hbox->addWidget(new QLabel("¶¯×÷:", central));
+        hbox->addWidget(new QLabel("åŠ¨ä½œ:", central));
 
         modeBox_ = new QComboBox(central);
-        modeBox_->addItem("Éî¶×");
-        modeBox_->addItem("¿ªºÏÌø");
-        modeBox_->addItem("´²ÉÏµÅÍÈ");
+        modeBox_->addItem("æ·±è¹²");
+        modeBox_->addItem("å¼€åˆè·³");
+        modeBox_->addItem("åºŠä¸Šè¹¬è…¿");
         hbox->addWidget(modeBox_);
 
-        hbox->addWidget(new QLabel("Ä¿±ê´ÎÊý:", central));
+        hbox->addWidget(new QLabel("ç›®æ ‡æ¬¡æ•°:", central));
         targetBox_ = new QSpinBox(central);
         targetBox_->setRange(1, 1000);
         targetBox_->setValue(20);
         hbox->addWidget(targetBox_);
 
-        mirrorBox_ = new QCheckBox("¾µÏñ", central);
+        mirrorBox_ = new QCheckBox("é•œåƒ", central);
         mirrorBox_->setChecked(true);
         hbox->addWidget(mirrorBox_);
 
-        startBtn_ = new QPushButton("¿ªÊ¼", central);
+        startBtn_ = new QPushButton("å¼€å§‹", central);
         hbox->addWidget(startBtn_);
 
         hbox->addStretch();
         vbox->addLayout(hbox);
 
-        // ¼ÆÊý + ½ø¶È
+        // è®¡æ•° + è¿›åº¦
         countLabel_ = new QLabel("0 / 20", central);
         countLabel_->setStyleSheet("font-size: 24px; font-weight: bold;");
         vbox->addWidget(countLabel_);
@@ -79,7 +79,7 @@ namespace wakeai {
         progressBar_->setValue(0);
         vbox->addWidget(progressBar_);
 
-        statusLabel_ = new QLabel("µã»÷¡¸¿ªÊ¼¡¹Æô¶¯Ê¶±ð", central);
+        statusLabel_ = new QLabel("ç‚¹å‡»ã€Œå¼€å§‹ã€å¯åŠ¨è¯†åˆ«", central);
         vbox->addWidget(statusLabel_);
 
         setCentralWidget(central);
@@ -104,7 +104,7 @@ namespace wakeai {
         countLabel_->setStyleSheet("font-size: 24px; font-weight: bold;");
         countLabel_->setText("0 / " + QString::number(targetBox_->value()));
         progressBar_->setValue(0);
-        statusLabel_->setText("ÒÑÇÐ»»¶¯×÷");
+        statusLabel_->setText("å·²åˆ‡æ¢åŠ¨ä½œ");
     }
 
     void MainWindow::onStartStop() {
@@ -113,22 +113,22 @@ namespace wakeai {
                 cap_.open(0);
             }
             if (!cap_.isOpened()) {
-                QMessageBox::warning(this, "´íÎó", "ÎÞ·¨´ò¿ªÉãÏñÍ·");
+                QMessageBox::warning(this, "é”™è¯¯", "æ— æ³•æ‰“å¼€æ‘„åƒå¤´");
                 return;
             }
             active_ = currentExercise();
             active_->reset();
             completedShown_ = false;
             running_ = true;
-            startBtn_->setText("Í£Ö¹");
-            statusLabel_->setText("Ê¶±ðÖÐ...");
+            startBtn_->setText("åœæ­¢");
+            statusLabel_->setText("è¯†åˆ«ä¸­...");
             timer_->start(30);
         }
         else {
             running_ = false;
             timer_->stop();
-            startBtn_->setText("¿ªÊ¼");
-            statusLabel_->setText("ÒÑÍ£Ö¹");
+            startBtn_->setText("å¼€å§‹");
+            statusLabel_->setText("å·²åœæ­¢");
         }
     }
 
@@ -149,7 +149,7 @@ namespace wakeai {
             smoothPose = smoother_.update(rawPose);
         }
         else {
-            smoother_.update(PoseLandmarks{});   // ¹Ø¼üµã¶ªÊ§£¬Î¹¿ÕÖ¡
+            smoother_.update(PoseLandmarks{});   // å…³é”®ç‚¹ä¸¢å¤±ï¼Œå–‚ç©ºå¸§
         }
 
         active_->update(smoothPose);
@@ -168,8 +168,8 @@ namespace wakeai {
         if (count >= target && !completedShown_) {
             completedShown_ = true;
             countLabel_->setStyleSheet("font-size: 24px; font-weight: bold; color: red;");
-            statusLabel_->setText("ÒÑÍê³ÉÄ¿±ê£¡");
-            QMessageBox::information(this, "Íê³É", "Ì«°ôÁË£¬ÄãÍê³ÉÁËÄ¿±ê£¡");
+            statusLabel_->setText("å·²å®Œæˆç›®æ ‡ï¼");
+            QMessageBox::information(this, "å®Œæˆ", "å¤ªæ£’äº†ï¼Œä½ å®Œæˆäº†ç›®æ ‡ï¼");
         }
 
         previewLabel_->setPixmap(

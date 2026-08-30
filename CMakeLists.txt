@@ -34,7 +34,9 @@ file(GLOB WAKEAI_APP_SOURCES
      ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
      ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/*.cpp)
 
-add_executable(WakeAI ${WAKEAI_APP_SOURCES})
+add_executable(WakeAI
+    ${WAKEAI_APP_SOURCES}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/ui/MainWindow.h)
 target_link_libraries(WakeAI PRIVATE WakeAI_core Qt6::Widgets)
 
 # ============ 命令行测试工具（原来的 main.cpp） ============
