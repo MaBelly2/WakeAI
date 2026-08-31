@@ -16,7 +16,7 @@ endif()
 # ============ 依赖查找 ============
 # Qt6：Core（QTimer）、Sql（SQLite 数据库）；铃声第一版用系统 Beep，无需 Multimedia
 # 配置时通过 -DCMAKE_PREFIX_PATH=D:/Qt/6.11.2/msvc2022_64 指定 Qt 位置
-find_package(Qt6 REQUIRED COMPONENTS Core Sql)
+find_package(Qt6 REQUIRED COMPONENTS Core Sql Widgets)
 
 # OpenCV：通过系统环境变量 OpenCV_DIR 自动定位（不再硬编码路径）
 # 说明：OpenCV 4.12 预编译库为 vc16（MSVC2019 工具集）；当前 MSVC 19.51（VS2026）
@@ -61,3 +61,10 @@ add_executable(WakeAITest
     src/system/AchievementEngine.cpp
     include/system/AlarmManager.h)
 target_link_libraries(WakeAITest Qt6::Core Qt6::Sql)
+
+# ============ 系统模块成果可视化（D 负责人，临时查看用）============
+add_executable(WakeAIViewer
+    tools/system_viewer.cpp
+    src/system/DatabaseManager.cpp
+    src/system/AchievementEngine.cpp)
+target_link_libraries(WakeAIViewer Qt6::Core Qt6::Sql Qt6::Widgets)
