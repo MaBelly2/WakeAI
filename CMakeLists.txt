@@ -58,10 +58,6 @@ add_executable(WakeAI
     ${CMAKE_CURRENT_SOURCE_DIR}/include/system/AlarmManager.h)
 target_link_libraries(WakeAI PRIVATE WakeAI_core WakeAI_system Qt6::Widgets)
 
-# ============ 命令行测试工具（原来的 main.cpp） ============
-add_executable(WakeAI_test tools/live_test.cpp)
-target_link_libraries(WakeAI_test PRIVATE WakeAI_core)
-
 # ============ 系统模块自测（D 负责人） ============
 add_executable(WakeAITest
     tests/test_system.cpp
