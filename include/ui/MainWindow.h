@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <QMainWindow>
 #include <QLabel>
@@ -18,6 +18,7 @@
 #include "exercise/Squat.h"
 #include "exercise/JumpingJack.h"
 #include "exercise/Cycling.h"
+#include "system/DatabaseManager.h"
 
 namespace wakeai {
 
@@ -61,6 +62,9 @@ namespace wakeai {
         bool running_ = false;
         bool completedShown_ = false;
         std::string modelPath_;
+
+        // 数据/成就层（郑旖轩 系统模块）
+        DatabaseManager db_;
     };
 
 } // namespace wakeai

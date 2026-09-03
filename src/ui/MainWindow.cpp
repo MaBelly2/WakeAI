@@ -1,10 +1,13 @@
-﻿#include "ui/MainWindow.h"
+#include "ui/MainWindow.h"
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QImage>
 #include <QPixmap>
+#include <QDate>
+#include <QDateTime>
+#include "system/AchievementEngine.h"
 
 namespace wakeai {
 
@@ -25,6 +28,15 @@ namespace wakeai {
         cycling_.setCountMode(CyclingCountMode::EachPedal);
 
         active_ = &squat_;  // 默认深蹲
+
+        // 初始化数据库与成就（郑旖轩 系统模块）
+        if (db_.init()) {
+            wakeai::Statistics st = db_.queryStatistics();
+            statusLabel_->setText(QString("连续早起 %1 天 · 已解锁 %2 个成就")
+                .arg(st.consecutiveDays).arg(db_.unlockedAchievements().size()));
+        } else {
+            statusLabel_->setText("数据库初始化失败");
+        }
 
         timer_ = new QTimer(this);
         connect(timer_, &QTimer::timeout, this, &MainWindow::tick);
@@ -169,6 +181,24 @@ namespace wakeai {
             completedShown_ = true;
             countLabel_->setStyleSheet("font-size: 24px; font-weight: bold; color: red;");
             statusLabel_->setText("已完成目标！");
+
+            // —— 郑旖轩：记录本次唤醒 + 解锁成就 ——
+            wakeai::WakeRecord rec;
+            rec.date = QDate::currentDate().toString("yyyy-MM-dd");
+            rec.alarmTime = "07:00";   // 简化：可后续接预约闹钟时间
+            rec.exerciseType = QString::fromUtf8(active_->name());
+            rec.targetCount = target;
+            rec.actualCount = count;
+            rec.success = true;
+            rec.completedAt = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss");
+            db_.saveWakeRecord(rec);
+
+            wakeai::AchievementEngine engine(db_);
+            engine.checkAndUnlock(db_.queryStatistics());
+            wakeai::Statistics st = db_.queryStatistics();
+            statusLabel_->setText(QString("已完成！连续早起 %1 天 · 解锁 %2 个成就")
+                .arg(st.consecutiveDays).arg(db_.unlockedAchievements().size()));
+
             QMessageBox::information(this, "完成", "太棒了，你完成了目标！");
         }
 
