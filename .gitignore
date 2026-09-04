@@ -1,4 +1,4 @@
-ï»¿# Prerequisites
+# Prerequisites
 *.d
 
 # Compiled Object files
@@ -68,20 +68,20 @@ vcpkg_installed/
 Testing/
 .cache/
 
-# ===== Visual Studio ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½ =====
+# ===== Visual Studio ±¾µØ»º´æ =====
 .vs/
 *.user
 *.suo
 *.ipch
 *.aps
 
-# ===== CMake ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ =====
+# ===== CMake ¹¹½¨Êä³ö =====
 out/
 build/
 CMakeCache.txt
 CMakeFiles/
 
-# ===== ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ =====
+# ===== ±àÒë²úÎï =====
 *.exe
 *.obj
 *.o
@@ -96,10 +96,6 @@ __pycache__/
 *.pyc
 .venv/
 
-# ===== ÏµÍ³ï¿½ï¿½ï¿½ï¿½ =====
+# ===== ÏµÍ³ÔÓÏî =====
 .DS_Store
 Thumbs.db
-
-*.db
-# CSV test output
-*.csv
