@@ -26,6 +26,7 @@ file(GLOB_RECURSE WAKEAI_SOURCES
 
 # ============ 生成可执行程序 ============
 add_executable(WakeAI ${WAKEAI_SOURCES})
+add_subdirectory(ui-added)
 
 # 链接 OpenCV 库
 target_link_libraries(WakeAI ${OpenCV_LIBS})
