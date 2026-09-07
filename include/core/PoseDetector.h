@@ -5,15 +5,15 @@
 
 namespace wakeai {
 
-    // ÓÃ OpenCV DNN ¼ÓÔØ YOLO-pose µÄ ONNX Ä£ĞÍ£¬Êä³öÈËÌå¹Ø¼üµã
+    // ç”¨ OpenCV DNN åŠ è½½ YOLO-pose çš„ ONNX æ¨¡å‹ï¼Œè¾“å‡ºäººä½“å…³é”®ç‚¹
     class PoseDetector {
     public:
         PoseDetector() = default;
 
-        // ¼ÓÔØ ONNX Ä£ĞÍ£¬³É¹¦·µ»Ø true
+        // åŠ è½½ ONNX æ¨¡å‹ï¼ŒæˆåŠŸè¿”å› true
         bool load(const std::string& modelPath);
 
-        // ´ÓÒ»Ö¡Í¼Ïñ¼ì²â¹Ø¼üµã£¬½á¹ûÌîÈë out£»Ã»¼ì²âµ½ÈË·µ»Ø false
+        // ä»ä¸€å¸§å›¾åƒæ£€æµ‹å…³é”®ç‚¹ï¼Œç»“æœå¡«å…¥ outï¼›æ²¡æ£€æµ‹åˆ°äººè¿”å› false
         bool detect(const cv::Mat& frame, PoseLandmarks& out);
 
     private:
@@ -25,9 +25,9 @@ namespace wakeai {
             PoseLandmarks& result) const;
 
         cv::dnn::Net net_;
-        int inputSize_ = 640;        // Ä£ĞÍÊäÈë³ß´ç
-        float confThreshold_ = 0.4f; // ÈËÌå¼ì²âÖÃĞÅ¶È
-        float nmsThreshold_ = 0.5f;  // È¥ÖØµşãĞÖµ
+        int inputSize_ = 640;        // æ¨¡å‹è¾“å…¥å°ºå¯¸
+        float confThreshold_ = 0.4f; // äººä½“æ£€æµ‹ç½®ä¿¡åº¦
+        float nmsThreshold_ = 0.5f;  // å»é‡å é˜ˆå€¼
     };
 
 } // namespace wakeai

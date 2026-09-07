@@ -1,57 +1,58 @@
 #pragma once
-
 #include <QMainWindow>
-#include <QTime>
-#include <QTimer>
 #include <QThread>
 #include <QSoundEffect>
-#include <QSettings>
 #include <QDateTime>
-
+#include <memory>
 #include "motionworker.h"
-namespace Ui {
-class MainWindow;          // ← ① 前置声明，放 class MainWindow 之前
-}
-class MainWindow : public QMainWindow
-{
+#include "exercise/WorkoutSession.h"
+#include "system/AlarmManager.h"
+#include "system/DatabaseManager.h"
+#include "system/AchievementEngine.h"
+namespace Ui { class MainWindow; }
+struct StartupOptions { QString modelPath,videoPath; int cameraIndex=0; bool testMode=false; };
+class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(StartupOptions options={},QWidget* parent=nullptr);
     ~MainWindow() override;
-
+protected:
+    void closeEvent(QCloseEvent* event) override;
 private slots:
-    void checkTime();
-    void on_btnSetAlarm_clicked();   // 设置新闹钟
-    void on_btnRecords_clicked();    // 首页 -> 记录页
-    void on_btnStart_clicked();      // 响铃页 -> 准备页
-    void on_btnSnooze_clicked();     // 稍后提醒（+5分钟）
-    void on_btnBegin_clicked();      // 准备页 -> 进行页，启动识别
-    void on_btnPause_clicked();      // 暂停/继续
-    void on_btnFinish_clicked();     // 完成任务（达标后才有效）
-    void on_btnHistory_clicked();    // 完成页 -> 记录页
-    void on_btnHome_clicked();       // 完成页 -> 首页
-    void on_btnRecordBack_clicked(); // 记录页 -> 首页
-    void onCountChanged(int count);
-    void onWrongMotionHint();
-
+    void on_btnSetAlarm_clicked();
+    void on_btnRecords_clicked();
+    void on_btnStart_clicked();
+    void on_btnSnooze_clicked();
+    void on_btnBegin_clicked();
+    void on_btnPause_clicked();
+    void on_btnFinish_clicked();
+    void on_btnHistory_clicked();
+    void on_btnHome_clicked();
+    void on_btnRecordBack_clicked();
 private:
-    enum State { Idle, Ringing, Preparing, Exercising, Done };
-    State state = Idle;
-
-    Ui::MainWindow *ui;
-
-    QTimer *clockTimer = nullptr;
-    QTime  alarmTime;
-    bool   alarmTriggered_ = false;
-    int    targetCount_ = 20;
-    bool   paused_ = false;
-
-    QSoundEffect *ringSound = nullptr;
-    QThread      *workerThread = nullptr;
-    MotionWorker *worker = nullptr;
-
-    QString modeName();        // 根据 comboMode 返回中文动作名
-    void    startRing();       // 到点响铃并切到响铃页
-    void    stopWorker();      // 停止识别线程（可再启动）
-    void    appendRecord();    // 写入历史记录
+    enum class State { Idle,Ringing,Preparing,Exercising,Done };
+    void armAlarm(int testSeconds=0);
+    void startRing();
+    void stopWorker();
+    void updateCount(int count);
+    void refreshRecords();
+    void showAchievements();
+    bool savePending();
+    QString findModelPath() const;
+    QString modeName() const;
+    Ui::MainWindow* ui;
+    StartupOptions options_;
+    wakeai::DatabaseManager db_;
+    wakeai::AchievementEngine achievements_;
+    wakeai::AlarmManager alarm_;
+    wakeai::AlarmSetting setting_;
+    wakeai::WorkoutSession session_;
+    wakeai::WakeRecord pendingRecord_;
+    QSoundEffect* sound_=nullptr;
+    QThread* thread_=nullptr;
+    std::shared_ptr<MotionControl> control_;
+    State state_=State::Idle;
+    QString sessionId_;
+    QDateTime scheduled_;
+    bool pending_=false,paused_=false,closing_=false,closeApproved_=false;
 };

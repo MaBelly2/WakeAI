@@ -1,36 +1,44 @@
-cmake_minimum_required(VERSION 3.16)
-project(WakeAI VERSION 1.0.0 LANGUAGES CXX)
-
-# ============ C++ 标准 ============
+cmake_minimum_required(VERSION 3.21)
+project(WakeAI VERSION 1.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
-# MSVC 默认按系统代码页(GBK/936)读源码，中文注释会乱码。
-# 加 /utf-8 强制按 UTF-8 读取。
-if (MSVC)
+option(WAKEAI_BUILD_GUI "Build alarm_ui" ON)
+option(WAKEAI_BUILD_TESTS "Build tests" ON)
+option(WAKEAI_BUILD_VISION "Build OpenCV tester" ON)
+if(MSVC)
     add_compile_options(/utf-8)
 endif()
-
-# ============ 依赖查找 ============
-# OpenCV：通过系统环境变量 OpenCV_DIR 自动定位（不再硬编码路径）
-find_package(OpenCV REQUIRED)
-
-# ============ 头文件搜索目录 ============
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-# ============ 源文件 ============
-# 自动收集 src 目录下所有 .cpp 文件
-file(GLOB_RECURSE WAKEAI_SOURCES
-     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
-
-# ============ 生成可执行程序 ============
-add_executable(WakeAI ${WAKEAI_SOURCES})
-add_subdirectory(ui-added)
-
-# 链接 OpenCV 库
-target_link_libraries(WakeAI ${OpenCV_LIBS})
-
-# ============ 打印信息，方便确认是否找到 OpenCV ============
-message(STATUS "OpenCV 版本: ${OpenCV_VERSION}")
-message(STATUS "OpenCV 库文件: ${OpenCV_LIBS}")
+include(CTest)
+if(WAKEAI_BUILD_TESTS)
+    add_executable(WorkoutSessionTest tests/test_workout_session.cpp)
+    target_include_directories(WorkoutSessionTest PRIVATE include)
+    add_test(NAME workout_session COMMAND WorkoutSessionTest)
+endif()
+if(WAKEAI_BUILD_VISION OR WAKEAI_BUILD_GUI)
+    find_package(OpenCV 4 REQUIRED COMPONENTS core imgproc dnn videoio highgui)
+    add_library(wakeai_core STATIC
+        src/core/PoseDetector.cpp src/core/PoseSmoother.cpp
+        src/exercise/Squat.cpp src/exercise/JumpingJack.cpp src/exercise/Cycling.cpp)
+    target_include_directories(wakeai_core PUBLIC include ${OpenCV_INCLUDE_DIRS})
+    target_link_libraries(wakeai_core PUBLIC ${OpenCV_LIBS})
+    if(WAKEAI_BUILD_VISION)
+        add_executable(WakeAI src/main.cpp)
+        target_link_libraries(WakeAI PRIVATE wakeai_core)
+    endif()
+endif()
+if(WAKEAI_BUILD_GUI)
+    find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia Sql)
+    set(CMAKE_AUTOMOC ON)
+    add_library(WakeAI_system STATIC
+        include/system/AlarmManager.h src/system/AlarmManager.cpp
+        src/system/DatabaseManager.cpp src/system/AchievementEngine.cpp)
+    target_include_directories(WakeAI_system PUBLIC include)
+    target_link_libraries(WakeAI_system PUBLIC Qt6::Core Qt6::Sql)
+    add_subdirectory(ui-added)
+    if(WAKEAI_BUILD_TESTS)
+        add_executable(WakeAITest tests/test_system.cpp)
+        target_link_libraries(WakeAITest PRIVATE WakeAI_system)
+        add_test(NAME system_data COMMAND WakeAITest)
+    endif()
+endif()
