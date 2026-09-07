@@ -1,0 +1,5 @@
+{
+    "OpenCVDir":  "E:\\opencv\\opencv\\build\\x64\\vc16\\lib",
+    "OpenCVBin":  "E:\\opencv\\opencv\\build\\x64\\vc16\\bin",
+    "QtRoot":  "E:\\Qt\\6.11.2\\msvc2022_64"
+}

@@ -1,0 +1,20 @@
+{
+    "version":  3,
+    "configurePresets":  [
+                             {
+                                 "name":  "wakeai-msvc-release",
+                                 "displayName":  "WakeAI MSVC x64 Release",
+                                 "generator":  "Visual Studio 17 2022",
+                                 "architecture":  "x64",
+                                 "binaryDir":  "${sourceDir}/out/handoff-msvc",
+                                 "cacheVariables":  {
+                                                        "CMAKE_PREFIX_PATH":  "E:/Qt/6.11.2/msvc2022_64",
+                                                        "WAKEAI_BUILD_VISION":  "ON",
+                                                        "WAKEAI_BUILD_TESTS":  "ON",
+                                                        "WAKEAI_BUILD_GUI":  "ON",
+                                                        "OpenCV_DIR":  "E:/opencv/opencv/build/x64/vc16/lib",
+                                                        "WAKEAI_OPENCV_RUNTIME_DIR":  "E:/opencv/opencv/build/x64/vc16/bin"
+                                                    }
+                             }
+                         ]
+}

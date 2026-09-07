@@ -1,0 +1,110 @@
+﻿[
+    {
+        "path":  ".gitignore",
+        "existed":  true
+    },
+    {
+        "path":  "CMakeLists.txt",
+        "existed":  true
+    },
+    {
+        "path":  "CMakePresets.json",
+        "existed":  false
+    },
+    {
+        "path":  "include/core/PoseData.h",
+        "existed":  true
+    },
+    {
+        "path":  "include/core/PoseDetector.h",
+        "existed":  true
+    },
+    {
+        "path":  "include/exercise/ExerciseConfig.h",
+        "existed":  false
+    },
+    {
+        "path":  "include/exercise/WorkoutSession.h",
+        "existed":  false
+    },
+    {
+        "path":  "include/system/AchievementEngine.h",
+        "existed":  false
+    },
+    {
+        "path":  "include/system/AlarmManager.h",
+        "existed":  false
+    },
+    {
+        "path":  "include/system/DatabaseManager.h",
+        "existed":  false
+    },
+    {
+        "path":  "src/core/PoseDetector.cpp",
+        "existed":  true
+    },
+    {
+        "path":  "src/main.cpp",
+        "existed":  true
+    },
+    {
+        "path":  "src/system/AchievementEngine.cpp",
+        "existed":  false
+    },
+    {
+        "path":  "src/system/AlarmManager.cpp",
+        "existed":  false
+    },
+    {
+        "path":  "src/system/DatabaseManager.cpp",
+        "existed":  false
+    },
+    {
+        "path":  "tests/test_system.cpp",
+        "existed":  false
+    },
+    {
+        "path":  "tests/test_workout_session.cpp",
+        "existed":  false
+    },
+    {
+        "path":  "tools/Build-WakeAI.ps1",
+        "existed":  false
+    },
+    {
+        "path":  "tools/Package-WakeAI.ps1",
+        "existed":  false
+    },
+    {
+        "path":  "tools/Start-WakeAI.ps1",
+        "existed":  false
+    },
+    {
+        "path":  "ui-added/CMakeLists.txt",
+        "existed":  true
+    },
+    {
+        "path":  "ui-added/main.cpp",
+        "existed":  true
+    },
+    {
+        "path":  "ui-added/mainwindow.cpp",
+        "existed":  true
+    },
+    {
+        "path":  "ui-added/mainwindow.h",
+        "existed":  true
+    },
+    {
+        "path":  "ui-added/motionworker.cpp",
+        "existed":  true
+    },
+    {
+        "path":  "ui-added/motionworker.h",
+        "existed":  true
+    },
+    {
+        "path":  "ui-added/resources.qrc",
+        "existed":  false
+    }
+]
