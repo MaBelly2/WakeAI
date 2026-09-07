@@ -68,20 +68,20 @@ vcpkg_installed/
 Testing/
 .cache/
 
-# ===== Visual Studio 本地缓存 =====
+# ===== Visual Studio 鏈湴缂撳瓨 =====
 .vs/
 *.user
 *.suo
 *.ipch
 *.aps
 
-# ===== CMake 构建输出 =====
+# ===== CMake 鏋勫缓杈撳嚭 =====
 out/
 build/
 CMakeCache.txt
 CMakeFiles/
 
-# ===== 编译产物 =====
+# ===== 缂栬瘧浜х墿 =====
 *.exe
 *.obj
 *.o
@@ -96,6 +96,14 @@ __pycache__/
 *.pyc
 .venv/
 
-# ===== 系统杂项 =====
+# ===== 绯荤粺鏉傞」 =====
 .DS_Store
 Thumbs.db
+
+# Per-machine paths and generated application data
+CMakeUserPresets.json
+wakeai.windows.local.json
+*.db
+*.db-*
+dist/
+handoff-backups/

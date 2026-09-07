@@ -13,7 +13,7 @@ namespace wakeai {
             return !net_.empty();
         }
         catch (const cv::Exception& e) {
-            std::cerr << "¶ÁÈ¡ ONNX Ê§°Ü: " << e.what() << std::endl;
+            std::cerr << "è¯»å– ONNX å¤±è´¥: " << e.what() << std::endl;
             return false;
         }
     }
@@ -22,7 +22,7 @@ namespace wakeai {
         float& scale, float& padX, float& padY) {
         int w = frame.cols, h = frame.rows;
 
-        // letterbox£ºµÈ±ÈËõ·Å + »Ò±ßÌî³ä£¬±£³Ö¿í¸ß±È£¨±ÜÃâ±äĞÎÓ°Ïì¹Ø¼üµã¾«¶È£©
+        // letterboxï¼šç­‰æ¯”ç¼©æ”¾ + ç°è¾¹å¡«å……ï¼Œä¿æŒå®½é«˜æ¯”ï¼ˆé¿å…å˜å½¢å½±å“å…³é”®ç‚¹ç²¾åº¦ï¼‰
         scale = std::min((float)inputSize_ / w, (float)inputSize_ / h);
         int newW = (int)std::round(w * scale);
         int newH = (int)std::round(h * scale);
@@ -34,7 +34,7 @@ namespace wakeai {
         cv::Mat letterboxed(inputSize_, inputSize_, frame.type(), cv::Scalar(114, 114, 114));
         resized.copyTo(letterboxed(cv::Rect((int)padX, (int)padY, newW, newH)));
 
-        // ×ª blob£ºBGR¡úRGB£¬¹éÒ»»¯µ½ 0~1
+        // è½¬ blobï¼šBGRâ†’RGBï¼Œå½’ä¸€åŒ–åˆ° 0~1
         blob = cv::dnn::blobFromImage(letterboxed, 1.0 / 255.0, cv::Size(), cv::Scalar(), true);
     }
 
@@ -55,9 +55,9 @@ namespace wakeai {
         float scale, float padX, float padY,
         PoseLandmarks& result) const {
         const int kNumKpts = 17;
-        const int kAttr = 56;   // 4(¿ò) + 1(ÖÃĞÅ¶È) + 17*3(¹Ø¼üµã)
+        const int kAttr = 56;   // 4(æ¡†) + 1(ç½®ä¿¡åº¦) + 17*3(å…³é”®ç‚¹)
 
-        // Êä³öĞÎ×´ [1, 56, 8400] ¡ú ±ä³É [56, 8400]
+        // è¾“å‡ºå½¢çŠ¶ [1, 56, 8400] â†’ å˜æˆ [56, 8400]
         cv::Mat out = output.reshape(1, kAttr);
 
         std::vector<cv::Rect> boxes;
@@ -83,7 +83,7 @@ namespace wakeai {
                 float kx = out.at<float>(5 + k * 3 + 0, i);
                 float ky = out.at<float>(5 + k * 3 + 1, i);
                 float kc = out.at<float>(5 + k * 3 + 2, i);
-                kpts[k] = cv::Point2f((kx - padX) / scale, (ky - padY) / scale);  // ×ª»ØÔ­Í¼×ø±ê
+                kpts[k] = cv::Point2f((kx - padX) / scale, (ky - padY) / scale);  // è½¬å›åŸå›¾åæ ‡
                 kconf[k] = kc;
             }
             allKpts.push_back(std::move(kpts));
@@ -96,13 +96,13 @@ namespace wakeai {
         cv::dnn::NMSBoxes(boxes, confs, confThreshold_, nmsThreshold_, indices);
         if (indices.empty()) return false;
 
-        // È¡ÖÃĞÅ¶È×î¸ßµÄÈË
+        // å–ç½®ä¿¡åº¦æœ€é«˜çš„äºº
         int best = indices[0];
         for (int idx : indices) {
             if (confs[idx] > confs[best]) best = idx;
         }
 
-        // YOLO µÄ 17 ¸öµã ¡ú MediaPipe µÄ 33 µãË÷Òı
+        // YOLO çš„ 17 ä¸ªç‚¹ â†’ MediaPipe çš„ 33 ç‚¹ç´¢å¼•
         static const int kYoloToMp[17] = {
             Nose,
             LeftEye, RightEye,
@@ -115,7 +115,7 @@ namespace wakeai {
             LeftAnkle, RightAnkle,
         };
 
-        result = PoseLandmarks{};   // ÏÈÇåÁã£¨Î´Ó³ÉäµÄµã¿É¼û¶È=0£©
+        result = PoseLandmarks{};   // å…ˆæ¸…é›¶ï¼ˆæœªæ˜ å°„çš„ç‚¹å¯è§åº¦=0ï¼‰
 
         for (int k = 0; k < kNumKpts; ++k) {
             int mpIdx = kYoloToMp[k];

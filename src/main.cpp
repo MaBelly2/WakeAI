@@ -18,6 +18,7 @@
 #include "exercise/Cycling.h"
 #include "exercise/JumpingJack.h"
 #include "exercise/Squat.h"
+#include "exercise/ExerciseConfig.h"
 
 using namespace wakeai;
 
@@ -543,57 +544,10 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-    // ===== 第一轮集中调参区 =====
-    // 后续固定视频测试时，优先只改这里，不要到各 cpp 里到处找数字。
     Squat squat;
-    squat.setThresholds(
-        120.0,  // 下蹲：膝角低于该值
-        155.0,  // 站起：膝角高于该值
-        3       // 连续确认帧数
-    );
-
     JumpingJack jack;
-    jack.setThresholds(
-        0.45f,  // 双手抬升打开阈值（肩宽归一化）
-        -0.25f, // 双手放下关闭阈值
-        1.25f,  // 双脚打开：脚踝间距/肩宽
-        0.75f,  // 双脚并拢
-        3       // 连续确认帧数
-    );
-
     Cycling cycling;
-
-    // ===== 床上蹬腿 V2：专门针对“手机只拍胯以下”的局部人体场景 =====
-    // 主计数不再依赖髋点和膝角，而是只要求左右膝+左右踝，
-    // 自动从“小腿二维投影尺度差”和“左右膝相对 y 位移”中选更稳定的信号。
-    cycling.setPartialBodyConfig(
-        0.22f,  // 膝/踝最低置信度
-        2,      // 连续 2 个有效帧确认相位
-        5,      // 最多容忍约 0.17 s 的短暂丢点（30 FPS）
-        8       // 两个稳定相位至少间隔 8 帧
-    );
-
-    cycling.setCalibrationConfig(
-        8,      // 仍保留快速标定；V3 用 trigger floor 防止早标定阈值过小
-        0.10f,
-        0.30f,
-        0.28f
-    );
-
-    // debug_log(2) 中旧值 baseline=0.017、trigger=0.035。
-    // 真实动作 SHIN_SCALE 可达约 ±1.2，而误触发段只有约 0.05~0.14，
-    // 因此把 SHIN_SCALE 的绝对 trigger 下限设为 0.10。
-    cycling.setSignalTriggerFloor(0.10f, 0.12f);
-
-    // 同一次伸腿中的骨骼抖动即使偶然形成相位，也不能短时间连续加分。
-    cycling.setMinCountIntervalFrames(10);
-
-    // WakeAI 闹钟模式：每次稳定左右相位切换算 1 次。
-    cycling.setCountMode(CyclingCountMode::EachPedal);
-
-    // 保留辅助膝角参数，仅用于髋点偶尔可见时的 debug；不作为主计数条件。
-    cycling.setThresholds(115.0, 145.0, 2);
-    // ===== 调参区结束 =====
+    applyDefaultExerciseConfig(squat, jack, cycling);
 
     PoseSmoother smoother(
         0.35f, // alpha 越小越平稳但延迟更大；建议先在 0.25~0.50 之间试

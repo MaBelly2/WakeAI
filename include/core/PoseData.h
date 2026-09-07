@@ -5,19 +5,19 @@
 
 namespace wakeai {
 
-    // µ¥¸ö¹Ø¼üµã£ºÏñËØ×ø±ê + ¿É¼û¶È
+    // å•ä¸ªå…³é”®ç‚¹ï¼šåƒç´ åæ ‡ + å¯è§åº¦
     struct Keypoint {
         float x = 0.0f;
         float y = 0.0f;
-        float z = 0.0f;           // Éî¶È£¬Ò»°ãÓÃ²»µ½£¬±£Áô
-        float visibility = 0.0f;  // ¿É¼û¶È 0~1
+        float z = 0.0f;           // æ·±åº¦ï¼Œä¸€èˆ¬ç”¨ä¸åˆ°ï¼Œä¿ç•™
+        float visibility = 0.0f;  // å¯è§åº¦ 0~1
 
         bool visible(float threshold = 0.5f) const {
             return visibility >= threshold;
         }
     };
 
-    // ÈËÌå¹Ø¼üµãË÷Òı£¨MediaPipe Pose µÄ 33 ¸öµã±àºÅ£©
+    // äººä½“å…³é”®ç‚¹ç´¢å¼•ï¼ˆMediaPipe Pose çš„ 33 ä¸ªç‚¹ç¼–å·ï¼‰
     enum Landmark : int {
         Nose = 0,
         LeftEyeInner = 1, LeftEye = 2, LeftEyeOuter = 3,
@@ -37,7 +37,7 @@ namespace wakeai {
         LeftFootIndex = 31, RightFootIndex = 32,
     };
 
-    // Ò»Ö¡µÄ×ËÌ¬Êı¾İ£º33 ¸ö¹Ø¼üµã
+    // ä¸€å¸§çš„å§¿æ€æ•°æ®ï¼š33 ä¸ªå…³é”®ç‚¹
     struct PoseLandmarks {
         static constexpr int kCount = 33;
         Keypoint pts[kCount];
@@ -45,14 +45,14 @@ namespace wakeai {
         Keypoint& operator[](int i) { return pts[i]; }
         const Keypoint& operator[](int i) const { return pts[i]; }
 
-        // Á½µãÏñËØ¾àÀë
+        // ä¸¤ç‚¹åƒç´ è·ç¦»
         static float dist(const Keypoint& a, const Keypoint& b) {
             float dx = a.x - b.x;
             float dy = a.y - b.y;
             return std::sqrt(dx * dx + dy * dy);
         }
 
-        // Èıµã¼Ğ½Ç£¬¶¥µãÎª b£¬µ¥Î»£º¶È£¨0~180£©
+        // ä¸‰ç‚¹å¤¹è§’ï¼Œé¡¶ç‚¹ä¸º bï¼Œå•ä½ï¼šåº¦ï¼ˆ0~180ï¼‰
         static float angleDeg(const Keypoint& a, const Keypoint& b, const Keypoint& c) {
             float v1x = a.x - b.x, v1y = a.y - b.y;
             float v2x = c.x - b.x, v2y = c.y - b.y;

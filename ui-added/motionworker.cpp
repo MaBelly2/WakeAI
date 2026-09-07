@@ -1,108 +1,98 @@
 #include "motionworker.h"
-
-#include <QDebug>
-#include <QThread>
-
 #include "core/PoseDetector.h"
 #include "core/PoseSmoother.h"
-#include "exercise/ExerciseBase.h"
 #include "exercise/Squat.h"
 #include "exercise/JumpingJack.h"
 #include "exercise/Cycling.h"
-
+#include "exercise/ExerciseConfig.h"
 #include <opencv2/opencv.hpp>
-
+#include <QElapsedTimer>
+#include <QThread>
+#include <algorithm>
+#include <cmath>
+#include <exception>
+#include <utility>
 using namespace wakeai;
-
-MotionWorker::MotionWorker(QObject *parent) : QObject(parent) {}
-MotionWorker::~MotionWorker() { stop(); }
-
-void MotionWorker::setModelPath(const QString &p) { modelPath_ = p; }
-void MotionWorker::setMode(Mode m) { mode_ = m; }
-void MotionWorker::stop()   { stopFlag_ = true; }
-void MotionWorker::pause()  { paused_ = true; }
-void MotionWorker::resume() { paused_ = false; }
-
-void MotionWorker::reset()
-{
-    if (active_) active_->reset();
+namespace {
+void drawPose(cv::Mat& frame, const PoseLandmarks& p) {
+    const std::pair<int,int> bones[]={{LeftShoulder,RightShoulder},{LeftShoulder,LeftElbow},
+        {LeftElbow,LeftWrist},{RightShoulder,RightElbow},{RightElbow,RightWrist},
+        {LeftShoulder,LeftHip},{RightShoulder,RightHip},{LeftHip,RightHip},
+        {LeftHip,LeftKnee},{LeftKnee,LeftAnkle},{RightHip,RightKnee},{RightKnee,RightAnkle}};
+    for(auto b:bones) if(p[b.first].visible(0.22f)&&p[b.second].visible(0.22f))
+        cv::line(frame,cv::Point(int(p[b.first].x),int(p[b.first].y)),
+            cv::Point(int(p[b.second].x),int(p[b.second].y)),cv::Scalar(0,220,90),2);
+    for(int i=0;i<PoseLandmarks::kCount;++i) if(p[i].visible(0.22f))
+        cv::circle(frame,cv::Point(int(p[i].x),int(p[i].y)),3,cv::Scalar(0,100,255),-1);
 }
-
-void MotionWorker::start()
-{
-    stopFlag_ = false;
-    paused_ = false;
-    runLoop();
+}
+MotionWorker::MotionWorker(Options options,std::shared_ptr<MotionControl> control)
+    : options_(std::move(options)),control_(std::move(control)) {}
+void MotionWorker::start() {
+    try { if(!control_->stop.load()) runLoop(); }
+    catch(const cv::Exception& e) { emit failed("OpenCV 错误："+QString::fromUtf8(e.what())); }
+    catch(const std::exception& e) { emit failed("识别错误："+QString::fromUtf8(e.what())); }
+    catch(...) { emit failed("识别线程发生未知错误"); }
     emit finished();
 }
-
-void MotionWorker::runLoop()
-{
+void MotionWorker::runLoop() {
     PoseDetector detector;
-    if (!detector.load(modelPath_.toStdString())) {
-        qDebug() << "[debug] 模型加载失败";
-        emit stateChanged("模型加载失败");
-        return;
+    emit stateChanged("正在加载模型...");
+    if(!detector.load(options_.modelPath.toStdString())) {
+        emit failed("模型加载失败："+options_.modelPath);return;
     }
-    qDebug() << "[debug] 模型加载成功";
-
+    if(control_->stop.load()) return;
+    cv::VideoCapture cap;
+    const bool video=!options_.videoPath.isEmpty();
+    if(video) cap.open(options_.videoPath.toStdString());
+    else cap.open(options_.cameraIndex);
+    if(!cap.isOpened()) {emit failed(video?"无法打开测试视频":"无法打开摄像头，请检查编号、权限或占用");return;}
+    if(!video) {cap.set(cv::CAP_PROP_FRAME_WIDTH,640);cap.set(cv::CAP_PROP_FRAME_HEIGHT,480);}
     Squat squat; JumpingJack jack; Cycling cycling;
-
-    if (mode_ == Mode::Squat)
-        squat.setThresholds(120.0, 155.0, 3);
-    else if (mode_ == Mode::JumpingJack)
-        jack.setThresholds(0.45f, -0.25f, 1.25f, 0.75f, 3);
-    else {
-        cycling.setPartialBodyConfig(0.22f, 2, 5, 8);
-        cycling.setCalibrationConfig(8, 0.10f, 0.30f, 0.28f);
-        cycling.setSignalTriggerFloor(0.10f, 0.12f);
-        cycling.setMinCountIntervalFrames(10);
-        cycling.setCountMode(CyclingCountMode::EachPedal);
-    }
-
-    active_ = &squat;
-    if (mode_ == Mode::JumpingJack) active_ = &jack;
-    if (mode_ == Mode::Cycling)     active_ = &cycling;
-
-    PoseSmoother smoother(0.35f, 0.20f);
-
-    cv::VideoCapture cap(0);
-    if (!cap.isOpened()) {
-        qDebug() << "[debug] 摄像头打不开";
-        emit stateChanged("无法打开摄像头");
-        return;
-    }
-    cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
-    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
-    qDebug() << "[debug] 摄像头打开成功";
-
-    int frameCount = 0;
-    while (!stopFlag_) {
+    applyDefaultExerciseConfig(squat,jack,cycling);
+    ExerciseBase* active=&squat;
+    if(options_.mode==Mode::JumpingJack) active=&jack;
+    if(options_.mode==Mode::Cycling) active=&cycling;
+    PoseSmoother smoother(0.35f,0.20f);
+    int lastCount=-1, failures=0;
+    bool lastValid=false;
+    QElapsedTimer progressClock;progressClock.start();
+    double fps=cap.get(cv::CAP_PROP_FPS);
+    if(!std::isfinite(fps)||fps<1||fps>240) fps=30;
+    const int interval=int(1000.0/fps);
+    emit stateChanged(options_.mode==Mode::Cycling ? "请先正常蹬腿，等待自动标定" : "请先保持完整的起始站姿");
+    while(!control_->stop.load()) {
+        QElapsedTimer frameClock;frameClock.start();
+        if(control_->reset.exchange(false)) {active->reset();smoother.reset();lastCount=-1;progressClock.restart();}
+        if(video&&control_->paused.load()) {progressClock.restart();QThread::msleep(30);continue;}
         cv::Mat frame;
-        if (!cap.read(frame) || frame.empty()) continue;
-        cv::flip(frame, frame, 1);
-        cv::Mat display = frame.clone();
-        cv::cvtColor(display, display, cv::COLOR_BGR2RGB);
-        emit frameReady(
-            QImage(display.data, display.cols, display.rows,
-                   int(display.step), QImage::Format_RGB888)
-                .copy());
-        // 暂停时：照常读帧，但跳过检测与计数
-        if (paused_) { QThread::msleep(50); continue; }
-
-        PoseLandmarks raw{}, smooth{};
-        const bool detected = detector.detect(frame, raw);
-        smooth = smoother.update(detected ? raw : PoseLandmarks{});
-        active_->update(smooth);
-
-        emit poseValidChanged(active_->valid());
-        emit countChanged(active_->count());
-
-        if (++frameCount % 30 == 0)
-            qDebug() << "[debug] pose:" << detected
-                     << "valid:" << active_->valid()
-                     << "count:" << active_->count();
+        if(!cap.read(frame)||frame.empty()) {
+            if(video) {emit stateChanged("视频播放结束；未达标可重新开始本次测试");break;}
+            if(++failures>=30) {emit failed("摄像头连续读取失败，请重新连接后重试");break;}
+            QThread::msleep(30);continue;
+        }
+        failures=0;
+        if(!video) cv::flip(frame,frame,1);
+        if(!control_->paused.load()) {
+            PoseLandmarks raw{};
+            const bool detected=detector.detect(frame,raw);
+            auto smooth=smoother.update(detected?raw:PoseLandmarks{});
+            active->update(smooth);
+            if(detected) drawPose(frame,smooth);
+            const int count=active->count();
+            if(count!=lastCount) {emit countChanged(count);lastCount=count;progressClock.restart();}
+            if(active->valid()!=lastValid) {lastValid=active->valid();emit poseValidChanged(lastValid);}
+            if(progressClock.elapsed()>=3000) {emit wrongMotionHint();progressClock.restart();}
+        } else progressClock.restart();
+        if(!control_->framePending.exchange(true)) {
+            cv::Mat rgb;cv::cvtColor(frame,rgb,cv::COLOR_BGR2RGB);
+            emit frameReady(QImage(rgb.data,rgb.cols,rgb.rows,int(rgb.step),QImage::Format_RGB888).copy());
+        }
+        if(control_->paused.load()&&!video) QThread::msleep(30);
+        if(video) {
+            int remain=interval-int(frameClock.elapsed());
+            while(remain>0&&!control_->stop.load()) {int part=std::min(remain,20);QThread::msleep(part);remain-=part;}
+        }
     }
-
     cap.release();
 }
