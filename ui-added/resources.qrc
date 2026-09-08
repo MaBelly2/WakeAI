@@ -1,1 +1,4 @@
-<RCC><qresource prefix="/audio"><file alias="alarm.wav">alarm.wav</file></qresource></RCC>
+<RCC>
+ <qresource prefix="/audio"><file alias="alarm.wav">alarm.wav</file></qresource>
+ <qresource prefix="/styles"><file alias="wakeai.qss">styles/wakeai.qss</file></qresource>
+</RCC>

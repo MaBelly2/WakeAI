@@ -6,6 +6,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QFileInfo>
+#include <QSet>
 #include <QUuid>
 #include <algorithm>
 namespace wakeai {
@@ -38,7 +39,8 @@ bool DatabaseManager::createTables() {
     const QStringList sql = {
         "CREATE TABLE IF NOT EXISTS alarm_settings (id INTEGER PRIMARY KEY AUTOINCREMENT,"
         "hour INTEGER NOT NULL,minute INTEGER NOT NULL,exercise_type TEXT NOT NULL,"
-        "target_count INTEGER NOT NULL,enabled INTEGER NOT NULL DEFAULT 0,theme TEXT NOT NULL DEFAULT 'default')",
+        "target_count INTEGER NOT NULL,enabled INTEGER NOT NULL DEFAULT 0,theme TEXT NOT NULL DEFAULT 'default',"
+        "ringtone_id TEXT NOT NULL DEFAULT 'builtin:classic',volume REAL NOT NULL DEFAULT 0.85)",
         "CREATE TABLE IF NOT EXISTS wake_records (id INTEGER PRIMARY KEY AUTOINCREMENT,"
         "date TEXT NOT NULL,alarm_time TEXT NOT NULL,exercise_type TEXT NOT NULL,"
         "target_count INTEGER NOT NULL,actual_count INTEGER NOT NULL,success INTEGER NOT NULL,completed_at TEXT NOT NULL)",
@@ -46,6 +48,19 @@ bool DatabaseManager::createTables() {
         "achievement_id TEXT NOT NULL UNIQUE,unlocked INTEGER NOT NULL DEFAULT 1,unlock_date TEXT NOT NULL)"
     };
     for (const auto& s : sql) if (!q.exec(s)) { error_ = q.lastError().text(); return false; }
+    QSet<QString> alarmColumns;
+    if (!q.exec("PRAGMA table_info(alarm_settings)")) { error_ = q.lastError().text(); return false; }
+    while (q.next()) alarmColumns.insert(q.value(1).toString());
+    q.finish();
+    if (!alarmColumns.contains("ringtone_id")
+        && !q.exec("ALTER TABLE alarm_settings ADD COLUMN ringtone_id TEXT NOT NULL DEFAULT 'builtin:classic'")) {
+        error_ = q.lastError().text(); return false;
+    }
+    if (!alarmColumns.contains("volume")
+        && !q.exec("ALTER TABLE alarm_settings ADD COLUMN volume REAL NOT NULL DEFAULT 0.85")) {
+        error_ = q.lastError().text(); return false;
+    }
+
     bool hasSession = false;
     if (!q.exec("PRAGMA table_info(wake_records)")) { error_ = q.lastError().text(); return false; }
     while (q.next()) if (q.value(1).toString() == "session_id") hasSession = true;
@@ -60,16 +75,19 @@ bool DatabaseManager::createTables() {
 }
 bool DatabaseManager::saveAlarmSetting(const AlarmSetting& s) {
     error_.clear();
-    if (!isOpen() || s.hour < 0 || s.hour > 23 || s.minute < 0 || s.minute > 59 || s.targetCount < 1) {
+    if (!isOpen() || s.hour < 0 || s.hour > 23 || s.minute < 0 || s.minute > 59
+        || s.targetCount < 1 || s.ringtoneId.trimmed().isEmpty() || s.volume < 0.0 || s.volume > 1.0) {
         error_ = "数据库未打开或闹钟参数无效"; return false;
     }
     if (!db_.transaction()) { error_ = db_.lastError().text(); return false; }
     QSqlQuery q(db_);
     bool ok = q.exec("DELETE FROM alarm_settings");
     if (ok) {
-        q.prepare("INSERT INTO alarm_settings(hour,minute,exercise_type,target_count,enabled,theme) VALUES(?,?,?,?,?,?)");
+        q.prepare("INSERT INTO alarm_settings(hour,minute,exercise_type,target_count,enabled,theme,ringtone_id,volume) "
+                  "VALUES(?,?,?,?,?,?,?,?)");
         q.addBindValue(s.hour); q.addBindValue(s.minute); q.addBindValue(s.exerciseType);
         q.addBindValue(s.targetCount); q.addBindValue(s.enabled ? 1 : 0); q.addBindValue(s.theme);
+        q.addBindValue(s.ringtoneId); q.addBindValue(s.volume);
         ok = q.exec();
     }
     if (!ok) { error_ = q.lastError().text(); db_.rollback(); return false; }
@@ -80,12 +98,14 @@ AlarmSetting DatabaseManager::loadSettings() const {
     AlarmSetting s;
     if (!isOpen()) return s;
     QSqlQuery q(db_);
-    if (!q.exec("SELECT hour,minute,exercise_type,target_count,enabled,theme FROM alarm_settings ORDER BY id DESC LIMIT 1")) {
+    if (!q.exec("SELECT hour,minute,exercise_type,target_count,enabled,theme,ringtone_id,volume "
+                "FROM alarm_settings ORDER BY id DESC LIMIT 1")) {
         error_ = q.lastError().text(); return s;
     }
     if (q.next()) {
         s.hour = q.value(0).toInt(); s.minute = q.value(1).toInt(); s.exerciseType = q.value(2).toString();
         s.targetCount = q.value(3).toInt(); s.enabled = q.value(4).toBool(); s.theme = q.value(5).toString();
+        s.ringtoneId = q.value(6).toString(); s.volume = qBound(0.0, q.value(7).toDouble(), 1.0);
     }
     return s;
 }

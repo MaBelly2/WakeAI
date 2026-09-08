@@ -10,6 +10,8 @@ struct AlarmSetting {
     int targetCount = 15;
     bool enabled = false;
     QString theme = "default";
+    QString ringtoneId = "builtin:classic";
+    double volume = 0.85;
 };
 struct WakeRecord {
     QString date, alarmTime, exerciseType;
