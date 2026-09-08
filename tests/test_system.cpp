@@ -20,6 +20,10 @@ int main(int argc,char* argv[]) {
         auto old=QSqlDatabase::addDatabase("QSQLITE","migration_seed");old.setDatabaseName(path);
         check(old.open(),"legacy db open");
         {QSqlQuery q(old);
+         check(q.exec("CREATE TABLE alarm_settings(id INTEGER PRIMARY KEY AUTOINCREMENT,hour INTEGER NOT NULL,"
+             "minute INTEGER NOT NULL,exercise_type TEXT NOT NULL,target_count INTEGER NOT NULL,"
+             "enabled INTEGER NOT NULL DEFAULT 0,theme TEXT NOT NULL DEFAULT 'default')"),"legacy alarm table");
+         check(q.exec("INSERT INTO alarm_settings VALUES(1,7,30,'squat',12,0,'default')"),"legacy alarm row");
          check(q.exec("CREATE TABLE wake_records(id INTEGER PRIMARY KEY AUTOINCREMENT,date TEXT NOT NULL,alarm_time TEXT NOT NULL,"
              "exercise_type TEXT NOT NULL,target_count INTEGER NOT NULL,actual_count INTEGER NOT NULL,success INTEGER NOT NULL,completed_at TEXT NOT NULL)"),"legacy table");
          check(q.exec("INSERT INTO wake_records VALUES(1,'2000-01-01','07:00','squat',1,1,1,'2000-01-01 07:01:00')"),"legacy record");}
@@ -29,10 +33,15 @@ int main(int argc,char* argv[]) {
     {
         DatabaseManager db(path);check(db.init(),"init and migrate");
         check(db.recentRecords().size()==1,"legacy record preserved");
+        auto migrated=db.loadSettings();
+        check(migrated.hour==7&&migrated.ringtoneId=="builtin:classic"&&migrated.volume==0.85,
+              "legacy alarm gains ringtone defaults");
         check(db.consecutiveWakeDaysAt(QDate(2026,9,7))==0,"old streak is not current streak");
         AlarmSetting a;a.hour=8;a.minute=15;a.targetCount=20;a.enabled=true;
+        a.ringtoneId="custom:test.wav";a.volume=0.64;
         check(db.saveAlarmSetting(a),"save setting");auto loaded=db.loadSettings();
-        check(loaded.hour==8&&loaded.minute==15&&loaded.targetCount==20&&loaded.enabled,"setting round trip");
+        check(loaded.hour==8&&loaded.minute==15&&loaded.targetCount==20&&loaded.enabled
+              &&loaded.ringtoneId=="custom:test.wav"&&loaded.volume==0.64,"setting round trip");
         a.hour=99;check(!db.saveAlarmSetting(a)&&db.loadSettings().hour==8,"invalid setting preserves old row");
         auto add=[&](QString id,QString date,int count){WakeRecord r;
             r.date=date;r.alarmTime="08:15";r.exerciseType="squat";r.targetCount=count;r.actualCount=count;r.success=true;

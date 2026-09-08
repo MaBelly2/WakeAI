@@ -2,10 +2,17 @@
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-qt_add_executable(alarm_ui main.cpp mainwindow.cpp mainwindow.h mainwindow.ui
-    motionworker.cpp motionworker.h resources.qrc)
+qt_add_executable(alarm_ui
+    main.cpp
+    mainwindow.cpp mainwindow.h mainwindow.ui
+    motionworker.cpp motionworker.h
+    uiwidgets.cpp uiwidgets.h
+    ringtonemanager.cpp ringtonemanager.h
+    ringtonedialog.cpp ringtonedialog.h
+    resources.qrc)
 target_link_libraries(alarm_ui PRIVATE
     wakeai_core WakeAI_system Qt6::Widgets Qt6::Multimedia)
+target_include_directories(alarm_ui PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 # Development reads the single model in the source repository, without copying.
 file(TO_CMAKE_PATH "${PROJECT_SOURCE_DIR}/models" WAKEAI_SOURCE_MODEL_DIR)
 target_compile_definitions(alarm_ui PRIVATE

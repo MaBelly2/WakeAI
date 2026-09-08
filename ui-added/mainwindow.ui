@@ -2,355 +2,129 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>335</width>
-    <height>438</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
-  </property>
+  <property name="geometry"><rect><x>0</x><y>0</y><width>1040</width><height>820</height></rect></property>
+  <property name="minimumSize"><size><width>820</width><height>680</height></size></property>
+  <property name="windowTitle"><string>WakeAI</string></property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="0">
-     <widget class="QStackedWidget" name="stackedWidget">
-      <property name="currentIndex">
-       <number>3</number>
-      </property>
-      <widget class="QWidget" name="page">
-       <layout class="QGridLayout" name="gridLayout_7">
-        <property name="leftMargin">
-         <number>20</number>
-        </property>
-        <property name="topMargin">
-         <number>20</number>
-        </property>
-        <property name="rightMargin">
-         <number>20</number>
-        </property>
-        <property name="bottomMargin">
-         <number>20</number>
-        </property>
-        <property name="spacing">
-         <number>15</number>
-        </property>
-        <item row="3" column="0">
-         <widget class="QPushButton" name="btnRecords">
-          <property name="text">
-           <string>运动记录</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QComboBox" name="comboMode">
-          <item>
-           <property name="text">
-            <string>蹲起</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>开合跳</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>空中自行车</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QSpinBox" name="spinTarget">
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>100</number>
-          </property>
-          <property name="value">
-           <number>10</number>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QPushButton" name="btnSetAlarm">
-          <property name="text">
-           <string>设置新闹钟</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QTimeEdit" name="timeEditAlarm">
-          <property name="calendarPopup">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="lblSetInfo">
-          <property name="text">
-           <string>已设置</string>
-          </property>
-         </widget>
-        </item>
+   <layout class="QVBoxLayout" name="rootLayout">
+    <property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property>
+    <property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property><property name="spacing"><number>0</number></property>
+    <item><widget class="QStackedWidget" name="stackedWidget"><property name="currentIndex"><number>0</number></property>
+     <widget class="QWidget" name="pageHome"><layout class="QVBoxLayout" name="homeOuter">
+      <property name="leftMargin"><number>54</number></property><property name="topMargin"><number>34</number></property>
+      <property name="rightMargin"><number>54</number></property><property name="bottomMargin"><number>38</number></property><property name="spacing"><number>20</number></property>
+      <item><layout class="QHBoxLayout" name="homeHeader">
+       <item><layout class="QVBoxLayout" name="homeTitles"><property name="spacing"><number>3</number></property>
+        <item><widget class="QLabel" name="lblGreeting"><property name="text"><string>晚上好</string></property><property name="uiRole" stdset="0"><string>pageTitle</string></property></widget></item>
+        <item><widget class="QLabel" name="lblDate"><property name="text"><string>让明天从一次准时起床开始</string></property><property name="uiRole" stdset="0"><string>pageSubtitle</string></property></widget></item>
+       </layout></item>
+       <item><spacer name="homeHeaderSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint"><size><width>40</width><height>20</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="lblStats"><property name="text"><string>连续 0 天 · 0 次成功唤醒</string></property><property name="uiRole" stdset="0"><string>statsPill</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      </layout></item>
+      <item><widget class="QFrame" name="alarmCard"><property name="maximumSize"><size><width>920</width><height>16777215</height></size></property><property name="uiRole" stdset="0"><string>heroCard</string></property>
+       <layout class="QVBoxLayout" name="alarmCardLayout"><property name="leftMargin"><number>34</number></property><property name="topMargin"><number>24</number></property><property name="rightMargin"><number>34</number></property><property name="bottomMargin"><number>26</number></property><property name="spacing"><number>9</number></property>
+        <item><widget class="QLabel" name="lblAlarmCaption"><property name="text"><string>NEXT ALARM</string></property><property name="uiRole" stdset="0"><string>eyebrow</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+        <item><widget class="QTimeEdit" name="timeEditAlarm"><property name="displayFormat"><string>HH:mm</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="buttonSymbols"><enum>QAbstractSpinBox::NoButtons</enum></property><property name="uiRole" stdset="0"><string>heroTime</string></property></widget></item>
+        <item><widget class="QLabel" name="lblSetInfo"><property name="text"><string>请设置闹钟</string></property><property name="uiRole" stdset="0"><string>heroCaption</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
        </layout>
-      </widget>
-      <widget class="QWidget" name="page_2">
-       <layout class="QGridLayout" name="gridLayout_2">
-        <property name="leftMargin">
-         <number>20</number>
-        </property>
-        <property name="topMargin">
-         <number>20</number>
-        </property>
-        <property name="rightMargin">
-         <number>20</number>
-        </property>
-        <property name="bottomMargin">
-         <number>20</number>
-        </property>
-        <property name="spacing">
-         <number>15</number>
-        </property>
-        <item row="2" column="0">
-         <widget class="QLabel" name="lblTask">
-          <property name="text">
-           <string>今日运动：</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="lblRingTime">
-          <property name="text">
-           <string>已设置</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="lblRingTitle">
-          <property name="text">
-           <string>该起床了</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QPushButton" name="btnSnooze">
-          <property name="text">
-           <string>开始提醒</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QPushButton" name="btnStart">
-          <property name="text">
-           <string>开始运动</string>
-          </property>
-         </widget>
-        </item>
+      </widget></item>
+      <item><widget class="QFrame" name="missionCard"><property name="maximumSize"><size><width>920</width><height>16777215</height></size></property><property name="uiRole" stdset="0"><string>card</string></property>
+       <layout class="QVBoxLayout" name="missionLayout"><property name="leftMargin"><number>28</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>28</number></property><property name="bottomMargin"><number>22</number></property><property name="spacing"><number>15</number></property>
+        <item><widget class="QLabel" name="lblMissionTitle"><property name="text"><string>起床任务</string></property><property name="uiRole" stdset="0"><string>sectionTitle</string></property></widget></item>
+        <item><layout class="QHBoxLayout" name="missionFields"><property name="spacing"><number>18</number></property>
+         <item><layout class="QVBoxLayout" name="modeField"><property name="spacing"><number>6</number></property>
+          <item><widget class="QLabel" name="lblModeCaption"><property name="text"><string>动作</string></property><property name="uiRole" stdset="0"><string>fieldLabel</string></property></widget></item>
+          <item><widget class="QComboBox" name="comboMode"><item><property name="text"><string>深蹲</string></property></item><item><property name="text"><string>开合跳</string></property></item><item><property name="text"><string>床上蹬腿</string></property></item></widget></item>
+         </layout></item>
+         <item><layout class="QVBoxLayout" name="targetField"><property name="spacing"><number>6</number></property>
+          <item><widget class="QLabel" name="lblTargetCaption"><property name="text"><string>目标次数</string></property><property name="uiRole" stdset="0"><string>fieldLabel</string></property></widget></item>
+          <item><widget class="QSpinBox" name="spinTarget"><property name="minimum"><number>1</number></property><property name="maximum"><number>1000</number></property><property name="value"><number>10</number></property><property name="suffix"><string> 次</string></property></widget></item>
+         </layout></item>
+        </layout></item>
+        <item><layout class="QHBoxLayout" name="ringtoneRow"><property name="spacing"><number>12</number></property>
+         <item><layout class="QVBoxLayout" name="ringtoneText"><property name="spacing"><number>3</number></property>
+          <item><widget class="QLabel" name="lblRingtoneCaption"><property name="text"><string>闹钟铃声</string></property><property name="uiRole" stdset="0"><string>fieldLabel</string></property></widget></item>
+          <item><widget class="QLabel" name="lblRingtone"><property name="text"><string>经典闹铃 · 85%</string></property><property name="uiRole" stdset="0"><string>valueLabel</string></property></widget></item>
+         </layout></item>
+         <item><spacer name="ringtoneSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint"><size><width>40</width><height>20</height></size></property></spacer></item>
+         <item><widget class="QPushButton" name="btnChooseRingtone"><property name="text"><string>选择与试听</string></property><property name="uiRole" stdset="0"><string>softButton</string></property></widget></item>
+        </layout></item>
        </layout>
-      </widget>
-      <widget class="QWidget" name="page_3">
-       <layout class="QGridLayout" name="gridLayout_3">
-        <property name="leftMargin">
-         <number>20</number>
-        </property>
-        <property name="topMargin">
-         <number>20</number>
-        </property>
-        <property name="rightMargin">
-         <number>20</number>
-        </property>
-        <property name="bottomMargin">
-         <number>20</number>
-        </property>
-        <property name="spacing">
-         <number>15</number>
-        </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="lblReady">
-          <property name="text">
-           <string>准备开始</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="lblReadyTask">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="lblReadyNote">
-          <property name="text">
-           <string>完成后闹钟自动关闭</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QPushButton" name="btnBegin">
-          <property name="text">
-           <string>开始计时</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="page_4">
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="4" column="1">
-         <widget class="QLabel" name="lblCamera">
-          <property name="text">
-           <string>camera</string>
-          </property>
-          <property name="scaledContents">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="1">
-         <widget class="QPushButton" name="btnPause">
-          <property name="text">
-           <string>暂停</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="1">
-         <widget class="QPushButton" name="btnFinish">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="text">
-           <string>完成任务</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QLabel" name="lblState">
-          <property name="text">
-           <string>蹲起进行中</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QLabel" name="lblProgress">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="page_5">
-       <layout class="QGridLayout" name="gridLayout_5">
-        <property name="leftMargin">
-         <number>20</number>
-        </property>
-        <property name="topMargin">
-         <number>20</number>
-        </property>
-        <property name="rightMargin">
-         <number>20</number>
-        </property>
-        <property name="bottomMargin">
-         <number>20</number>
-        </property>
-        <property name="spacing">
-         <number>15</number>
-        </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="lblDone">
-          <property name="text">
-           <string>打卡成功</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="lblSummary">
-          <property name="text">
-           <string>text</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="lblClosed">
-          <property name="text">
-           <string>闹钟已关闭</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QPushButton" name="btnHistory">
-          <property name="text">
-           <string>查看记录</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QPushButton" name="btnHome">
-          <property name="text">
-           <string>返回首页</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="Page_6">
-       <layout class="QGridLayout" name="gridLayout_6">
-        <property name="leftMargin">
-         <number>20</number>
-        </property>
-        <property name="topMargin">
-         <number>20</number>
-        </property>
-        <property name="rightMargin">
-         <number>20</number>
-        </property>
-        <property name="bottomMargin">
-         <number>20</number>
-        </property>
-        <property name="spacing">
-         <number>15</number>
-        </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="lblWeek">
-          <property name="text">
-           <string>运动记录</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QListWidget" name="listRecords"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QPushButton" name="btnRecordBack">
-          <property name="text">
-           <string>返回首页</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-    </item>
+      </widget></item>
+      <item><layout class="QHBoxLayout" name="homeActions"><property name="spacing"><number>14</number></property>
+       <item><widget class="QPushButton" name="btnRecords"><property name="text"><string>运动记录</string></property><property name="uiRole" stdset="0"><string>secondaryButton</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnSetAlarm"><property name="text"><string>设置闹钟</string></property><property name="uiRole" stdset="0"><string>primaryButton</string></property></widget></item>
+      </layout></item>
+     </layout></widget>
+     <widget class="QWidget" name="pageRinging"><layout class="QVBoxLayout" name="ringOuter">
+      <property name="leftMargin"><number>58</number></property><property name="topMargin"><number>38</number></property><property name="rightMargin"><number>58</number></property><property name="bottomMargin"><number>44</number></property><property name="spacing"><number>12</number></property>
+      <item><spacer name="ringTop"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint"><size><width>20</width><height>10</height></size></property></spacer></item>
+      <item alignment="Qt::AlignHCenter"><widget class="RingPulseWidget" name="ringPulse"><property name="minimumSize"><size><width>250</width><height>250</height></size></property><property name="maximumSize"><size><width>280</width><height>280</height></size></property></widget></item>
+      <item><widget class="QLabel" name="lblRingTime"><property name="text"><string>07:00</string></property><property name="uiRole" stdset="0"><string>ringTime</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><widget class="QLabel" name="lblRingTitle"><property name="text"><string>该起床了</string></property><property name="uiRole" stdset="0"><string>pageTitle</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><widget class="QLabel" name="lblTask"><property name="text"><string>深蹲 10 次</string></property><property name="uiRole" stdset="0"><string>pageSubtitle</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><spacer name="ringMiddle"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint"><size><width>20</width><height>25</height></size></property></spacer></item>
+      <item><widget class="QPushButton" name="btnStart"><property name="text"><string>开始运动</string></property><property name="uiRole" stdset="0"><string>primaryButton</string></property></widget></item>
+      <item><widget class="QPushButton" name="btnSnooze"><property name="text"><string>稍后提醒（5 分钟）</string></property><property name="uiRole" stdset="0"><string>ghostButton</string></property></widget></item>
+     </layout></widget>
+     <widget class="QWidget" name="pagePreparing"><layout class="QVBoxLayout" name="prepOuter">
+      <property name="leftMargin"><number>70</number></property><property name="topMargin"><number>70</number></property><property name="rightMargin"><number>70</number></property><property name="bottomMargin"><number>60</number></property><property name="spacing"><number>18</number></property>
+      <item><spacer name="prepTop"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint"><size><width>20</width><height>30</height></size></property></spacer></item>
+      <item><widget class="QLabel" name="lblReady"><property name="text"><string>准备开始</string></property><property name="uiRole" stdset="0"><string>pageTitle</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><widget class="QLabel" name="lblReadyTask"><property name="text"><string>深蹲 10 次</string></property><property name="uiRole" stdset="0"><string>missionBig</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><widget class="QFrame" name="prepCard"><property name="uiRole" stdset="0"><string>card</string></property><layout class="QVBoxLayout" name="prepCardLayout">
+       <property name="leftMargin"><number>28</number></property><property name="topMargin"><number>24</number></property><property name="rightMargin"><number>28</number></property><property name="bottomMargin"><number>24</number></property><property name="spacing"><number>10</number></property>
+       <item><widget class="QLabel" name="lblPrepTip"><property name="text"><string>让全身关键点进入画面，保持光线充足。开始后先稳定完成起始姿势。</string></property><property name="uiRole" stdset="0"><string>bodyText</string></property><property name="wordWrap"><bool>true</bool></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+       <item><widget class="QLabel" name="lblReadyNote"><property name="text"><string>达标后点击“完成任务”关闭闹钟</string></property><property name="uiRole" stdset="0"><string>mutedLabel</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      </layout></widget></item>
+      <item><spacer name="prepMiddle"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint"><size><width>20</width><height>40</height></size></property></spacer></item>
+      <item><widget class="QPushButton" name="btnBegin"><property name="text"><string>开始识别</string></property><property name="uiRole" stdset="0"><string>primaryButton</string></property></widget></item>
+     </layout></widget>
+     <widget class="QWidget" name="pageExercise"><layout class="QVBoxLayout" name="exerciseOuter">
+      <property name="leftMargin"><number>34</number></property><property name="topMargin"><number>24</number></property><property name="rightMargin"><number>34</number></property><property name="bottomMargin"><number>28</number></property><property name="spacing"><number>14</number></property>
+      <item><layout class="QHBoxLayout" name="exerciseHeader">
+       <item><layout class="QVBoxLayout" name="exerciseTitles"><property name="spacing"><number>2</number></property>
+        <item><widget class="QLabel" name="lblExerciseTitle"><property name="text"><string>动作识别中</string></property><property name="uiRole" stdset="0"><string>sectionTitle</string></property></widget></item>
+        <item><widget class="QLabel" name="lblExerciseSubtitle"><property name="text"><string>计数会显示在画面中上部</string></property><property name="uiRole" stdset="0"><string>pageSubtitle</string></property></widget></item>
+       </layout></item>
+       <item><spacer name="exerciseHeaderSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint"><size><width>40</width><height>20</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="lblState"><property name="text"><string>正在启动识别…</string></property><property name="uiRole" stdset="0"><string>statusPill</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      </layout></item>
+      <item><widget class="CameraView" name="cameraView"><property name="minimumSize"><size><width>640</width><height>400</height></size></property></widget></item>
+      <item><layout class="QHBoxLayout" name="exerciseActions"><property name="spacing"><number>14</number></property>
+       <item><widget class="QPushButton" name="btnPause"><property name="text"><string>暂停</string></property><property name="uiRole" stdset="0"><string>secondaryButton</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnFinish"><property name="enabled"><bool>false</bool></property><property name="text"><string>完成任务</string></property><property name="uiRole" stdset="0"><string>successButton</string></property></widget></item>
+      </layout></item>
+     </layout></widget>
+     <widget class="QWidget" name="pageDone"><layout class="QVBoxLayout" name="doneOuter">
+      <property name="leftMargin"><number>70</number></property><property name="topMargin"><number>80</number></property><property name="rightMargin"><number>70</number></property><property name="bottomMargin"><number>60</number></property><property name="spacing"><number>18</number></property>
+      <item><spacer name="doneTop"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint"><size><width>20</width><height>40</height></size></property></spacer></item>
+      <item><widget class="QLabel" name="lblDoneMark"><property name="text"><string>✓</string></property><property name="uiRole" stdset="0"><string>doneMark</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><widget class="QLabel" name="lblDone"><property name="text"><string>打卡成功</string></property><property name="uiRole" stdset="0"><string>pageTitle</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><widget class="QLabel" name="lblSummary"><property name="text"><string>深蹲 10 次 已完成</string></property><property name="uiRole" stdset="0"><string>missionBig</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><widget class="QLabel" name="lblClosed"><property name="text"><string>闹钟已关闭，记录已保存</string></property><property name="uiRole" stdset="0"><string>pageSubtitle</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+      <item><spacer name="doneMiddle"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint"><size><width>20</width><height>60</height></size></property></spacer></item>
+      <item><layout class="QHBoxLayout" name="doneActions"><property name="spacing"><number>14</number></property>
+       <item><widget class="QPushButton" name="btnHistory"><property name="text"><string>查看记录</string></property><property name="uiRole" stdset="0"><string>secondaryButton</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnHome"><property name="text"><string>返回首页</string></property><property name="uiRole" stdset="0"><string>primaryButton</string></property></widget></item>
+      </layout></item>
+     </layout></widget>
+     <widget class="QWidget" name="pageRecords"><layout class="QVBoxLayout" name="recordsOuter">
+      <property name="leftMargin"><number>52</number></property><property name="topMargin"><number>42</number></property><property name="rightMargin"><number>52</number></property><property name="bottomMargin"><number>42</number></property><property name="spacing"><number>17</number></property>
+      <item><widget class="QLabel" name="lblRecordsTitle"><property name="text"><string>运动记录</string></property><property name="uiRole" stdset="0"><string>pageTitle</string></property></widget></item>
+      <item><widget class="QLabel" name="lblWeek"><property name="text"><string>成功唤醒 0 次 · 连续 0 天 · 累计 0 个动作</string></property><property name="uiRole" stdset="0"><string>pageSubtitle</string></property></widget></item>
+      <item><widget class="QListWidget" name="listRecords"><property name="alternatingRowColors"><bool>false</bool></property><property name="spacing"><number>6</number></property></widget></item>
+      <item><widget class="QPushButton" name="btnRecordBack"><property name="text"><string>返回</string></property><property name="uiRole" stdset="0"><string>secondaryButton</string></property></widget></item>
+     </layout></widget>
+    </widget></item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>335</width>
-     <height>18</height>
-    </rect>
-   </property>
-  </widget>
+  <widget class="QMenuBar" name="menubar"/>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
- <connections/>
+ <customwidgets>
+  <customwidget><class>CameraView</class><extends>QWidget</extends><header location="global">uiwidgets.h</header><container>0</container></customwidget>
+  <customwidget><class>RingPulseWidget</class><extends>QWidget</extends><header location="global">uiwidgets.h</header><container>0</container></customwidget>
+ </customwidgets>
+ <resources/><connections/>
 </ui>

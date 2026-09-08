@@ -21,6 +21,10 @@ New-Item -ItemType Directory -Path "$Destination\models"|Out-Null
 Copy-Item $model "$Destination\models"
 if(!(Test-Path "$Destination\platforms\qwindows.dll")){throw 'Qt Windows platform plugin missing.'}
 if(!(Test-Path "$Destination\sqldrivers\qsqlite.dll")){throw 'Qt SQLite driver missing.'}
+if(!(Test-Path "$Destination\multimedia") -or
+   !(Get-ChildItem -LiteralPath "$Destination\multimedia" -Filter '*.dll' -ErrorAction SilentlyContinue)){
+    throw 'Qt Multimedia backend plugin missing; ringtone playback will not work.'
+}
 Write-Host "Package created: $Destination"
 Write-Host 'Target PC needs the official Microsoft Visual C++ x64 Redistributable.'
 Write-Host 'Verify launch, audio, camera, records and restart on the target PC.'

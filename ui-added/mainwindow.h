@@ -1,7 +1,8 @@
 #pragma once
 #include <QMainWindow>
 #include <QThread>
-#include <QSoundEffect>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 #include <QDateTime>
 #include <memory>
 #include "motionworker.h"
@@ -9,6 +10,7 @@
 #include "system/AlarmManager.h"
 #include "system/DatabaseManager.h"
 #include "system/AchievementEngine.h"
+#include "ringtonemanager.h"
 namespace Ui { class MainWindow; }
 struct StartupOptions { QString modelPath,videoPath; int cameraIndex=0; bool testMode=false; };
 class MainWindow : public QMainWindow {
@@ -29,6 +31,7 @@ private slots:
     void on_btnHistory_clicked();
     void on_btnHome_clicked();
     void on_btnRecordBack_clicked();
+    void on_btnChooseRingtone_clicked();
 private:
     enum class State { Idle,Ringing,Preparing,Exercising,Done };
     void armAlarm(int testSeconds=0);
@@ -37,6 +40,9 @@ private:
     void updateCount(int count);
     void refreshRecords();
     void showAchievements();
+    void switchPage(int index);
+    void updateRingtoneLabel();
+    bool prepareAlarmAudio();
     bool savePending();
     QString findModelPath() const;
     QString modeName() const;
@@ -48,11 +54,13 @@ private:
     wakeai::AlarmSetting setting_;
     wakeai::WorkoutSession session_;
     wakeai::WakeRecord pendingRecord_;
-    QSoundEffect* sound_=nullptr;
+    RingtoneManager ringtones_;
+    QMediaPlayer player_;
+    QAudioOutput audio_;
     QThread* thread_=nullptr;
     std::shared_ptr<MotionControl> control_;
     State state_=State::Idle;
     QString sessionId_;
     QDateTime scheduled_;
-    bool pending_=false,paused_=false,closing_=false,closeApproved_=false;
+    bool pending_=false,paused_=false,poseValid_=false,closing_=false,closeApproved_=false;
 };

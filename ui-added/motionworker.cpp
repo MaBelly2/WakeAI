@@ -15,15 +15,43 @@
 using namespace wakeai;
 namespace {
 void drawPose(cv::Mat& frame, const PoseLandmarks& p) {
-    const std::pair<int,int> bones[]={{LeftShoulder,RightShoulder},{LeftShoulder,LeftElbow},
+    constexpr float threshold=0.22f;
+    const auto point=[&p](int index){
+        return cv::Point(cvRound(p[index].x),cvRound(p[index].y));
+    };
+
+    // 先为躯干铺一层很轻的半透明强调色，画面更接近成品运动 App。
+    if(p[LeftShoulder].visible(threshold)&&p[RightShoulder].visible(threshold)
+        &&p[RightHip].visible(threshold)&&p[LeftHip].visible(threshold)) {
+        std::vector<cv::Point> torso={point(LeftShoulder),point(RightShoulder),
+            point(RightHip),point(LeftHip)};
+        cv::Mat overlay=frame.clone();
+        cv::fillConvexPoly(overlay,torso,cv::Scalar(181,211,66),cv::LINE_AA);
+        cv::addWeighted(overlay,0.16,frame,0.84,0.0,frame);
+    }
+
+    const std::pair<int,int> bones[]={
+        {Nose,LeftShoulder},{Nose,RightShoulder},
+        {LeftShoulder,RightShoulder},{LeftShoulder,LeftElbow},
         {LeftElbow,LeftWrist},{RightShoulder,RightElbow},{RightElbow,RightWrist},
         {LeftShoulder,LeftHip},{RightShoulder,RightHip},{LeftHip,RightHip},
-        {LeftHip,LeftKnee},{LeftKnee,LeftAnkle},{RightHip,RightKnee},{RightKnee,RightAnkle}};
-    for(auto b:bones) if(p[b.first].visible(0.22f)&&p[b.second].visible(0.22f))
-        cv::line(frame,cv::Point(int(p[b.first].x),int(p[b.first].y)),
-            cv::Point(int(p[b.second].x),int(p[b.second].y)),cv::Scalar(0,220,90),2);
-    for(int i=0;i<PoseLandmarks::kCount;++i) if(p[i].visible(0.22f))
-        cv::circle(frame,cv::Point(int(p[i].x),int(p[i].y)),3,cv::Scalar(0,100,255),-1);
+        {LeftHip,LeftKnee},{LeftKnee,LeftAnkle},{RightHip,RightKnee},{RightKnee,RightAnkle}
+    };
+    for(const auto& bone:bones) {
+        if(!p[bone.first].visible(threshold)||!p[bone.second].visible(threshold))
+            continue;
+        // 深色外描边保证白线在白墙、窗户等亮背景上仍然清楚。
+        cv::line(frame,point(bone.first),point(bone.second),cv::Scalar(24,30,31),7,cv::LINE_AA);
+        cv::line(frame,point(bone.first),point(bone.second),cv::Scalar(250,250,250),3,cv::LINE_AA);
+    }
+    const int joints[]={Nose,LeftShoulder,RightShoulder,LeftElbow,RightElbow,
+        LeftWrist,RightWrist,LeftHip,RightHip,LeftKnee,RightKnee,LeftAnkle,RightAnkle};
+    for(const int index:joints) {
+        if(!p[index].visible(threshold))
+            continue;
+        cv::circle(frame,point(index),6,cv::Scalar(24,30,31),-1,cv::LINE_AA);
+        cv::circle(frame,point(index),3,cv::Scalar(181,211,66),-1,cv::LINE_AA);
+    }
 }
 }
 MotionWorker::MotionWorker(Options options,std::shared_ptr<MotionControl> control)
