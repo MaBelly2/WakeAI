@@ -9,6 +9,7 @@ qt_add_executable(alarm_ui
     uiwidgets.cpp uiwidgets.h
     ringtonemanager.cpp ringtonemanager.h
     ringtonedialog.cpp ringtonedialog.h
+    alarmcardwidget.cpp alarmcardwidget.h
     resources.qrc)
 target_link_libraries(alarm_ui PRIVATE
     wakeai_core WakeAI_system Qt6::Widgets Qt6::Multimedia)

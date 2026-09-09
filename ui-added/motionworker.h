@@ -5,7 +5,7 @@
 #include <atomic>
 #include <memory>
 struct MotionControl {
-    std::atomic<bool> stop{false}, paused{false}, reset{false}, framePending{false};
+    std::atomic<bool> stop{false}, paused{false}, reset{false}, framePending{false}, freezeFrame{false};
 };
 class MotionWorker : public QObject {
     Q_OBJECT
@@ -15,6 +15,7 @@ public:
         QString modelPath, videoPath;
         int cameraIndex=0;
         Mode mode=Mode::Squat;
+        int noProgressHintMs=120000;
     };
     MotionWorker(Options options, std::shared_ptr<MotionControl> control);
 public slots:

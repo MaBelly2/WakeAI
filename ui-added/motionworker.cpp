@@ -101,6 +101,7 @@ void MotionWorker::runLoop() {
         }
         failures=0;
         if(!video) cv::flip(frame,frame,1);
+        int pendingCount=-1;
         if(!control_->paused.load()) {
             PoseLandmarks raw{};
             const bool detected=detector.detect(frame,raw);
@@ -108,14 +109,19 @@ void MotionWorker::runLoop() {
             active->update(smooth);
             if(detected) drawPose(frame,smooth);
             const int count=active->count();
-            if(count!=lastCount) {emit countChanged(count);lastCount=count;progressClock.restart();}
+            if(count!=lastCount) {pendingCount=count;lastCount=count;progressClock.restart();}
             if(active->valid()!=lastValid) {lastValid=active->valid();emit poseValidChanged(lastValid);}
-            if(progressClock.elapsed()>=3000) {emit wrongMotionHint();progressClock.restart();}
+            if(progressClock.elapsed()>=std::max(10000,options_.noProgressHintMs)) {
+                emit wrongMotionHint();progressClock.restart();
+            }
         } else progressClock.restart();
-        if(!control_->framePending.exchange(true)) {
+        // Queue the rendered frame before its count signal. When the target is
+        // reached the UI can stop the worker and keep this exact final frame.
+        if(!control_->freezeFrame.load()&&!control_->framePending.exchange(true)) {
             cv::Mat rgb;cv::cvtColor(frame,rgb,cv::COLOR_BGR2RGB);
             emit frameReady(QImage(rgb.data,rgb.cols,rgb.rows,int(rgb.step),QImage::Format_RGB888).copy());
         }
+        if(pendingCount>=0) emit countChanged(pendingCount);
         if(control_->paused.load()&&!video) QThread::msleep(30);
         if(video) {
             int remain=interval-int(frameClock.elapsed());

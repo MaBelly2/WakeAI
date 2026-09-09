@@ -16,9 +16,17 @@ QLabel[uiRole="pageTitle"] { font-size: 30px; font-weight: 750; color: #172033; 
 QLabel[uiRole="pageSubtitle"], QLabel[uiRole="mutedLabel"] { font-size: 14px; color: #718096; }
 QLabel[uiRole="sectionTitle"] { font-size: 20px; font-weight: 700; color: #172033; }
 QLabel[uiRole="eyebrow"] { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #5CD6BD; }
+QLabel[uiRole="eyebrowDark"] { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #249B84; }
+QLabel[uiRole="nextTime"] { color: white; font-size: 68px; font-weight: 850; }
+QLabel[uiRole="heroTitle"] { color: white; font-size: 23px; font-weight: 700; }
 QLabel[uiRole="heroCaption"] { color: #B9C7D8; font-size: 14px; }
 QLabel[uiRole="fieldLabel"] { color: #7B8B9F; font-size: 12px; font-weight: 600; }
+QLabel[uiRole="fieldLabelWide"] { color: #334155; font-size: 14px; font-weight: 700; min-width: 80px; }
 QLabel[uiRole="valueLabel"] { color: #243247; font-size: 16px; font-weight: 650; }
+QLabel[uiRole="achievementName"] { color: #172033; font-size: 21px; font-weight: 750; }
+QLabel[uiRole="achievementProgress"] { color: #18806D; font-size: 13px; font-weight: 700; }
+QLabel[uiRole="statsInline"] { color: #526275; font-size: 12px; font-weight: 650; }
+QLabel[uiRole="emptyState"] { color: #8492A5; font-size: 16px; padding: 18px; }
 QLabel[uiRole="statsPill"], QLabel[uiRole="statusPill"] {
     background: #E5F4F1;
     color: #187563;
@@ -49,8 +57,21 @@ QFrame[uiRole="card"] {
     border: 1px solid #E2E9F0;
     border-radius: 18px;
 }
+QFrame[uiRole="timeCard"] {
+    background: #172033;
+    border: 1px solid #293750;
+    border-radius: 18px;
+}
+QWidget[uiRole="alarmListCard"] {
+    background: white;
+    border: 1px solid #DEE7EE;
+    border-radius: 17px;
+}
+QWidget[uiRole="alarmListCard"][activeAlarm="true"] { border: 2px solid #74CFBC; }
+QLabel[uiRole="alarmCardTime"] { color: #172033; font-size: 30px; font-weight: 800; }
+QLabel[uiRole="alarmCardTitle"] { color: #2E3B4E; font-size: 15px; font-weight: 700; }
 
-QTimeEdit[uiRole="heroTime"] {
+QTimeEdit[uiRole="editTime"] {
     color: white;
     background: transparent;
     border: none;
@@ -59,7 +80,7 @@ QTimeEdit[uiRole="heroTime"] {
     selection-background-color: #287C9A;
     min-height: 75px;
 }
-QComboBox, QSpinBox {
+QLineEdit, QComboBox, QSpinBox {
     min-height: 42px;
     background: #F7F9FC;
     border: 1px solid #DCE5ED;
@@ -68,8 +89,8 @@ QComboBox, QSpinBox {
     color: #243247;
     font-weight: 600;
 }
-QComboBox:hover, QSpinBox:hover { border-color: #71CDBA; }
-QComboBox:focus, QSpinBox:focus { border: 2px solid #3BB69D; }
+QLineEdit:hover, QComboBox:hover, QSpinBox:hover { border-color: #71CDBA; }
+QLineEdit:focus, QComboBox:focus, QSpinBox:focus { border: 2px solid #3BB69D; }
 QComboBox::drop-down { border: none; width: 30px; }
 QComboBox QAbstractItemView { background: white; border: 1px solid #DCE5ED; selection-background-color: #E5F5F2; }
 
@@ -94,9 +115,32 @@ QPushButton[uiRole="secondaryButton"] {
 QPushButton[uiRole="secondaryButton"]:hover { background: #F7FAFC; border-color: #AFC0CD; }
 QPushButton[uiRole="softButton"] { color: #177763; background: #E5F5F2; }
 QPushButton[uiRole="softButton"]:hover { background: #D5EFE9; }
+QPushButton[uiRole="heroButton"] { color: #D7FFF7; background: #24443F; border: 1px solid #35645B; }
+QPushButton[uiRole="heroButton"]:hover { background: #2D574F; }
 QPushButton[uiRole="ghostButton"] { color: #65758B; background: transparent; }
 QPushButton[uiRole="ghostButton"]:hover { background: #E9EEF4; color: #334155; }
+QPushButton[uiRole="textButton"] { color: #238A75; background: transparent; padding: 3px 8px; }
+QPushButton[uiRole="textButton"]:hover { background: #E5F4F1; }
+QPushButton[uiRole="circleButton"] { min-width: 34px; max-width: 34px; min-height: 34px; max-height: 34px; border-radius: 17px; padding: 0; color: #2B7F6F; background: #E4F4F0; font-size: 23px; }
+QPushButton[uiRole="circleButton"]:hover { background: #D2ECE6; }
+QPushButton[uiRole="smallButton"] { min-height: 29px; padding: 2px 12px; color: #2C7568; background: #E7F5F2; border-radius: 8px; }
+QPushButton[uiRole="dangerButton"] { min-height: 29px; padding: 2px 12px; color: #C1574B; background: #FFF0ED; border-radius: 8px; }
+QPushButton[uiRole="dangerButton"]:hover { background: #FFE2DD; }
 QPushButton:disabled { color: #FFFFFF; background: #BDC9D1; border-color: #BDC9D1; }
+
+QCheckBox[uiRole="switch"] {
+    min-width: 62px; max-width: 62px; min-height: 28px; max-height: 28px;
+    border-radius: 14px; padding: 0 10px; background: #E2E8EE;
+    color: #6B7788; font-size: 11px; font-weight: 700;
+}
+QCheckBox[uiRole="switch"]:checked { background: #2AAA90; color: white; }
+QCheckBox[uiRole="switch"]::indicator { width: 0; height: 0; }
+QCheckBox[uiRole="dayChip"] {
+    min-width: 37px; min-height: 34px; border-radius: 17px; padding: 0;
+    background: #F0F4F7; color: #617085; font-weight: 700;
+}
+QCheckBox[uiRole="dayChip"]:checked { background: #249B84; color: white; }
+QCheckBox[uiRole="dayChip"]::indicator { width: 0; height: 0; }
 
 QListWidget, QListWidget#ringtoneList {
     background: white;
@@ -108,6 +152,9 @@ QListWidget, QListWidget#ringtoneList {
 QListWidget::item { min-height: 42px; padding: 8px 12px; border-radius: 9px; color: #334155; }
 QListWidget::item:selected { background: #E4F5F1; color: #147864; }
 QListWidget::item:hover:!selected { background: #F5F8FA; }
+QListWidget#listAlarms { background: transparent; border: none; padding: 2px; }
+QListWidget#listAlarms::item { min-height: 112px; padding: 0; background: transparent; }
+QListWidget#listAlarms::item:hover { background: transparent; }
 
 QDialog { background: #F3F6FA; color: #172033; font-family: "Microsoft YaHei UI", "Segoe UI"; font-size: 14px; }
 QLabel#dialogTitle { font-size: 25px; font-weight: 750; color: #172033; }

@@ -3,12 +3,17 @@
 #include <QString>
 #include <QVector>
 #include <QDate>
+#include <QtGlobal>
 namespace wakeai {
 struct AlarmSetting {
+    qint64 id = -1;
     int hour = 7, minute = 0;
+    QString label = "起床闹钟";
     QString exerciseType = "squat";
     int targetCount = 15;
     bool enabled = false;
+    int repeatMask = 0; // bit 0..6 = Monday..Sunday; 0 means one-shot.
+    int snoozeMinutes = 5;
     QString theme = "default";
     QString ringtoneId = "builtin:classic";
     double volume = 0.85;
@@ -33,6 +38,11 @@ public:
     bool isOpen() const;
     bool saveAlarmSetting(const AlarmSetting& s);
     AlarmSetting loadSettings() const;
+    qint64 saveAlarm(const AlarmSetting& alarm);
+    AlarmSetting alarm(qint64 id) const;
+    QVector<AlarmSetting> alarms() const;
+    bool setAlarmEnabled(qint64 id, bool enabled);
+    bool deleteAlarm(qint64 id);
     bool saveWakeRecord(const WakeRecord& r);
     QVector<WakeRecord> recentRecords(int limit = 100) const;
     Statistics queryStatistics() const;

@@ -45,7 +45,14 @@ bool DatabaseManager::createTables() {
         "date TEXT NOT NULL,alarm_time TEXT NOT NULL,exercise_type TEXT NOT NULL,"
         "target_count INTEGER NOT NULL,actual_count INTEGER NOT NULL,success INTEGER NOT NULL,completed_at TEXT NOT NULL)",
         "CREATE TABLE IF NOT EXISTS achievements (id INTEGER PRIMARY KEY AUTOINCREMENT,"
-        "achievement_id TEXT NOT NULL UNIQUE,unlocked INTEGER NOT NULL DEFAULT 1,unlock_date TEXT NOT NULL)"
+        "achievement_id TEXT NOT NULL UNIQUE,unlocked INTEGER NOT NULL DEFAULT 1,unlock_date TEXT NOT NULL)",
+        "CREATE TABLE IF NOT EXISTS alarms (id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "hour INTEGER NOT NULL,minute INTEGER NOT NULL,label TEXT NOT NULL DEFAULT '起床闹钟',"
+        "exercise_type TEXT NOT NULL,target_count INTEGER NOT NULL,enabled INTEGER NOT NULL DEFAULT 1,"
+        "repeat_mask INTEGER NOT NULL DEFAULT 0,snooze_minutes INTEGER NOT NULL DEFAULT 5,"
+        "ringtone_id TEXT NOT NULL DEFAULT 'builtin:classic',volume REAL NOT NULL DEFAULT 0.85,"
+        "created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)",
+        "CREATE TABLE IF NOT EXISTS app_meta (key TEXT PRIMARY KEY,value TEXT NOT NULL)"
     };
     for (const auto& s : sql) if (!q.exec(s)) { error_ = q.lastError().text(); return false; }
     QSet<QString> alarmColumns;
@@ -59,6 +66,51 @@ bool DatabaseManager::createTables() {
     if (!alarmColumns.contains("volume")
         && !q.exec("ALTER TABLE alarm_settings ADD COLUMN volume REAL NOT NULL DEFAULT 0.85")) {
         error_ = q.lastError().text(); return false;
+    }
+
+    // V3 migration: import the former single alarm once. The marker prevents a
+    // deliberately emptied multi-alarm list from being recreated on restart.
+    if (!q.exec("SELECT value FROM app_meta WHERE key='alarms_migrated_v3'")) {
+        error_ = q.lastError().text(); return false;
+    }
+    const bool migrated = q.next();
+    q.finish();
+    if (!migrated) {
+        if (!db_.transaction()) { error_ = db_.lastError().text(); return false; }
+        QSqlQuery legacy(db_);
+        bool ok = legacy.exec("SELECT hour,minute,exercise_type,target_count,enabled,ringtone_id,volume "
+                              "FROM alarm_settings ORDER BY id DESC LIMIT 1");
+        if (ok && legacy.next()) {
+            const QVariant hour = legacy.value(0);
+            const QVariant minute = legacy.value(1);
+            const QVariant exerciseType = legacy.value(2);
+            const QVariant targetCount = legacy.value(3);
+            const QVariant enabled = legacy.value(4);
+            const QVariant ringtoneId = legacy.value(5);
+            const QVariant volume = legacy.value(6);
+            legacy.finish();
+            QSqlQuery insert(db_);
+            insert.prepare("INSERT INTO alarms(hour,minute,label,exercise_type,target_count,enabled,repeat_mask,"
+                           "snooze_minutes,ringtone_id,volume) VALUES(?,?,'起床闹钟',?,?,?,0,5,?,?)");
+            insert.addBindValue(hour); insert.addBindValue(minute);
+            insert.addBindValue(exerciseType); insert.addBindValue(targetCount);
+            insert.addBindValue(enabled); insert.addBindValue(ringtoneId);
+            insert.addBindValue(volume);
+            ok = insert.exec();
+            if (!ok) error_ = insert.lastError().text();
+        } else if (!ok) {
+            error_ = legacy.lastError().text();
+        }
+        legacy.finish();
+        if (ok) {
+            QSqlQuery marker(db_);
+            ok = marker.exec("INSERT INTO app_meta(key,value) VALUES('alarms_migrated_v3','1')");
+            if (!ok) error_ = marker.lastError().text();
+        }
+        if (!ok || !db_.commit()) {
+            if (error_.isEmpty()) error_ = db_.lastError().text();
+            db_.rollback(); return false;
+        }
     }
 
     bool hasSession = false;
@@ -108,6 +160,88 @@ AlarmSetting DatabaseManager::loadSettings() const {
         s.ringtoneId = q.value(6).toString(); s.volume = qBound(0.0, q.value(7).toDouble(), 1.0);
     }
     return s;
+}
+qint64 DatabaseManager::saveAlarm(const AlarmSetting& alarm) {
+    error_.clear();
+    if (!isOpen() || alarm.hour < 0 || alarm.hour > 23 || alarm.minute < 0 || alarm.minute > 59
+        || alarm.label.trimmed().isEmpty() || alarm.targetCount < 1 || alarm.targetCount > 1000
+        || alarm.repeatMask < 0 || alarm.repeatMask > 127
+        || alarm.snoozeMinutes < 1 || alarm.snoozeMinutes > 60
+        || alarm.ringtoneId.trimmed().isEmpty() || alarm.volume < 0.0 || alarm.volume > 1.0) {
+        error_ = "数据库未打开或闹钟参数无效"; return -1;
+    }
+    QSqlQuery q(db_);
+    if (alarm.id < 0) {
+        q.prepare("INSERT INTO alarms(hour,minute,label,exercise_type,target_count,enabled,repeat_mask,"
+                  "snooze_minutes,ringtone_id,volume) VALUES(?,?,?,?,?,?,?,?,?,?)");
+    } else {
+        q.prepare("UPDATE alarms SET hour=?,minute=?,label=?,exercise_type=?,target_count=?,enabled=?,"
+                  "repeat_mask=?,snooze_minutes=?,ringtone_id=?,volume=? WHERE id=?");
+    }
+    q.addBindValue(alarm.hour); q.addBindValue(alarm.minute); q.addBindValue(alarm.label.trimmed().left(40));
+    q.addBindValue(alarm.exerciseType); q.addBindValue(alarm.targetCount); q.addBindValue(alarm.enabled ? 1 : 0);
+    q.addBindValue(alarm.repeatMask); q.addBindValue(alarm.snoozeMinutes);
+    q.addBindValue(alarm.ringtoneId); q.addBindValue(alarm.volume);
+    if (alarm.id >= 0) q.addBindValue(alarm.id);
+    if (!q.exec()) { error_ = q.lastError().text(); return -1; }
+    if (alarm.id >= 0 && q.numRowsAffected() == 0) {
+        error_ = "要修改的闹钟不存在"; return -1;
+    }
+    return alarm.id >= 0 ? alarm.id : q.lastInsertId().toLongLong();
+}
+AlarmSetting DatabaseManager::alarm(qint64 id) const {
+    AlarmSetting result; result.id = -1;
+    if (!isOpen() || id < 0) return result;
+    QSqlQuery q(db_);
+    q.prepare("SELECT id,hour,minute,label,exercise_type,target_count,enabled,repeat_mask,snooze_minutes,"
+              "ringtone_id,volume FROM alarms WHERE id=?");
+    q.addBindValue(id);
+    if (!q.exec()) { error_ = q.lastError().text(); return result; }
+    if (q.next()) {
+        result.id=q.value(0).toLongLong(); result.hour=q.value(1).toInt(); result.minute=q.value(2).toInt();
+        result.label=q.value(3).toString(); result.exerciseType=q.value(4).toString();
+        result.targetCount=q.value(5).toInt(); result.enabled=q.value(6).toBool();
+        result.repeatMask=q.value(7).toInt(); result.snoozeMinutes=q.value(8).toInt();
+        result.ringtoneId=q.value(9).toString(); result.volume=qBound(0.0,q.value(10).toDouble(),1.0);
+    }
+    return result;
+}
+QVector<AlarmSetting> DatabaseManager::alarms() const {
+    QVector<AlarmSetting> result;
+    if (!isOpen()) return result;
+    QSqlQuery q(db_);
+    if (!q.exec("SELECT id,hour,minute,label,exercise_type,target_count,enabled,repeat_mask,snooze_minutes,"
+                "ringtone_id,volume FROM alarms ORDER BY hour,minute,id")) {
+        error_ = q.lastError().text(); return result;
+    }
+    while (q.next()) {
+        AlarmSetting alarm;
+        alarm.id=q.value(0).toLongLong(); alarm.hour=q.value(1).toInt(); alarm.minute=q.value(2).toInt();
+        alarm.label=q.value(3).toString(); alarm.exerciseType=q.value(4).toString();
+        alarm.targetCount=q.value(5).toInt(); alarm.enabled=q.value(6).toBool();
+        alarm.repeatMask=q.value(7).toInt(); alarm.snoozeMinutes=q.value(8).toInt();
+        alarm.ringtoneId=q.value(9).toString(); alarm.volume=qBound(0.0,q.value(10).toDouble(),1.0);
+        result.append(alarm);
+    }
+    return result;
+}
+bool DatabaseManager::setAlarmEnabled(qint64 id, bool enabled) {
+    error_.clear();
+    if (!isOpen() || id < 0) { error_ = "数据库未打开或闹钟编号无效"; return false; }
+    QSqlQuery q(db_); q.prepare("UPDATE alarms SET enabled=? WHERE id=?");
+    q.addBindValue(enabled ? 1 : 0); q.addBindValue(id);
+    if (!q.exec() || q.numRowsAffected()==0) {
+        error_ = q.lastError().text().isEmpty() ? "要修改的闹钟不存在" : q.lastError().text(); return false;
+    }
+    return true;
+}
+bool DatabaseManager::deleteAlarm(qint64 id) {
+    error_.clear();
+    if (!isOpen() || id < 0) { error_ = "数据库未打开或闹钟编号无效"; return false; }
+    QSqlQuery q(db_); q.prepare("DELETE FROM alarms WHERE id=?"); q.addBindValue(id);
+    if (!q.exec()) { error_ = q.lastError().text(); return false; }
+    if (q.numRowsAffected() == 0) { error_ = "要删除的闹钟不存在"; return false; }
+    return true;
 }
 bool DatabaseManager::saveWakeRecord(const WakeRecord& r) {
     error_.clear();
