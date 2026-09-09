@@ -42,6 +42,16 @@ bool RingtoneManager::ensureBuiltInTones(QString *error)
                          builtIn + QStringLiteral("classic.wav"), error))
         return false;
 
+    if (!QFileInfo::exists(builtIn + QStringLiteral("hajimi(star).wav"))
+        && !copyResource(QStringLiteral(":/audio/hajimi(star).wav"),
+            builtIn + QStringLiteral("hajimi(star).wav"), error))
+        return false;
+    if (!QFileInfo::exists(builtIn + QStringLiteral("hajimi(landlord).wav"))
+        && !copyResource(QStringLiteral(":/audio/hajimi(landlord).wav"),
+            builtIn + QStringLiteral("hajimi(landlord).wav"), error))
+        return false;
+
+
     if (!QFileInfo::exists(builtIn + QStringLiteral("morning.wav"))
         && !writeTone(builtIn + QStringLiteral("morning.wav"),
                       {523.25, 659.25, 783.99, 659.25}, 310, 0.44, error))
@@ -67,7 +77,11 @@ QVector<RingtoneItem> RingtoneManager::items() const
         {QStringLiteral("builtin:bell"), QStringLiteral("清脆铃音"),
          rootDir_ + QStringLiteral("/builtin/bell.wav"), true},
         {QStringLiteral("builtin:focus"), QStringLiteral("专注节拍"),
-         rootDir_ + QStringLiteral("/builtin/focus.wav"), true}
+         rootDir_ + QStringLiteral("/builtin/focus.wav"), true},
+        {QStringLiteral("builtin:hajimi(star)"), QStringLiteral("星际拓荒哈基米"),
+         rootDir_ + QStringLiteral("/builtin/hajimi(star).wav"), true},
+        {QStringLiteral("builtin:hajimi(landlord)"), QStringLiteral("欢乐斗地主哈基米"),
+         rootDir_ + QStringLiteral("/builtin/hajimi(landlord).wav"), true}
     };
 
     QDir custom(rootDir_ + QStringLiteral("/custom"));
