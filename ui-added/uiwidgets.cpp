@@ -4,6 +4,7 @@
 #include <QPainterPath>
 #include <QPropertyAnimation>
 #include <QEasingCurve>
+#include <QPolygonF>
 #include <QtMath>
 
 CameraView::CameraView(QWidget *parent) : QWidget(parent)
@@ -11,6 +12,20 @@ CameraView::CameraView(QWidget *parent) : QWidget(parent)
     setMinimumSize(640, 360);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAttribute(Qt::WA_OpaquePaintEvent);
+    noticeAnimation_ = new QPropertyAnimation(this, "noticeOpacity", this);
+    noticeAnimation_->setEasingCurve(QEasingCurve::OutCubic);
+    noticeTimer_.setSingleShot(true);
+    connect(&noticeTimer_, &QTimer::timeout, this, [this] {
+        if (!fixedSuccess_) animateNotice(0.0, 260);
+    });
+    celebrationTimer_.setInterval(16);
+    connect(&celebrationTimer_, &QTimer::timeout, this, [this] {
+        if (celebrationClock_.elapsed() >= 2800) {
+            celebrating_ = false;
+            celebrationTimer_.stop();
+        }
+        update();
+    });
 }
 
 void CameraView::setFrame(const QImage &frame)
@@ -40,20 +55,50 @@ void CameraView::setCount(int count, int target, bool animate)
         pulse->setKeyValueAt(1.0, 1.0);
         pulse->setEasingCurve(QEasingCurve::OutBack);
         pulse->start(QAbstractAnimation::DeleteWhenStopped);
+        if (!fixedSuccess_ && noticeKind_ == NoticeKind::Warning)
+            clearNotice();
     }
     update();
 }
 
-void CameraView::setStatus(const QString &status, bool poseValid)
+void CameraView::showNotice(const QString &text, NoticeKind kind, int visibleMs)
 {
-    status_ = status;
-    poseValid_ = poseValid;
+    fixedSuccess_ = false;
+    celebrating_ = false;
+    celebrationTimer_.stop();
+    noticeText_ = text;
+    noticeKind_ = kind;
+    animateNotice(1.0, 180);
+    noticeTimer_.start(qMax(800, visibleMs));
     update();
+}
+
+void CameraView::showSuccess(const QString &text)
+{
+    noticeTimer_.stop();
+    fixedSuccess_ = true;
+    noticeText_ = text;
+    noticeKind_ = NoticeKind::Success;
+    animateNotice(1.0, 220);
+    celebrating_ = true;
+    celebrationClock_.restart();
+    celebrationTimer_.start();
+    update();
+}
+
+void CameraView::clearNotice()
+{
+    noticeTimer_.stop();
+    fixedSuccess_ = false;
+    celebrating_ = false;
+    celebrationTimer_.stop();
+    animateNotice(0.0, 180);
 }
 
 void CameraView::clearFrame()
 {
     frame_ = {};
+    clearNotice();
     update();
 }
 
@@ -67,6 +112,21 @@ void CameraView::setCountPulse(qreal value)
 {
     countPulse_ = value;
     update();
+}
+
+void CameraView::setNoticeOpacity(qreal value)
+{
+    noticeOpacity_ = qBound(0.0, value, 1.0);
+    update();
+}
+
+void CameraView::animateNotice(qreal endValue, int durationMs)
+{
+    noticeAnimation_->stop();
+    noticeAnimation_->setDuration(durationMs);
+    noticeAnimation_->setStartValue(noticeOpacity_);
+    noticeAnimation_->setEndValue(endValue);
+    noticeAnimation_->start();
 }
 
 QRectF CameraView::imageTargetRect() const
@@ -153,23 +213,186 @@ void CameraView::paintEvent(QPaintEvent *)
     painter.setBrush(QColor("#42D3B5"));
     painter.drawRoundedRect(completed, 3, 3);
 
-    QFont statusFont = font();
-    statusFont.setPointSize(11);
-    statusFont.setWeight(QFont::DemiBold);
-    painter.setFont(statusFont);
-    const qreal statusWidth = painter.fontMetrics().horizontalAdvance(status_) + 42;
-    const QRectF statusPill(target.left() + 22, target.bottom() - 72,
-                            qMin(statusWidth, target.width() - 44), 34);
-    painter.setBrush(poseValid_ ? QColor(16, 111, 92, 220) : QColor(30, 41, 59, 220));
-    painter.drawRoundedRect(statusPill, 17, 17);
-    painter.setPen(Qt::white);
-    painter.drawEllipse(QPointF(statusPill.left() + 17, statusPill.center().y()), 4, 4);
-    painter.drawText(statusPill.adjusted(30, 0, -10, 0), Qt::AlignVCenter | Qt::AlignLeft, status_);
+    if (celebrating_)
+        drawCelebration(painter, target);
+
+    if (noticeOpacity_ > 0.01 && !noticeText_.isEmpty()) {
+        painter.save();
+        painter.setOpacity(noticeOpacity_ * 0.94);
+        const bool success = noticeKind_ == NoticeKind::Success;
+        const qreal noticeWidth = qMin<qreal>(success ? 520 : 600, target.width() - 54);
+        const qreal noticeHeight = success ? 126 : 92;
+        const QRectF notice(target.center().x() - noticeWidth / 2.0,
+                            target.center().y() - noticeHeight / 2.0,
+                            noticeWidth, noticeHeight);
+        painter.setPen(QPen(success ? QColor(83, 235, 178, 190)
+                                    : noticeKind_ == NoticeKind::Warning
+                                          ? QColor(255, 174, 78, 185)
+                                          : QColor(255, 255, 255, 135), 1.4));
+        painter.setBrush(success ? QColor(3, 42, 34, 132)
+                                 : noticeKind_ == NoticeKind::Warning
+                                       ? QColor(45, 24, 5, 118)
+                                       : QColor(10, 20, 34, 126));
+        painter.drawRoundedRect(notice, 23, 23);
+
+        QFont noticeFont = font();
+        noticeFont.setWeight(QFont::Bold);
+        noticeFont.setPointSize(success ? 29 : 22);
+        painter.setFont(noticeFont);
+        painter.setPen(success ? QColor(83, 235, 178)
+                               : noticeKind_ == NoticeKind::Warning
+                                     ? QColor(255, 174, 78)
+                                     : Qt::white);
+        if (success) {
+            painter.drawText(notice.adjusted(18, 12, -18, -42),
+                             Qt::AlignCenter | Qt::TextWordWrap, noticeText_);
+            QFont subFont = font();
+            subFont.setPointSize(13);
+            subFont.setWeight(QFont::DemiBold);
+            painter.setFont(subFont);
+            painter.setPen(QColor(230, 255, 247, 220));
+            painter.drawText(notice.adjusted(18, 72, -18, -10), Qt::AlignCenter,
+                             QStringLiteral("点击“完成任务”关闭闹钟"));
+        } else {
+            painter.drawText(notice.adjusted(24, 12, -24, -12),
+                             Qt::AlignCenter | Qt::TextWordWrap, noticeText_);
+        }
+        painter.restore();
+    }
 
     painter.setClipping(false);
     painter.setPen(QPen(QColor(255, 255, 255, 28), 1));
     painter.setBrush(Qt::NoBrush);
     painter.drawRoundedRect(target, 22, 22);
+}
+
+void CameraView::drawCelebration(QPainter &painter, const QRectF &target)
+{
+    const qreal seconds = celebrationClock_.elapsed() / 1000.0;
+    const QColor colors[] = {QColor("#FFD54A"), QColor("#FFB23E"), QColor("#FFF1A1"),
+                             QColor("#64E1B9"), QColor("#F7C948")};
+    painter.save();
+    painter.setPen(Qt::NoPen);
+    for (int i = 0; i < 58; ++i) {
+        const qreal delay = (i % 10) * 0.045;
+        const qreal t = seconds - delay;
+        if (t < 0.0) continue;
+        const qreal spread = (((i * 47) % 101) - 50) / 50.0;
+        const qreal originX = target.center().x() + spread * target.width() * 0.23;
+        const qreal velocityX = (((i * 31) % 61) - 30) * 2.8;
+        const qreal velocityY = -245.0 - (i % 8) * 18.0;
+        const qreal x = originX + velocityX * t;
+        const qreal y = target.center().y() - 6.0 + velocityY * t + 170.0 * t * t;
+        if (!target.adjusted(8, 8, -8, -8).contains(QPointF(x, y))) continue;
+        painter.save();
+        painter.translate(x, y);
+        painter.rotate(i * 29.0 + t * (130.0 + (i % 5) * 25.0));
+        painter.setBrush(colors[i % 5]);
+        if (i % 3 == 0)
+            painter.drawEllipse(QRectF(-4, -4, 8, 8));
+        else
+            painter.drawRoundedRect(QRectF(-3, -7, 6, 14), 2, 2);
+        painter.restore();
+    }
+    painter.restore();
+}
+
+AchievementIconWidget::AchievementIconWidget(QWidget *parent) : QWidget(parent)
+{
+    setMinimumSize(108, 108);
+    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+}
+
+void AchievementIconWidget::setAchievement(int index, bool unlocked)
+{
+    index_ = qBound(0, index, 4);
+    unlocked_ = unlocked;
+    auto *animation = new QPropertyAnimation(this, "pulse", this);
+    animation->setDuration(320);
+    animation->setKeyValueAt(0.0, 0.78);
+    animation->setKeyValueAt(0.55, 1.08);
+    animation->setKeyValueAt(1.0, 1.0);
+    animation->setEasingCurve(QEasingCurve::OutBack);
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+    update();
+}
+
+void AchievementIconWidget::setPulse(qreal value)
+{
+    pulse_ = value;
+    update();
+}
+
+void AchievementIconWidget::paintEvent(QPaintEvent *)
+{
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+    const QColor palette[] = {QColor("#FFAE45"), QColor("#F06B57"), QColor("#8A73E8"),
+                              QColor("#35B99C"), QColor("#E3AD27")};
+    const QPointF center = rect().center();
+    const qreal radius = qMin(width(), height()) * 0.39;
+    painter.translate(center);
+    painter.scale(pulse_, pulse_);
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(unlocked_ ? palette[index_] : QColor("#E4E9EF"));
+    painter.drawEllipse(QPointF(0, 0), radius, radius);
+    painter.setPen(QPen(unlocked_ ? Qt::white : QColor("#98A6B7"), 5,
+                        Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.setBrush(Qt::NoBrush);
+    const qreal r = radius;
+
+    if (index_ == 0) { // sunrise
+        painter.drawLine(QPointF(-r * .58, r * .28), QPointF(r * .58, r * .28));
+        painter.drawArc(QRectF(-r * .34, -r * .10, r * .68, r * .68), 0, 180 * 16);
+        for (int i = -2; i <= 2; ++i) {
+            const qreal angle = -90.0 + i * 31.0;
+            const qreal a = qDegreesToRadians(angle);
+            painter.drawLine(QPointF(qCos(a) * r * .51, qSin(a) * r * .51),
+                             QPointF(qCos(a) * r * .68, qSin(a) * r * .68));
+        }
+    } else if (index_ == 1) { // flame
+        QPainterPath flame;
+        flame.moveTo(0, r * .62);
+        flame.cubicTo(-r * .58, r * .40, -r * .46, -r * .12, -r * .10, -r * .60);
+        flame.cubicTo(-r * .08, -r * .22, r * .42, -r * .18, r * .27, -r * .68);
+        flame.cubicTo(r * .73, -r * .18, r * .57, r * .43, 0, r * .62);
+        painter.drawPath(flame);
+        painter.drawArc(QRectF(-r * .18, r * .04, r * .36, r * .45), 205 * 16, 130 * 16);
+    } else if (index_ == 2) { // star
+        QPolygonF star;
+        for (int i = 0; i < 10; ++i) {
+            const qreal angle = qDegreesToRadians(-90.0 + i * 36.0);
+            const qreal rr = i % 2 == 0 ? r * .66 : r * .29;
+            star << QPointF(qCos(angle) * rr, qSin(angle) * rr);
+        }
+        painter.drawPolygon(star);
+    } else if (index_ == 3) { // lightning
+        QPolygonF bolt;
+        bolt << QPointF(r * .05, -r * .70) << QPointF(-r * .45, r * .08)
+             << QPointF(-r * .08, r * .08) << QPointF(-r * .22, r * .70)
+             << QPointF(r * .50, -r * .18) << QPointF(r * .12, -r * .18);
+        painter.drawPolyline(bolt);
+        painter.drawLine(bolt.last(), bolt.first());
+    } else { // trophy
+        QPainterPath cup;
+        cup.moveTo(-r * .40, -r * .52); cup.lineTo(r * .40, -r * .52);
+        cup.cubicTo(r * .34, r * .02, r * .20, r * .20, 0, r * .24);
+        cup.cubicTo(-r * .20, r * .20, -r * .34, r * .02, -r * .40, -r * .52);
+        painter.drawPath(cup);
+        painter.drawArc(QRectF(-r * .66, -r * .43, r * .44, r * .55), 90 * 16, 180 * 16);
+        painter.drawArc(QRectF(r * .22, -r * .43, r * .44, r * .55), -90 * 16, 180 * 16);
+        painter.drawLine(QPointF(0, r * .24), QPointF(0, r * .52));
+        painter.drawLine(QPointF(-r * .28, r * .54), QPointF(r * .28, r * .54));
+    }
+
+    if (!unlocked_) {
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(QColor("#7F8EA1"));
+        painter.drawEllipse(QPointF(r * .56, r * .56), r * .25, r * .25);
+        painter.setPen(QPen(Qt::white, 2.5));
+        painter.drawArc(QRectF(r * .45, r * .34, r * .22, r * .26), 0, 180 * 16);
+        painter.drawRoundedRect(QRectF(r * .43, r * .50, r * .27, r * .22), 3, 3);
+    }
 }
 
 RingPulseWidget::RingPulseWidget(QWidget *parent) : QWidget(parent)
