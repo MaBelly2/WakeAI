@@ -117,9 +117,6 @@ void JumpingJack::update(const PoseLandmarks& pose) {
         }
         break;
 
-    case ExerciseState::Up:
-        state_ = ExerciseState::Ready;
-        break;
     }
 }
 
@@ -136,27 +133,6 @@ double JumpingJack::angle() const {
 
 ExerciseState JumpingJack::state() const {
     return state_;
-}
-
-float JumpingJack::progress() const {
-    if (!valid_) {
-        return 0.0f;
-    }
-
-    const float armDen = kArmOpen_ - kArmClose_;
-    const float legDen = kSpreadOpen_ - kSpreadClose_;
-    if (armDen <= 1e-6f || legDen <= 1e-6f) {
-        return 0.0f;
-    }
-
-    const float leftP = std::clamp((leftArmLift_ - kArmClose_) / armDen, 0.0f, 1.0f);
-    const float rightP = std::clamp((rightArmLift_ - kArmClose_) / armDen, 0.0f, 1.0f);
-    const float armP = std::min(leftP, rightP); // 两只手都要达标
-
-    const float legP = std::clamp(
-        (curSpread_ - kSpreadClose_) / legDen, 0.0f, 1.0f);
-
-    return 0.5f * armP + 0.5f * legP;
 }
 
 bool JumpingJack::valid() const {
@@ -192,10 +168,6 @@ void JumpingJack::setThresholds(float armOpen,
     kSpreadOpen_ = spreadOpen;
     kSpreadClose_ = spreadClose;
     kConfirmFrames_ = std::max(1, confirmFrames);
-}
-
-const char* JumpingJack::name() const {
-    return "开合跳";
 }
 
 } // namespace wakeai

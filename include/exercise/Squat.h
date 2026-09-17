@@ -12,10 +12,8 @@ public:
     int count() const override;
     double angle() const override;
     ExerciseState state() const override;
-    float progress() const override;
     bool valid() const override;
     void reset() override;
-    const char* name() const override;
 
     // 第一轮调参入口：建议从 120 / 155 / 3 开始。
     void setThresholds(double downAngle, double upAngle, int confirmFrames);

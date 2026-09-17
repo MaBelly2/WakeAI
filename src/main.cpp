@@ -52,7 +52,6 @@ const char* stateName(ExerciseState state) {
     switch (state) {
     case ExerciseState::Ready: return "READY";
     case ExerciseState::Down: return "ACTIVE";
-    case ExerciseState::Up: return "RETURNING";
     }
     return "UNKNOWN";
 }

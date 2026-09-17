@@ -109,10 +109,6 @@ void Squat::update(const PoseLandmarks& pose) {
         }
         break;
 
-    case ExerciseState::Up:
-        // 第一轮未使用 Up，防御性回到 Ready。
-        state_ = ExerciseState::Ready;
-        break;
     }
 }
 
@@ -126,16 +122,6 @@ double Squat::angle() const {
 
 ExerciseState Squat::state() const {
     return state_;
-}
-
-float Squat::progress() const {
-    if (!valid_ || kUpAngle_ <= kDownAngle_) {
-        return 0.0f;
-    }
-
-    // 站直约为 0，蹲得越深越接近 1。
-    const double p = (kUpAngle_ - curAngle_) / (kUpAngle_ - kDownAngle_);
-    return static_cast<float>(std::clamp(p, 0.0, 1.0));
 }
 
 bool Squat::valid() const {
@@ -163,10 +149,6 @@ void Squat::setThresholds(double downAngle, double upAngle, int confirmFrames) {
     kDownAngle_ = downAngle;
     kUpAngle_ = upAngle;
     kConfirmFrames_ = std::max(1, confirmFrames);
-}
-
-const char* Squat::name() const {
-    return "深蹲";
 }
 
 } // namespace wakeai

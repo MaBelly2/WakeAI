@@ -37,10 +37,8 @@ public:
     int count() const override;
     double angle() const override;
     ExerciseState state() const override;
-    float progress() const override;
     bool valid() const override;
     void reset() override;
-    const char* name() const override;
 
     // 保留第一轮接口，避免其他代码编译失败。
     // bend/extend 现在只用于“髋点可见时”的辅助膝角调试，不再作为主计数条件。
@@ -222,7 +220,6 @@ private:
 
     // ExerciseBase 兼容字段。
     double curAngle_ = -1.0;
-    float curProgress_ = 0.0f;
 };
 
 } // namespace wakeai

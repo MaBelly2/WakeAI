@@ -12,10 +12,8 @@ public:
     int count() const override;
     double angle() const override;
     ExerciseState state() const override;
-    float progress() const override;
     bool valid() const override;
     void reset() override;
-    const char* name() const override;
 
     // armOpen / armClose：手腕相对肩部的“肩宽归一化高度”。
     // spreadOpen / spreadClose：脚踝间距 / 肩宽。

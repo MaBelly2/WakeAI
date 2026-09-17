@@ -9,7 +9,6 @@ namespace wakeai {
 enum class ExerciseState {
     Ready,
     Down,
-    Up,
 };
 
 class ExerciseBase {
@@ -27,14 +26,10 @@ public:
 
     virtual ExerciseState state() const = 0;
 
-    // 0~1，可供 UI / 热力显示使用。
-    virtual float progress() const = 0;
-
     // 当前帧是否有足够可靠的关键点用于动作判断。
     virtual bool valid() const = 0;
 
     virtual void reset() = 0;
-    virtual const char* name() const = 0;
 };
 
 } // namespace wakeai

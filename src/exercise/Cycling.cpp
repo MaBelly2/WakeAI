@@ -237,7 +237,6 @@ void Cycling::update(const PoseLandmarks& pose) {
 
     if (!calibrated_) {
         // 标定阶段不计数；让用户正常蹬几下即可自动完成。
-        curProgress_ = 0.0f;
         return;
     }
 
@@ -245,12 +244,6 @@ void Cycling::update(const PoseLandmarks& pose) {
         (signalSource_ == CyclingSignalSource::ShinScale)
             ? filteredScaleSignal_
             : filteredKneeYSignal_;
-
-    curProgress_ = std::clamp(
-        std::abs(selectedSignal_ - signalBaseline_) /
-            std::max(signalTrigger_ * 2.0f, 1e-4f),
-        0.0f,
-        1.0f);
 
     const CyclingPhase rawPhase = classifySelectedSignal();
 
@@ -346,10 +339,6 @@ ExerciseState Cycling::state() const {
     return state_;
 }
 
-float Cycling::progress() const {
-    return valid_ ? curProgress_ : 0.0f;
-}
-
 bool Cycling::valid() const {
     return valid_;
 }
@@ -404,7 +393,6 @@ void Cycling::reset() {
     lastCountFrame_ = -100000;
 
     curAngle_ = -1.0;
-    curProgress_ = 0.0f;
 }
 
 void Cycling::setThresholds(double bendAngle,
@@ -453,8 +441,5 @@ void Cycling::setCountMode(CyclingCountMode mode) {
     countMode_ = mode;
 }
 
-const char* Cycling::name() const {
-    return "床上蹬腿";
-}
 
 } // namespace wakeai
