@@ -18,7 +18,6 @@ public:
         if (!active_ || !reached_ || finished_) return false;
         finished_ = true; active_ = false; return true;
     }
-    void cancel() { active_ = false; }
     int count() const { return count_; }
     int target() const { return target_; }
     bool reached() const { return reached_; }

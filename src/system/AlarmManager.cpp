@@ -15,7 +15,6 @@ void AlarmManager::setAlarmDateTime(const QDateTime& when) {
     next_ = when;
     time_ = when.time();
 }
-void AlarmManager::setChallenge(int) { if (!ringing_) completed_ = false; }
 void AlarmManager::setTestAlarmInSeconds(int seconds) {
     if (!ringing_) next_ = QDateTime::currentDateTime().addSecs(std::max(1, seconds));
 }

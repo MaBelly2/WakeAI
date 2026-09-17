@@ -70,7 +70,6 @@ public:
     void setMinCountIntervalFrames(int frames);
 
     void setCountMode(CyclingCountMode mode);
-    CyclingCountMode countMode() const { return countMode_; }
 
     // ===== 调试信息 =====
     double leftKneeAngle() const { return leftAngle_; }
@@ -104,8 +103,6 @@ public:
     float leftAnkleVisibility() const { return leftAnkleVis_; }
     float rightAnkleVisibility() const { return rightAnkleVis_; }
 
-    float visibilityThreshold() const { return kVisibility_; }
-    int confirmFrames() const { return kConfirmFrames_; }
 
 
 private:

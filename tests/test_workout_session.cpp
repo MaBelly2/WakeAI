@@ -14,7 +14,6 @@ int main() {
     check(s.finish()&&!s.finish(),"finish idempotent");
     check(!s.updateCount(10),"ignore late worker update");
     s.begin(2);check(s.count()==0&&!s.reached()&&!s.finished(),"new session clears state");
-    s.cancel();check(!s.updateCount(2)&&!s.finish(),"cancel does not succeed");
     s.begin(0);check(s.target()==1&&s.updateCount(1)&&s.finish(),"positive target enforced");
     return failures?1:0;
 }

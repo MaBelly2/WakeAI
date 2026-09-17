@@ -23,7 +23,6 @@ public:
     bool armed() const { return armed_; }
     double downThreshold() const { return kDownAngle_; }
     double upThreshold() const { return kUpAngle_; }
-    int confirmFrames() const { return kConfirmFrames_; }
 
 private:
     bool computeKneeAngle(const PoseLandmarks& pose,

@@ -9,7 +9,6 @@ public:
     explicit AlarmManager(QObject* parent = nullptr);
     ~AlarmManager() override = default;
     void setAlarmDateTime(const QDateTime& when);
-    void setChallenge(int targetCount);
     void setTestAlarmInSeconds(int seconds);
     void enable();
     void disable(); // Does not bypass a ringing challenge.

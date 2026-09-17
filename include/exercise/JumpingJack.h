@@ -27,10 +27,7 @@ public:
     float legSpread() const { return curSpread_; }
     bool armed() const { return armed_; }
     float armOpenThreshold() const { return kArmOpen_; }
-    float armCloseThreshold() const { return kArmClose_; }
     float spreadOpenThreshold() const { return kSpreadOpen_; }
-    float spreadCloseThreshold() const { return kSpreadClose_; }
-    int confirmFrames() const { return kConfirmFrames_; }
 
 private:
     bool computeMetrics(const PoseLandmarks& pose,

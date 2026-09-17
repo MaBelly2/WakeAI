@@ -288,7 +288,6 @@ void MainWindow::scheduleNextAlarm()
         if (ringtones_.item(setting_.ringtoneId).id.isEmpty())
             setting_.ringtoneId = RingtoneManager::defaultId();
         alarm_.setAlarmDateTime(nearest);
-        alarm_.setChallenge(setting_.targetCount);
         alarm_.enable();
     }
     refreshDashboard();
@@ -547,7 +546,6 @@ void MainWindow::startTestAlarm(int seconds)
         if (candidate.id == scheduledAlarmId_) { setting_ = candidate; break; }
     scheduledAlarmId_ = setting_.id;
     alarm_.disable();
-    alarm_.setChallenge(setting_.targetCount);
     alarm_.setTestAlarmInSeconds(seconds);
     alarm_.enable();
     scheduled_ = alarm_.nextTrigger();
