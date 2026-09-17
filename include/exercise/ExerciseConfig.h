@@ -12,6 +12,5 @@ inline void applyDefaultExerciseConfig(Squat& squat, JumpingJack& jack, Cycling&
     cycling.setSignalTriggerFloor(0.10f, 0.12f);
     cycling.setMinCountIntervalFrames(10);
     cycling.setCountMode(CyclingCountMode::EachPedal);
-    cycling.setThresholds(115.0, 145.0, 2);
 }
 }

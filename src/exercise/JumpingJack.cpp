@@ -124,13 +124,6 @@ int JumpingJack::count() const {
     return count_;
 }
 
-double JumpingJack::angle() const {
-    // 为兼容现有 ExerciseBase 接口，返回两臂抬升归一化值的平均值。
-    // 注意它不是“角度”。
-    return (static_cast<double>(leftArmLift_) +
-            static_cast<double>(rightArmLift_)) / 2.0;
-}
-
 ExerciseState JumpingJack::state() const {
     return state_;
 }

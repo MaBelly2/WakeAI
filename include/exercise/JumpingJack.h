@@ -10,7 +10,6 @@ public:
 
     void update(const PoseLandmarks& pose) override;
     int count() const override;
-    double angle() const override;
     ExerciseState state() const override;
     bool valid() const override;
     void reset() override;

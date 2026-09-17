@@ -20,10 +20,6 @@ public:
 
     virtual int count() const = 0;
 
-    // 为兼容现有工程保留 angle()。
-    // Squat：膝角；JumpingJack：双臂抬升归一化值；Cycling：较弯曲腿的膝角。
-    virtual double angle() const = 0;
-
     virtual ExerciseState state() const = 0;
 
     // 当前帧是否有足够可靠的关键点用于动作判断。

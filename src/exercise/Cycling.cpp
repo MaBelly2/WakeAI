@@ -186,19 +186,6 @@ void Cycling::update(const PoseLandmarks& pose) {
     computeOptionalKneeAngle(
         pose, RightHip, RightKnee, RightAnkle, rightAngle_);
 
-    if (leftAngle_ >= 0.0 && rightAngle_ >= 0.0) {
-        curAngle_ = std::min(leftAngle_, rightAngle_);
-    }
-    else if (leftAngle_ >= 0.0) {
-        curAngle_ = leftAngle_;
-    }
-    else if (rightAngle_ >= 0.0) {
-        curAngle_ = rightAngle_;
-    }
-    else {
-        curAngle_ = -1.0;
-    }
-
     // ---------------- 主特征1：左右小腿二维投影尺度 ----------------
     // 同一个人的左右小腿真实长度近似相同，因此 log(L/R) 可以较好地抵消
     // “手机整体靠近/远离”造成的共同尺度变化。
@@ -331,10 +318,6 @@ int Cycling::count() const {
     return count_;
 }
 
-double Cycling::angle() const {
-    return curAngle_;
-}
-
 ExerciseState Cycling::state() const {
     return state_;
 }
@@ -392,18 +375,6 @@ void Cycling::reset() {
     seenOpposite_ = false;
     lastCountFrame_ = -100000;
 
-    curAngle_ = -1.0;
-}
-
-void Cycling::setThresholds(double bendAngle,
-                            double extendAngle,
-                            int confirmFrames) {
-    if (bendAngle < extendAngle) {
-        kBendAngle_ = bendAngle;
-        kExtendAngle_ = extendAngle;
-    }
-
-    kConfirmFrames_ = std::max(1, confirmFrames);
 }
 
 void Cycling::setPartialBodyConfig(float visibility,

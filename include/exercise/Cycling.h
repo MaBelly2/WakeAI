@@ -35,17 +35,12 @@ public:
 
     void update(const PoseLandmarks& pose) override;
     int count() const override;
-    double angle() const override;
     ExerciseState state() const override;
     bool valid() const override;
     void reset() override;
 
     // 保留第一轮接口，避免其他代码编译失败。
     // bend/extend 现在只用于“髋点可见时”的辅助膝角调试，不再作为主计数条件。
-    void setThresholds(double bendAngle,
-                       double extendAngle,
-                       int confirmFrames);
-
     // 床上局部腿部模式的主要参数。
     // visibility: 膝、踝关键点最低置信度；建议 0.18~0.30。
     // confirmFrames: A/B 相位连续确认帧数；固定视频先用 2。
@@ -112,9 +107,6 @@ public:
     float visibilityThreshold() const { return kVisibility_; }
     int confirmFrames() const { return kConfirmFrames_; }
 
-    // 兼容旧调试界面。
-    double bendThreshold() const { return kBendAngle_; }
-    double extendThreshold() const { return kExtendAngle_; }
 
 private:
     bool computeLowerLegMetrics(const PoseLandmarks& pose,
@@ -214,12 +206,7 @@ private:
 
     float kSignalAlpha_ = 0.35f;
 
-    // 只用于可选膝角调试。
-    double kBendAngle_ = 115.0;
-    double kExtendAngle_ = 145.0;
 
-    // ExerciseBase 兼容字段。
-    double curAngle_ = -1.0;
 };
 
 } // namespace wakeai
