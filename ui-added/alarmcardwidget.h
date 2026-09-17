@@ -12,7 +12,6 @@ class AlarmCardWidget : public QWidget
     Q_OBJECT
 public:
     explicit AlarmCardWidget(const wakeai::AlarmSetting &alarm, QWidget *parent = nullptr);
-    qint64 alarmId() const { return alarm_.id; }
 
 signals:
     void enabledChanged(qint64 id, bool enabled);

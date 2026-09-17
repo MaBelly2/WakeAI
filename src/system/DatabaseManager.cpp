@@ -312,12 +312,4 @@ bool DatabaseManager::isAchievementUnlocked(const QString& id) const {
     QSqlQuery q(db_); q.prepare("SELECT 1 FROM achievements WHERE achievement_id=? AND unlocked=1");
     q.addBindValue(id); if(!q.exec()) {error_=q.lastError().text();return false;} return q.next();
 }
-QVector<QString> DatabaseManager::unlockedAchievements() const {
-    QVector<QString> ids; if(!isOpen()) return ids;
-    QSqlQuery q(db_);
-    if(q.exec("SELECT achievement_id FROM achievements WHERE unlocked=1 ORDER BY id"))
-        while(q.next()) ids.append(q.value(0).toString());
-    else error_=q.lastError().text();
-    return ids;
-}
 }

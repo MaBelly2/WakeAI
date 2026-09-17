@@ -621,7 +621,6 @@ void MainWindow::on_btnBegin_clicked()
 
     session_.begin(setting_.targetCount);
     paused_ = false;
-    poseValid_ = false;
     state_ = State::Exercising;
     ui->btnPause->setEnabled(true);
     ui->btnPause->setText(QStringLiteral("暂停"));
@@ -670,7 +669,6 @@ void MainWindow::on_btnBegin_clicked()
             [this, workerThread](bool valid) {
                 if (thread_ != workerThread || state_ != State::Exercising || session_.reached() || paused_)
                     return;
-                poseValid_ = valid;
                 ui->lblExerciseSubtitle->setText(valid
                     ? QStringLiteral("关键点有效，请继续完成动作")
                     : QStringLiteral("请后退一步，让全身进入画面"));

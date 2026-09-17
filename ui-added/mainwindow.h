@@ -102,7 +102,6 @@ private:
     int achievementIndex_ = 0;
     bool pending_ = false;
     bool paused_ = false;
-    bool poseValid_ = false;
     bool closing_ = false;
     bool closeApproved_ = false;
 };

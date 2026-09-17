@@ -26,13 +26,13 @@ PoseLandmarks PoseSmoother::update(const PoseLandmarks& input) {
                 history_[i].z = alpha_ * cur.z + (1.0f - alpha_) * history_[i].z;
             }
 
-            // visibility 不做 EMA：动作算法必须知道“这一帧”是否真的看到了该点。
+            // visibility 涓嶅仛 EMA锛氬姩浣滅畻娉曞繀椤荤煡閬撯€滆繖涓€甯р€濇槸鍚︾湡鐨勭湅鍒颁簡璇ョ偣銆?
             history_[i].visibility = cur.visibility;
             output[i] = history_[i];
         }
         else {
-            // 坐标保留历史值，便于下一次重新出现时继续平滑；
-            // 但输出可见度使用当前帧值，所以该点对动作算法是无效的。
+            // 鍧愭爣淇濈暀鍘嗗彶鍊硷紝渚夸簬涓嬩竴娆￠噸鏂板嚭鐜版椂缁х画骞虫粦锛?
+            // 浣嗚緭鍑哄彲瑙佸害浣跨敤褰撳墠甯у€硷紝鎵€浠ヨ鐐瑰鍔ㄤ綔绠楁硶鏄棤鏁堢殑銆?
             if (initialized_[i]) {
                 output[i] = history_[i];
             }
@@ -48,8 +48,5 @@ void PoseSmoother::reset() {
     initialized_.fill(false);
 }
 
-void PoseSmoother::setAlpha(float alpha) {
-    alpha_ = std::clamp(alpha, 0.01f, 1.0f);
-}
 
 } // namespace wakeai

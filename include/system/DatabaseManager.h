@@ -50,7 +50,6 @@ public:
     int consecutiveWakeDaysAt(const QDate& today) const;
     bool unlockAchievement(const QString& id);
     bool isAchievementUnlocked(const QString& id) const;
-    QVector<QString> unlockedAchievements() const;
     QString lastError() const { return error_; }
     QString databasePath() const { return dbPath_; }
 private:

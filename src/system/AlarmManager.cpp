@@ -10,10 +10,6 @@ void AlarmManager::scheduleNext() {
     next_ = QDateTime(now.date(), time_);
     if (next_ <= now) next_ = next_.addDays(1);
 }
-void AlarmManager::setAlarm(int h, int m) {
-    if (ringing_ || !QTime(h, m).isValid()) return;
-    time_ = QTime(h, m); scheduleNext();
-}
 void AlarmManager::setAlarmDateTime(const QDateTime& when) {
     if (ringing_ || !when.isValid()) return;
     next_ = when;

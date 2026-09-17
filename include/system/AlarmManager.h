@@ -8,7 +8,6 @@ class AlarmManager : public QObject {
 public:
     explicit AlarmManager(QObject* parent = nullptr);
     ~AlarmManager() override = default;
-    void setAlarm(int hour, int minute);
     void setAlarmDateTime(const QDateTime& when);
     void setChallenge(int targetCount);
     void setTestAlarmInSeconds(int seconds);

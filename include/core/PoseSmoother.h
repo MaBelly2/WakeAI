@@ -5,9 +5,9 @@
 
 namespace wakeai {
 
-// 对每个关键点做 EMA（指数移动平均）平滑。
-// 注意：坐标可以沿用历史值做平滑，但 visibility 始终使用“当前帧”的值，
-// 因此关键点丢失时动作状态机不会把旧坐标当成有效新数据。
+// 瀵规瘡涓叧閿偣鍋?EMA锛堟寚鏁扮Щ鍔ㄥ钩鍧囷級骞虫粦銆?
+// 娉ㄦ剰锛氬潗鏍囧彲浠ユ部鐢ㄥ巻鍙插€煎仛骞虫粦锛屼絾 visibility 濮嬬粓浣跨敤鈥滃綋鍓嶅抚鈥濈殑鍊硷紝
+// 鍥犳鍏抽敭鐐逛涪澶辨椂鍔ㄤ綔鐘舵€佹満涓嶄細鎶婃棫鍧愭爣褰撴垚鏈夋晥鏂版暟鎹€?
 class PoseSmoother {
 public:
     explicit PoseSmoother(float alpha = 0.35f,
@@ -16,9 +16,6 @@ public:
     PoseLandmarks update(const PoseLandmarks& input);
 
     void reset();
-
-    void setAlpha(float alpha);
-    float alpha() const { return alpha_; }
 
 private:
     float alpha_ = 0.35f;
