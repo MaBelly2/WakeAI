@@ -1,0 +1,151 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="40" width="600" height="45">
+      <content textType="title" fontSize="28" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>项目背景与设计目标</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="90" width="700" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>直击大学生早八痛点：把关闭闹钟与运动任务关联，强制身体先醒</p>
+      </content>
+    </shape>
+
+    <!-- 左侧卡片 - 使用场景 -->
+    <shape type="rect" topLeftX="45" topLeftY="145" width="400" height="160" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.25)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="160" width="120" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>痛点场景</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="200" width="360" height="90">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.6">
+        <p>● 早八闹钟一响，随手关掉继续睡</p>
+        <p>● "再睡5分钟" → 迟到半小时</p>
+        <p>● 普通闹钟只能响，不能让人真正醒过来</p>
+      </content>
+    </shape>
+
+    <!-- 右侧卡片 - 设计目标 -->
+    <shape type="rect" topLeftX="515" topLeftY="145" width="400" height="160" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.25)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="535" topLeftY="160" width="120" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>设计目标</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="535" topLeftY="200" width="360" height="90">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.6">
+        <p>● 灵活设置闹钟，自动统计运动次数</p>
+        <p>● 完成运动才能停铃，强制身体唤醒</p>
+        <p>● 保存完成记录，提供成就激励</p>
+      </content>
+    </shape>
+
+    <!-- 用户流程 -->
+    <shape type="text" topLeftX="45" topLeftY="330" width="200" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="left">
+        <p>用户流程</p>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="45" topLeftY="365" width="180" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="380" width="180" height="30">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true">
+        <p>响铃</p>
+      </content>
+    </shape>
+
+    <line startX="225" startY="395" endX="255" endY="395">
+      <border color="rgba(0,212,255,0.7)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="255" topLeftY="365" width="180" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="255" topLeftY="380" width="180" height="30">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true">
+        <p>完成运动</p>
+      </content>
+    </shape>
+
+    <line startX="435" startY="395" endX="465" endY="395">
+      <border color="rgba(0,212,255,0.7)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="465" topLeftY="365" width="180" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="465" topLeftY="380" width="180" height="30">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true">
+        <p>达到目标</p>
+      </content>
+    </shape>
+
+    <line startX="645" startY="395" endX="675" endY="395">
+      <border color="rgba(0,212,255,0.7)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="675" topLeftY="365" width="180" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.2)"/></fill>
+      <border color="rgba(0,212,255,0.7)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="675" topLeftY="380" width="180" height="30">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>点击关闭</p>
+      </content>
+    </shape>
+
+    <!-- 功能边界说明 -->
+    <shape type="text" topLeftX="45" topLeftY="450" width="870" height="30">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(251,191,36,0.9)" textAlign="left">
+        <p>功能边界：运动唤醒辅助工具，通过身体运动提升清醒度，实际效果仍需用户体验验证。</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>02 / 18</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 45 秒。从大学生最熟悉的早八场景切入，讲清楚为什么普通闹钟叫不醒人。</p>
+      <p>左边讲痛点：随手关闹钟、再睡5分钟就迟到。右边讲目标：必须完成运动才能停铃。</p>
+      <p>下面是用户流程图。强调我们的设计是辅助工具，不夸大效果。</p>
+    </content>
+  </note>
+</slide>

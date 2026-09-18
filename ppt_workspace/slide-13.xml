@@ -1,0 +1,141 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="700" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>铃声管理与交互设计</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>设置、反馈与个性化功能共同支持完整使用过程</p>
+      </content>
+    </shape>
+
+    <!-- 三个截图占位框 -->
+    <!-- 第一个：闹钟编辑 -->
+    <shape type="rect" topLeftX="45" topLeftY="125" width="270" height="200" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1" dashArray="dash"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="200" width="270" height="50">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center" lineSpacing="multiple:1.5">
+        <p>真实截图待补充</p>
+        <p>闹钟编辑</p>
+      </content>
+    </shape>
+
+    <!-- 第二个：铃声选择/试听 -->
+    <shape type="rect" topLeftX="345" topLeftY="125" width="270" height="200" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1" dashArray="dash"/>
+    </shape>
+    <shape type="text" topLeftX="345" topLeftY="200" width="270" height="50">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center" lineSpacing="multiple:1.5">
+        <p>真实截图待补充</p>
+        <p>铃声选择 / 试听</p>
+      </content>
+    </shape>
+
+    <!-- 第三个：完成页面 -->
+    <shape type="rect" topLeftX="645" topLeftY="125" width="270" height="200" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1" dashArray="dash"/>
+    </shape>
+    <shape type="text" topLeftX="645" topLeftY="200" width="270" height="50">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center" lineSpacing="multiple:1.5">
+        <p>真实截图待补充</p>
+        <p>完成页面</p>
+      </content>
+    </shape>
+
+    <!-- 底部三列说明 -->
+    <!-- 左列 -->
+    <shape type="rect" topLeftX="45" topLeftY="350" width="270" height="110" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="365" width="230" height="28">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>页面切换</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="400" width="230" height="50">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.5">
+        <p>QStackedWidget 管理</p>
+        <p>多页面流畅切换</p>
+      </content>
+    </shape>
+
+    <!-- 中列 -->
+    <shape type="rect" topLeftX="345" topLeftY="350" width="270" height="110" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="365" topLeftY="365" width="230" height="28">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>铃声播放</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="365" topLeftY="400" width="230" height="50">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.5">
+        <p>导入、试听、音量调整</p>
+        <p>QMediaPlayer 循环播放</p>
+      </content>
+    </shape>
+
+    <!-- 右列 -->
+    <shape type="rect" topLeftX="645" topLeftY="350" width="270" height="110" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="665" topLeftY="365" width="230" height="28">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>交互动画</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="665" topLeftY="400" width="230" height="50">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.5">
+        <p>进度与次数动画</p>
+        <p>QPainter / 属性动画</p>
+      </content>
+    </shape>
+
+    <!-- 底部说明 -->
+    <shape type="text" topLeftX="45" topLeftY="480" width="870" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>部分内置铃声由正弦波叠加合成 WAV 音频文件</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>13 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 45 秒。铃声支持内置、自定义导入、试听、音量和删除。部分内置音频通过正弦波合成 WAV，QMediaPlayer 循环播放。页面用 QStackedWidget 管理，QPainter 和属性动画提供骨架、进度和次数反馈。展示时替换为实际截图。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

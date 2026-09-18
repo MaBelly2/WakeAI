@@ -4,6 +4,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 qt_add_executable(alarm_ui
     main.cpp
+    startupoverlay.cpp startupoverlay.h
     mainwindow.cpp mainwindow.h mainwindow.ui
     motionworker.cpp motionworker.h
     uiwidgets.cpp uiwidgets.h

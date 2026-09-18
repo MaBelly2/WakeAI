@@ -1,0 +1,116 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="700" height="40">
+      <content textType="title" fontSize="22" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>床上蹬腿：二维信号与自动标定</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>膝、踝提供主要特征，每次稳定左右切换计一次</p>
+      </content>
+    </shape>
+
+    <!-- 左侧 - 两种信号 -->
+    <shape type="rect" topLeftX="45" topLeftY="125" width="420" height="160" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="140" width="200" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>两种输入信号</p>
+      </content>
+    </shape>
+
+    <!-- 信号A -->
+    <shape type="rect" topLeftX="65" topLeftY="180" width="380" height="40" presetHandlers="6">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="75" topLeftY="190" width="360" height="25">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(0,212,255,1)" textAlign="left">
+        <p>A = log(左小腿投影长度 / 右小腿投影长度)</p>
+      </content>
+    </shape>
+
+    <!-- 信号B -->
+    <shape type="rect" topLeftX="65" topLeftY="230" width="380" height="40" presetHandlers="6">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="75" topLeftY="240" width="360" height="25">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(0,212,255,1)" textAlign="left">
+        <p>B = (左膝 y - 右膝 y) / 平均小腿长度</p>
+      </content>
+    </shape>
+
+    <!-- 右侧 - 自动标定与防误计 -->
+    <shape type="rect" topLeftX="495" topLeftY="125" width="420" height="160" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="140" width="250" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>自动标定与防误计</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="180" width="380" height="100">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.7">
+        <p>选择归一化动态范围较大的信号</p>
+        <p>2 帧确认，稳定相位间隔 ≥ 8 帧</p>
+        <p>两次计数间隔 ≥ 10 帧</p>
+        <p>触发阈值设绝对下限</p>
+      </content>
+    </shape>
+
+    <!-- 底部说明卡片 -->
+    <shape type="rect" topLeftX="45" topLeftY="310" width="870" height="160" presetHandlers="8">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.25)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="325" width="250" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>算法要点与限制</p>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="65" topLeftY="365" width="830" height="95">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.7">
+        <p>髋点仅辅助显示，不作为计数必需条件；针对只拍到下半身的场景设计</p>
+        <p>每次稳定左右切换计一次（EachPedal 模式），完整往返计两次</p>
+        <p>标定结束后不会自动重新选择信号与阈值；二维投影受遮挡、视角及左右点误识别影响</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>10 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 85 秒。这是最复杂的动作。A 是左右小腿投影长度的对数比，B 是左右膝 y 差除以平均小腿长度。初始收集变化范围后选归一化动态范围较大的信号，不能称为噪声最小的信号。根据基线与上下阈值判断左右相位。当前 EachPedal 每次切换计一，完整往返计两次。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

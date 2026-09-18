@@ -1,0 +1,243 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="30" width="700" height="38">
+      <content textType="title" fontSize="22" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>测试方案与结果展示</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="70" width="700" height="22">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>业务正确性与动作识别效果分开验证</p>
+      </content>
+    </shape>
+
+    <!-- 左侧 - 已有测试代码 -->
+    <shape type="rect" topLeftX="45" topLeftY="110" width="300" height="130" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="125" width="200" height="28">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>已有测试代码</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="160" width="260" height="70">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.6">
+        <p>会话约束、数据库迁移与去重</p>
+        <p>成就统计、响铃与稍后提醒</p>
+      </content>
+    </shape>
+
+    <!-- 右侧 - 测试表格标题 -->
+    <shape type="text" topLeftX="370" topLeftY="115" width="500" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>识别测试计划</p>
+      </content>
+    </shape>
+
+    <!-- 测试表格 - 用矩形模拟 -->
+    <!-- 表头 -->
+    <shape type="rect" topLeftX="370" topLeftY="145" width="545" height="30">
+      <fill><fillColor color="rgba(0,212,255,0.2)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="378" topLeftY="150" width="160" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>测试场景</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="540" topLeftY="150" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>人工次数</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="625" topLeftY="150" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>程序次数</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="710" topLeftY="150" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>误计/漏计</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="795" topLeftY="150" width="115" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>观察结论</p>
+      </content>
+    </shape>
+
+    <!-- 行1：深蹲 -->
+    <shape type="text" topLeftX="378" topLeftY="185" width="160" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>深蹲：标准动作</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="540" topLeftY="185" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待标注</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="625" topLeftY="185" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="710" topLeftY="185" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="795" topLeftY="185" width="115" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+
+    <line startX="370" startY="212" endX="915" endY="212">
+      <border color="rgba(0,212,255,0.1)" width="1"/>
+    </line>
+
+    <!-- 行2：开合跳 -->
+    <shape type="text" topLeftX="378" topLeftY="220" width="160" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>开合跳：标准动作</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="540" topLeftY="220" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待标注</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="625" topLeftY="220" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="710" topLeftY="220" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="795" topLeftY="220" width="115" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+
+    <line startX="370" startY="247" endX="915" endY="247">
+      <border color="rgba(0,212,255,0.1)" width="1"/>
+    </line>
+
+    <!-- 行3：蹬腿 -->
+    <shape type="text" topLeftX="378" topLeftY="255" width="160" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>蹬腿：局部身体入镜</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="540" topLeftY="255" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待标注</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="625" topLeftY="255" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="710" topLeftY="255" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="795" topLeftY="255" width="115" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+
+    <line startX="370" startY="282" endX="915" endY="282">
+      <border color="rgba(0,212,255,0.1)" width="1"/>
+    </line>
+
+    <!-- 行4：复杂场景 -->
+    <shape type="text" topLeftX="378" topLeftY="290" width="160" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>遮挡 / 幅度 / 角度变化</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="540" topLeftY="290" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待标注</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="625" topLeftY="290" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="710" topLeftY="290" width="80" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="795" topLeftY="290" width="115" height="22">
+      <content textType="body" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>待测试</p>
+      </content>
+    </shape>
+
+    <!-- 底部测试流程 -->
+    <shape type="rect" topLeftX="45" topLeftY="340" width="870" height="80" presetHandlers="8">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.25)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="355" width="200" height="28">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>测试流程</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="390" width="830" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="center">
+        <p>固定视频 → 人工标注 → 程序计数 → 逐帧对比 → 定位误计/漏计原因</p>
+      </content>
+    </shape>
+
+    <!-- 底部说明 -->
+    <shape type="text" topLeftX="45" topLeftY="445" width="870" height="30">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>相同总次数也可能同时存在误计和漏计，不能只看总差值判断准确性</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>14 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 65 秒。已有测试代码覆盖会话、数据库迁移和去重、连续天数和成就以及闹钟调度。但当前材料没有执行结果。识别测试应固定视频并人工标注，对照 CSV 逐帧定位误计漏计，增加遮挡、幅度不足和角度变化场景。相同总次数也可能同时有误计和漏计，不能只看差值。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

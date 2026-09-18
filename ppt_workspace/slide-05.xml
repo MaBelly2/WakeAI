@@ -1,0 +1,167 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="700" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>闹钟调度与任务状态管理</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>统一调度最近事件，状态检查避免重复触发</p>
+      </content>
+    </shape>
+
+    <!-- 状态机 - 5个状态节点 -->
+    <shape type="rect" topLeftX="45" topLeftY="130" width="130" height="50" presetHandlers="25">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="143" width="130" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true">
+        <p>Idle</p>
+      </content>
+    </shape>
+
+    <line startX="175" startY="155" endX="205" endY="155">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="205" topLeftY="130" width="130" height="50" presetHandlers="25">
+      <fill><fillColor color="rgba(251,191,36,0.2)"/></fill>
+      <border color="rgba(251,191,36,0.7)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="205" topLeftY="143" width="130" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(251,191,36,1)" textAlign="center" bold="true">
+        <p>Ringing</p>
+      </content>
+    </shape>
+
+    <line startX="335" startY="155" endX="365" endY="155">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="365" topLeftY="130" width="130" height="50" presetHandlers="25">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="365" topLeftY="143" width="130" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true">
+        <p>Preparing</p>
+      </content>
+    </shape>
+
+    <line startX="495" startY="155" endX="525" endY="155">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="525" topLeftY="130" width="130" height="50" presetHandlers="25">
+      <fill><fillColor color="rgba(0,212,255,0.2)"/></fill>
+      <border color="rgba(0,212,255,0.7)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="525" topLeftY="143" width="130" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>Exercising</p>
+      </content>
+    </shape>
+
+    <line startX="655" startY="155" endX="685" endY="155">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="685" topLeftY="130" width="130" height="50" presetHandlers="25">
+      <fill><fillColor color="rgba(34,197,94,0.2)"/></fill>
+      <border color="rgba(34,197,94,0.7)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="685" topLeftY="143" width="130" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(34,197,94,1)" textAlign="center" bold="true">
+        <p>Done</p>
+      </content>
+    </shape>
+
+    <!-- 状态说明标签 -->
+    <shape type="text" topLeftX="205" topLeftY="185" width="130" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>到时触发</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="685" topLeftY="185" width="130" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>达标后点击完成</p>
+      </content>
+    </shape>
+
+    <!-- 左侧卡片 - 调度规则 -->
+    <shape type="rect" topLeftX="45" topLeftY="230" width="420" height="200" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="245" width="200" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>调度规则</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="285" width="380" height="130">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.8">
+        <p>七位掩码保存重复日期</p>
+        <p>遍历闹钟，选择最近触发时间</p>
+        <p>每 250 ms 检查一次</p>
+      </content>
+    </shape>
+
+    <!-- 右侧卡片 - 代码片段 -->
+    <shape type="rect" topLeftX="495" topLeftY="230" width="420" height="200" presetHandlers="8">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="245" width="200" height="28">
+      <content textType="body" fontSize="13" fontFamily="Consolas" color="rgba(0,212,255,1)" textAlign="left">
+        <p>// 触发检查</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="280" width="380" height="130">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.6">
+        <p>if (!enabled_ || ringing_)</p>
+        <p>    return;</p>
+        <p>if (now &lt; next_) return;</p>
+        <p>ringing_ = true;</p>
+        <p>completed_ = false;</p>
+        <p>emit alarmTriggered();</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>05 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 60 秒。七位掩码表示一周，0 表示单次，0x1F 为工作日，0x60 为周末，0x7F 为每天。遍历闹钟选择最近一次交给 AlarmManager，每 250 毫秒检查。稍后提醒延后触发，单次完成后停用。当前依赖应用进程运行。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

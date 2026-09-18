@@ -1,0 +1,122 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="600" height="40">
+      <content textType="title" fontSize="26" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>系统架构与技术选型</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="80" width="700" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>界面、识别、动作规则与系统服务分开组织</p>
+      </content>
+    </shape>
+
+    <!-- 四层架构 - 左侧标签 + 右侧内容 -->
+    <!-- 界面层 -->
+    <shape type="rect" topLeftX="45" topLeftY="140" width="120" height="65" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="158" width="120" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>界面层</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="190" topLeftY="155" width="600" height="35">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>Qt Widgets · MainWindow · CameraView</p>
+      </content>
+    </shape>
+
+    <!-- 分隔线 -->
+    <line startX="185" startY="140" endX="185" endY="430">
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </line>
+
+    <!-- 识别层 -->
+    <shape type="rect" topLeftX="45" topLeftY="215" width="120" height="65" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="233" width="120" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>识别层</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="190" topLeftY="230" width="650" height="35">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>MotionWorker · PoseDetector · PoseSmoother</p>
+      </content>
+    </shape>
+
+    <!-- 动作层 -->
+    <shape type="rect" topLeftX="45" topLeftY="290" width="120" height="65" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="308" width="120" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>动作层</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="190" topLeftY="305" width="700" height="35">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>Squat · JumpingJack · Cycling · WorkoutSession</p>
+      </content>
+    </shape>
+
+    <!-- 系统层 -->
+    <shape type="rect" topLeftX="45" topLeftY="365" width="120" height="65" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="383" width="120" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>系统层</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="190" topLeftY="380" width="720" height="35">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left">
+        <p>AlarmManager · DatabaseManager · AchievementEngine</p>
+      </content>
+    </shape>
+
+    <!-- 底部技术栈说明 -->
+    <shape type="text" topLeftX="45" topLeftY="460" width="870" height="30">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="left">
+        <p>C++17 实现逻辑   Qt 协调界面/线程/音频   OpenCV DNN 推理   SQLite 存储</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>04 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 55 秒。沿数据流解释四层结构。后台将姿态交给统一动作接口，再通过信号更新界面和会话。CMake 构建 GUI 与独立调试程序，两者复用核心识别代码。架构图是职责示意，不代表严格分层依赖约束。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "startupoverlay.h"
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QMessageBox>
@@ -20,5 +21,14 @@ int main(int argc,char* argv[]) {
     if(!ok||options.cameraIndex<0||(!options.videoPath.isEmpty()&&!options.testMode)) {
         QMessageBox::critical(nullptr,"参数错误","摄像头编号必须为非负整数；视频输入必须加 --test-mode。");return 2;
     }
-    MainWindow window(options);window.show();return app.exec();
+    // 开屏动画：先显示圆角图标，再显示铅笔风 "WakeAI" 文字，结束后再启动主窗口。
+    StartupOverlay splash;
+    splash.show();
+    splash.start();
+    QObject::connect(&splash, &StartupOverlay::ready, &app, [&]() {
+        auto* window = new MainWindow(options);
+        window->setAttribute(Qt::WA_DeleteOnClose);
+        window->show();
+    });
+    return app.exec();
 }

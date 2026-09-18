@@ -1,0 +1,165 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="600" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>人体姿态识别流程</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>模型提取 17 个关键点，后续规则负责动作计数</p>
+      </content>
+    </shape>
+
+    <!-- 识别流程 - 7个步骤，分两行 -->
+    <!-- 第一行 4个步骤 -->
+    <shape type="rect" topLeftX="45" topLeftY="130" width="185" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="145" width="185" height="30">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true">
+        <p>读取画面</p>
+      </content>
+    </shape>
+
+    <line startX="230" startY="160" endX="250" endY="160">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="250" topLeftY="130" width="185" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="250" topLeftY="145" width="185" height="30">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true" lineSpacing="multiple:1.4">
+        <p>640×640 缩放</p>
+        <p>与灰边填充</p>
+      </content>
+    </shape>
+
+    <line startX="435" startY="160" endX="455" endY="160">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="455" topLeftY="130" width="185" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="455" topLeftY="145" width="185" height="30">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true">
+        <p>RGB / 归一化</p>
+      </content>
+    </shape>
+
+    <line startX="640" startY="160" endX="660" endY="160">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="660" topLeftY="130" width="185" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.2)"/></fill>
+      <border color="rgba(0,212,255,0.7)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="660" topLeftY="145" width="185" height="30">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>YOLO Pose</p>
+      </content>
+    </shape>
+
+    <!-- 第二行 3个步骤（居中） -->
+    <shape type="rect" topLeftX="100" topLeftY="225" width="185" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="240" width="185" height="30">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true" lineSpacing="multiple:1.4">
+        <p>置信度过滤</p>
+        <p>/ NMS</p>
+      </content>
+    </shape>
+
+    <line startX="285" startY="255" endX="305" endY="255">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="305" topLeftY="225" width="185" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(51,65,85,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="305" topLeftY="240" width="185" height="30">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="center" bold="true" lineSpacing="multiple:1.4">
+        <p>选择置信度</p>
+        <p>最高的人</p>
+      </content>
+    </shape>
+
+    <line startX="490" startY="255" endX="510" endY="255">
+      <border color="rgba(0,212,255,0.6)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <shape type="rect" topLeftX="510" topLeftY="225" width="185" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(34,197,94,0.2)"/></fill>
+      <border color="rgba(34,197,94,0.7)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="510" topLeftY="240" width="185" height="30">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(34,197,94,1)" textAlign="center" bold="true">
+        <p>还原 17 点坐标</p>
+      </content>
+    </shape>
+
+    <!-- 代码片段卡片 -->
+    <shape type="rect" topLeftX="45" topLeftY="320" width="870" height="150" presetHandlers="8">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.25)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="335" width="800" height="25">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(0,212,255,1)" textAlign="left">
+        <p>// OpenCV DNN 推理</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="370" width="830" height="90">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.6">
+        <p>net_ = cv::dnn::readNetFromONNX(modelPath);</p>
+        <p>net_.setInput(blob);                       // 归一化后输入</p>
+        <p>cv::Mat output = net_.forward();           // 模型推理输出</p>
+        <p>// 解析 56 维属性：4框 + 1置信度 + 17×3关键点</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>06 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 55 秒。等比例缩放和填充避免拉伸人体。输入 640×640，转换 RGB 并归一化，OpenCV DNN 执行 ONNX 模型。低置信度过滤和 NMS 后选置信度最高的人，并还原坐标。33 点仅是内部编号接口，没有额外完整 33 点，也没有真实三维深度。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

@@ -1,0 +1,2507 @@
+<presentation id="DPUosmcpDl71W4d3xCKcgwGqnXc" xmlns="https://www.larkoffice.com/sml/2.0" width="960" height="540">
+  <title>WakeAI_课程答辩</title>
+  <theme>
+    <background>
+      <fillColor color="rgba(255, 255, 255, 1)"/>
+    </background>
+    <textStyles>
+      <headline fontColor="rgba(31, 35, 41, 1)"/>
+      <sub-headline fontColor="rgba(31, 35, 41, 1)"/>
+      <body fontColor="rgba(31, 35, 41, 1)"/>
+      <caption fontColor="rgba(155, 158, 162, 1)" fontSize="14"/>
+    </textStyles>
+  </theme>
+  <slide id="pwd">
+    <style>
+      <fill id="fwd">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bxQ" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <line id="bxH" startX="44.999999999999986" startY="120" endX="45.00000000000001" endY="420.001666662037">
+        <border color="rgba(0, 212, 255, 0.5)" width="3"/>
+      </line>
+      <shape width="600" height="50" topLeftX="65" topLeftY="50" type="text" id="bxR">
+        <content textType="title" fontSize="32" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>WakeAI 智能运动唤醒助手</p>
+        </content>
+      </shape>
+      <shape width="500" height="30" topLeftX="65" topLeftY="105" type="text" id="bxg">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>基于人体姿态识别的运动闹钟系统</p>
+        </content>
+      </shape>
+      <shape width="480" height="120" topLeftX="65" topLeftY="180" type="text" id="bxG">
+        <content textType="title" fontSize="36" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" lineSpacing="multiple:1.3" textAlign="left">
+          <p>用一组运动，</p>
+          <p>完成一次清醒的开始。</p>
+        </content>
+      </shape>
+      <shape width="480" height="50" topLeftX="65" topLeftY="330" type="text" id="bxU">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>C++17 / Qt / OpenCV</p>
+          <p>YOLO Pose / SQLite</p>
+        </content>
+      </shape>
+      <shape width="500" height="60" topLeftX="65" topLeftY="420" type="text" id="bqB">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>课程：[待填写] 姓名：[待填写] 学号：[待填写]</p>
+          <p>班级：[待填写] 指导教师：[待填写]</p>
+        </content>
+      </shape>
+      <shape width="320" height="240" topLeftX="580" topLeftY="170" presetHandlers="8" type="rect" id="bxr">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" dashArray="dash" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="320" height="60" topLeftX="580" topLeftY="260" type="text" id="bxT">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>真实截图待补充</p>
+          <p>项目首页或运动识别界面</p>
+        </content>
+      </shape>
+      <shape width="8" height="8" topLeftX="560" topLeftY="160" type="ellipse" id="bxk">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="900" topLeftY="410" type="ellipse" id="bxy">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.6)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bxO">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bqD">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>01 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bDb">
+      <content>
+        <p>建议用时 30 秒。介绍项目定位：把闹钟与摄像头动作计数结合，完成指定运动后通过正常流程关闭铃声。接下来按为什么做、实现什么、如何实现和如何验证展开。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwJ">
+    <style>
+      <fill id="fwJ">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bCX" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="600" height="45" topLeftX="45" topLeftY="40" type="text" id="bCz">
+        <content textType="title" fontSize="28" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>项目背景与设计目标</p>
+        </content>
+      </shape>
+      <shape width="700" height="28" topLeftX="45" topLeftY="90" type="text" id="bCp">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>直击大学生早八痛点：把关闭闹钟与运动任务关联，强制身体先醒</p>
+        </content>
+      </shape>
+      <shape width="400" height="160" topLeftX="45" topLeftY="145" presetHandlers="8" type="rect" id="bCq">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.25)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="120" height="30" topLeftX="65" topLeftY="160" type="text" id="bCL">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>痛点场景</p>
+        </content>
+      </shape>
+      <shape width="360" height="90" topLeftX="65" topLeftY="200" type="text" id="bCj">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>● 早八闹钟一响，随手关掉继续睡</p>
+          <p>● &quot;再睡5分钟&quot; → 迟到半小时</p>
+          <p>● 普通闹钟只能响，不能让人真正醒过来</p>
+        </content>
+      </shape>
+      <shape width="400" height="160" topLeftX="515" topLeftY="145" presetHandlers="8" type="rect" id="bCS">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.25)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="120" height="30" topLeftX="535" topLeftY="160" type="text" id="bCm">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>设计目标</p>
+        </content>
+      </shape>
+      <shape width="360" height="90" topLeftX="535" topLeftY="200" type="text" id="bCv">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>● 灵活设置闹钟，自动统计运动次数</p>
+          <p>● 完成运动才能停铃，强制身体唤醒</p>
+          <p>● 保存完成记录，提供成就激励</p>
+        </content>
+      </shape>
+      <shape width="200" height="25" topLeftX="45" topLeftY="330" type="text" id="bCo">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="left">
+          <p>用户流程</p>
+        </content>
+      </shape>
+      <shape width="180" height="60" topLeftX="45" topLeftY="365" presetHandlers="6" type="rect" id="bCi">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="30" topLeftX="45" topLeftY="380" type="text" id="bCI">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>响铃</p>
+        </content>
+      </shape>
+      <line id="bCF" startX="225" startY="395" endX="255.01666203960727" endY="395">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="180" height="60" topLeftX="255" topLeftY="365" presetHandlers="6" type="rect" id="bCb">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="30" topLeftX="255" topLeftY="380" type="text" id="bCu">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>完成运动</p>
+        </content>
+      </shape>
+      <line id="bCA" startX="435" startY="395" endX="465.01666203960724" endY="395">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="180" height="60" topLeftX="465" topLeftY="365" presetHandlers="6" type="rect" id="bCY">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="30" topLeftX="465" topLeftY="380" type="text" id="bCC">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>达到目标</p>
+        </content>
+      </shape>
+      <line id="bCe" startX="645" startY="395" endX="675.0166620396072" endY="395">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="180" height="60" topLeftX="675" topLeftY="365" presetHandlers="6" type="rect" id="bCw">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.2)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.7)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="30" topLeftX="675" topLeftY="380" type="text" id="bCs">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>点击关闭</p>
+        </content>
+      </shape>
+      <shape width="870" height="30" topLeftX="45" topLeftY="450" type="text" id="bCx">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(251, 191, 36, 0.902)" textAlign="left">
+          <p>功能边界：运动唤醒辅助工具，通过身体运动提升清醒度，实际效果仍需用户体验验证。</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bCE">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bCP">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>02 / 18</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bBA">
+      <content>
+        <p>建议用时 45 秒。从大学生最熟悉的早八场景切入，讲清楚为什么普通闹钟叫不醒人。</p>
+        <p>左边讲痛点：随手关闹钟、再睡5分钟就迟到。右边讲目标：必须完成运动才能停铃。</p>
+        <p>下面是用户流程图。强调我们的设计是辅助工具，不夸大效果。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwr">
+    <style>
+      <fill id="fwr">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bik" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="biO">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>创新点：直击早八起床痛点</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bCW">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>为什么普通闹钟叫不醒大学生？我们用运动来解决</p>
+        </content>
+      </shape>
+      <shape width="420" height="220" topLeftX="45" topLeftY="125" presetHandlers="8" type="rect" id="biH">
+        <fill>
+          <fillColor color="rgba(239, 68, 68, 0.08)"/>
+        </fill>
+        <border color="rgba(239, 68, 68, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="30" topLeftX="65" topLeftY="140" type="text" id="big">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(239, 68, 68, 1)" bold="true" textAlign="left">
+          <p>痛点：早八困局</p>
+        </content>
+      </shape>
+      <shape width="380" height="140" topLeftX="65" topLeftY="185" type="text" id="biU">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.8" textAlign="left">
+          <p>● 闹钟一响，随手关掉继续睡</p>
+          <p>● &quot;再睡5分钟&quot; → 迟到半小时</p>
+          <p>● 睡眠惯性：大脑还没开机</p>
+          <p>● 普通闹钟只能&quot;响&quot;，不能&quot;醒&quot;</p>
+        </content>
+      </shape>
+      <shape width="420" height="220" topLeftX="495" topLeftY="125" presetHandlers="8" type="rect" id="bCZ">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.08)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="30" topLeftX="515" topLeftY="140" type="text" id="biT">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="left">
+          <p>解法：运动唤醒</p>
+        </content>
+      </shape>
+      <shape width="380" height="140" topLeftX="515" topLeftY="185" type="text" id="biy">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.8" textAlign="left">
+          <p>● 必须完成运动才能关闹钟</p>
+          <p>● 身体动起来 → 心率提升 → 真正清醒</p>
+          <p>● 摄像头自动计数，不用手动操作</p>
+          <p>● 从&quot;被动响铃&quot;到&quot;主动唤醒&quot;</p>
+        </content>
+      </shape>
+      <shape width="870" height="100" topLeftX="45" topLeftY="375" presetHandlers="8" type="rect" id="bCD">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.1)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="390" type="text" id="biQ">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>创新价值</p>
+        </content>
+      </shape>
+      <shape width="830" height="40" topLeftX="65" topLeftY="425" type="text" id="biR">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="center">
+          <p>运动唤醒 + 自动计数 + 成就激励 = 让起床从&quot;痛苦&quot;变成&quot;有成就感的小挑战&quot;</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="biG">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bCB">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>03 / 18</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bir">
+      <content>
+        <p>建议用时 40 秒。从大学生最熟悉的早八场景切入，讲清楚为什么普通闹钟叫不醒人，以及我们的运动唤醒方案如何解决这个问题。强调从&quot;被动响铃&quot;到&quot;主动唤醒&quot;的转变。</p>
+        <p>这个创新点贴近大学生生活，容易引起共鸣。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwo">
+    <style>
+      <fill id="fwo">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bqx" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="600" height="40" topLeftX="45" topLeftY="35" type="text" id="bqP">
+        <content textType="title" fontSize="26" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>功能总览与使用流程</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="80" type="text" id="bqb">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>达标后点击完成，才会停止铃声</p>
+        </content>
+      </shape>
+      <shape width="180" height="55" topLeftX="45" topLeftY="125" presetHandlers="6" type="rect" id="bqJ">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="28" topLeftX="45" topLeftY="140" type="text" id="bqA">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>设置闹钟</p>
+        </content>
+      </shape>
+      <line id="bqC" startX="225" startY="152" endX="250.0199920063936" endY="152">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="180" height="55" topLeftX="250" topLeftY="125" presetHandlers="6" type="rect" id="bqm">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="28" topLeftX="250" topLeftY="140" type="text" id="bqf">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>到时响铃</p>
+        </content>
+      </shape>
+      <line id="bqo" startX="430" startY="152" endX="455.0199920063936" endY="152">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="180" height="55" topLeftX="455" topLeftY="125" presetHandlers="6" type="rect" id="bqI">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="28" topLeftX="455" topLeftY="140" type="text" id="bqz">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>开始识别</p>
+        </content>
+      </shape>
+      <line id="bql" startX="635" startY="152" endX="660.0199920063936" endY="152">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="180" height="55" topLeftX="660" topLeftY="125" presetHandlers="6" type="rect" id="bqq">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="28" topLeftX="660" topLeftY="140" type="text" id="bqj">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>达到目标</p>
+        </content>
+      </shape>
+      <shape width="250" height="30" topLeftX="45" topLeftY="210" type="text" id="bqw">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>深蹲 / 开合跳 / 床上蹬腿</p>
+        </content>
+      </shape>
+      <shape width="150" height="55" topLeftX="350" topLeftY="210" presetHandlers="6" type="rect" id="bqK">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="150" height="28" topLeftX="350" topLeftY="225" type="text" id="bqE">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>点击完成</p>
+        </content>
+      </shape>
+      <line id="bqF" startX="500" startY="237" endX="525.0199920063936" endY="237">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="150" height="55" topLeftX="525" topLeftY="210" presetHandlers="6" type="rect" id="bqu">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="150" height="28" topLeftX="525" topLeftY="225" type="text" id="bqZ">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>停铃</p>
+        </content>
+      </shape>
+      <line id="bqY" startX="675" startY="237" endX="700.0199920063936" endY="237">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="150" height="55" topLeftX="700" topLeftY="210" presetHandlers="6" type="rect" id="bqS">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.2)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.7)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="150" height="28" topLeftX="700" topLeftY="225" type="text" id="bqv">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>保存记录</p>
+        </content>
+      </shape>
+      <shape width="420" height="140" topLeftX="45" topLeftY="310" presetHandlers="8" type="rect" id="bqc">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="325" type="text" id="bqW">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>闹钟与音频</p>
+        </content>
+      </shape>
+      <shape width="380" height="70" topLeftX="65" topLeftY="365" type="text" id="bqi">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.7" textAlign="left">
+          <p>新增、编辑、删除、启停、重复日期</p>
+          <p>稍后提醒、铃声导入、试听与音量</p>
+        </content>
+      </shape>
+      <shape width="420" height="140" topLeftX="495" topLeftY="310" presetHandlers="8" type="rect" id="bqX">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="515" topLeftY="325" type="text" id="bqp">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>持续反馈</p>
+        </content>
+      </shape>
+      <shape width="380" height="70" topLeftX="515" topLeftY="365" type="text" id="bqL">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.7" textAlign="left">
+          <p>历史记录、连续完成天数、成就</p>
+          <p>实时次数与目标进度</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bqe">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bqs">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>03 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bDt">
+      <content>
+        <p>建议用时 55 秒。沿主流程说明用户如何使用。运动挑战有三种动作，主界面显示画面、骨架、次数、进度与提示。重点解释达到次数和完成任务是两个事件，防止把达标说成自动停铃。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwQ">
+    <style>
+      <fill id="fwQ">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bxB" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="600" height="40" topLeftX="45" topLeftY="35" type="text" id="bxx">
+        <content textType="title" fontSize="26" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>系统架构与技术选型</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="80" type="text" id="bxE">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>界面、识别、动作规则与系统服务分开组织</p>
+        </content>
+      </shape>
+      <shape width="120" height="65" topLeftX="45" topLeftY="140" presetHandlers="6" type="rect" id="bxP">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="120" height="30" topLeftX="45" topLeftY="158" type="text" id="bxD">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>界面层</p>
+        </content>
+      </shape>
+      <shape width="600" height="35" topLeftX="190" topLeftY="155" type="text" id="bxA">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>Qt Widgets · MainWindow · CameraView</p>
+        </content>
+      </shape>
+      <line id="bxY" startX="185.00000000000003" startY="140" endX="185.00000000000009" endY="430.0017241328058">
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+      </line>
+      <shape width="120" height="65" topLeftX="45" topLeftY="215" presetHandlers="6" type="rect" id="bxC">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="120" height="30" topLeftX="45" topLeftY="233" type="text" id="bxS">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>识别层</p>
+        </content>
+      </shape>
+      <shape width="650" height="35" topLeftX="190" topLeftY="230" type="text" id="bAU">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>MotionWorker · PoseDetector · PoseSmoother</p>
+        </content>
+      </shape>
+      <shape width="120" height="65" topLeftX="45" topLeftY="290" presetHandlers="6" type="rect" id="bxZ">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="120" height="30" topLeftX="45" topLeftY="308" type="text" id="bxo">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>动作层</p>
+        </content>
+      </shape>
+      <shape width="700" height="35" topLeftX="190" topLeftY="305" type="text" id="bxi">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>Squat · JumpingJack · Cycling · WorkoutSession</p>
+        </content>
+      </shape>
+      <shape width="120" height="65" topLeftX="45" topLeftY="365" presetHandlers="6" type="rect" id="bxI">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="120" height="30" topLeftX="45" topLeftY="383" type="text" id="bAO">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>系统层</p>
+        </content>
+      </shape>
+      <shape width="720" height="35" topLeftX="190" topLeftY="380" type="text" id="bxW">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>AlarmManager · DatabaseManager · AchievementEngine</p>
+        </content>
+      </shape>
+      <shape width="870" height="30" topLeftX="45" topLeftY="460" type="text" id="bxq">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="left">
+          <p>C++17 实现逻辑 Qt 协调界面/线程/音频 OpenCV DNN 推理 SQLite 存储</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bxL">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bxj">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>04 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bDW">
+      <content>
+        <p>建议用时 55 秒。沿数据流解释四层结构。后台将姿态交给统一动作接口，再通过信号更新界面和会话。CMake 构建 GUI 与独立调试程序，两者复用核心识别代码。架构图是职责示意，不代表严格分层依赖约束。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwa">
+    <style>
+      <fill id="fwa">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bqG" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="boB">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>闹钟调度与任务状态管理</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="boA">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>统一调度最近事件，状态检查避免重复触发</p>
+        </content>
+      </shape>
+      <shape width="130" height="50" topLeftX="45" topLeftY="130" presetHandlers="25" type="rect" id="bqh">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="130" height="25" topLeftX="45" topLeftY="143" type="text" id="bqa">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>Idle</p>
+        </content>
+      </shape>
+      <line id="bqQ" startX="175" startY="155" endX="205.01666203960727" endY="155">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="130" height="50" topLeftX="205" topLeftY="130" presetHandlers="25" type="rect" id="bqR">
+        <fill>
+          <fillColor color="rgba(251, 191, 36, 0.2)"/>
+        </fill>
+        <border color="rgba(251, 191, 36, 0.7)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="130" height="25" topLeftX="205" topLeftY="143" type="text" id="boD">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="center">
+          <p>Ringing</p>
+        </content>
+      </shape>
+      <line id="boo" startX="335" startY="155" endX="365.01666203960724" endY="155">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="130" height="50" topLeftX="365" topLeftY="130" presetHandlers="25" type="rect" id="bqd">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="130" height="25" topLeftX="365" topLeftY="143" type="text" id="bqN">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>Preparing</p>
+        </content>
+      </shape>
+      <line id="bqT" startX="495" startY="155" endX="525.0166620396072" endY="155">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="130" height="50" topLeftX="525" topLeftY="130" presetHandlers="25" type="rect" id="bqy">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.2)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.7)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="130" height="25" topLeftX="525" topLeftY="143" type="text" id="bqU">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>Exercising</p>
+        </content>
+      </shape>
+      <line id="boZ" startX="655" startY="155" endX="685.0166620396072" endY="155">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="130" height="50" topLeftX="685" topLeftY="130" presetHandlers="25" type="rect" id="boq">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.2)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.7)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="130" height="25" topLeftX="685" topLeftY="143" type="text" id="bqV">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="center">
+          <p>Done</p>
+        </content>
+      </shape>
+      <shape width="130" height="20" topLeftX="205" topLeftY="185" type="text" id="bqt">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>到时触发</p>
+        </content>
+      </shape>
+      <shape width="130" height="20" topLeftX="685" topLeftY="185" type="text" id="bqH">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>达标后点击完成</p>
+        </content>
+      </shape>
+      <shape width="420" height="200" topLeftX="45" topLeftY="230" presetHandlers="8" type="rect" id="bqg">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="245" type="text" id="bqO">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>调度规则</p>
+        </content>
+      </shape>
+      <shape width="380" height="130" topLeftX="65" topLeftY="285" type="text" id="boW">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.8" textAlign="left">
+          <p>七位掩码保存重复日期</p>
+          <p>遍历闹钟，选择最近触发时间</p>
+          <p>每 250 ms 检查一次</p>
+        </content>
+      </shape>
+      <shape width="420" height="200" topLeftX="495" topLeftY="230" presetHandlers="8" type="rect" id="box">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="515" topLeftY="245" type="text" id="bqn">
+        <content fontSize="13" fontFamily="Consolas" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>// 触发检查</p>
+        </content>
+      </shape>
+      <shape width="380" height="130" topLeftX="515" topLeftY="280" type="text" id="bqM">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>if (!enabled_ || ringing_)</p>
+          <p>return;</p>
+          <p>if (now &lt; next_) return;</p>
+          <p>ringing_ = true;</p>
+          <p>completed_ = false;</p>
+          <p>emit alarmTriggered();</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bqr">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bqk">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>05 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bBc">
+      <content>
+        <p>建议用时 60 秒。七位掩码表示一周，0 表示单次，0x1F 为工作日，0x60 为周末，0x7F 为每天。遍历闹钟选择最近一次交给 AlarmManager，每 250 毫秒检查。稍后提醒延后触发，单次完成后停用。当前依赖应用进程运行。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwL">
+    <style>
+      <fill id="fwL">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bog" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="600" height="40" topLeftX="45" topLeftY="35" type="text" id="boU">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>人体姿态识别流程</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bol">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>模型提取 17 个关键点，后续规则负责动作计数</p>
+        </content>
+      </shape>
+      <shape width="185" height="60" topLeftX="45" topLeftY="130" presetHandlers="6" type="rect" id="boV">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="185" height="30" topLeftX="45" topLeftY="145" type="text" id="bot">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>读取画面</p>
+        </content>
+      </shape>
+      <line id="boH" startX="230" startY="160" endX="250.0249843945008" endY="160">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="185" height="60" topLeftX="250" topLeftY="130" presetHandlers="6" type="rect" id="boT">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="185" height="30" topLeftX="250" topLeftY="145" type="text" id="boy">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" lineSpacing="multiple:1.4" textAlign="center">
+          <p>640×640 缩放</p>
+          <p>与灰边填充</p>
+        </content>
+      </shape>
+      <line id="bYD" startX="435" startY="160" endX="455.0249843945008" endY="160">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="185" height="60" topLeftX="455" topLeftY="130" presetHandlers="6" type="rect" id="bof">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="185" height="30" topLeftX="455" topLeftY="145" type="text" id="boc">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>RGB / 归一化</p>
+        </content>
+      </shape>
+      <line id="bod" startX="640" startY="160" endX="660.0249843945007" endY="160">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="185" height="60" topLeftX="660" topLeftY="130" presetHandlers="6" type="rect" id="boN">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.2)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.7)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="185" height="30" topLeftX="660" topLeftY="145" type="text" id="boR">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>YOLO Pose</p>
+        </content>
+      </shape>
+      <shape width="185" height="60" topLeftX="100" topLeftY="225" presetHandlers="6" type="rect" id="boG">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="185" height="30" topLeftX="100" topLeftY="240" type="text" id="bYB">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" lineSpacing="multiple:1.4" textAlign="center">
+          <p>置信度过滤</p>
+          <p>/ NMS</p>
+        </content>
+      </shape>
+      <line id="boJ" startX="285" startY="255" endX="305.0249843945008" endY="255">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="185" height="60" topLeftX="305" topLeftY="225" presetHandlers="6" type="rect" id="boh">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="185" height="30" topLeftX="305" topLeftY="240" type="text" id="boa">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" lineSpacing="multiple:1.4" textAlign="center">
+          <p>选择置信度</p>
+          <p>最高的人</p>
+        </content>
+      </shape>
+      <line id="boQ" startX="490" startY="255" endX="510.0249843945008" endY="255">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="185" height="60" topLeftX="510" topLeftY="225" presetHandlers="6" type="rect" id="bok">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.2)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.7)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="185" height="30" topLeftX="510" topLeftY="240" type="text" id="boO">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="center">
+          <p>还原 17 点坐标</p>
+        </content>
+      </shape>
+      <shape width="870" height="150" topLeftX="45" topLeftY="320" presetHandlers="8" type="rect" id="bYW">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.25)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="800" height="25" topLeftX="65" topLeftY="335" type="text" id="boK">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>// OpenCV DNN 推理</p>
+        </content>
+      </shape>
+      <shape width="830" height="90" topLeftX="65" topLeftY="370" type="text" id="bon">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>net_ = cv::dnn::readNetFromONNX(modelPath);</p>
+          <p>net_.setInput(blob); // 归一化后输入</p>
+          <p>cv::Mat output = net_.forward(); // 模型推理输出</p>
+          <p>// 解析 56 维属性：4框 + 1置信度 + 17×3关键点</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="boM">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bor">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>06 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bBm">
+      <content>
+        <p>建议用时 55 秒。等比例缩放和填充避免拉伸人体。输入 640×640，转换 RGB 并归一化，OpenCV DNN 执行 ONNX 模型。低置信度过滤和 NMS 后选置信度最高的人，并还原坐标。33 点仅是内部编号接口，没有额外完整 33 点，也没有真实三维深度。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwR">
+    <style>
+      <fill id="fwR">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="boi" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="boI">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>关键点平滑与统一动作接口</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="boX">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>坐标做平滑，置信度保留本帧值</p>
+        </content>
+      </shape>
+      <shape width="420" height="180" topLeftX="45" topLeftY="130" presetHandlers="8" type="rect" id="boz">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="145" type="text" id="bop">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>指数移动平均平滑</p>
+        </content>
+      </shape>
+      <shape width="380" height="50" topLeftX="65" topLeftY="185" presetHandlers="6" type="rect" id="boL">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="360" height="30" topLeftX="75" topLeftY="197" type="text" id="boj">
+        <content fontSize="13" fontFamily="Consolas" color="rgba(0, 212, 255, 1)" textAlign="center">
+          <p>history.x = 0.35×current.x + 0.65×history.x</p>
+        </content>
+      </shape>
+      <shape width="380" height="50" topLeftX="65" topLeftY="250" type="text" id="boe">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>GUI 中 alpha = 0.35，当前坐标占 35%</p>
+          <p>坐标平滑，置信度保留本帧值（避免丢点误判）</p>
+        </content>
+      </shape>
+      <shape width="420" height="180" topLeftX="495" topLeftY="130" presetHandlers="8" type="rect" id="bow">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="515" topLeftY="145" type="text" id="bos">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>统一动作接口</p>
+        </content>
+      </shape>
+      <shape width="380" height="30" topLeftX="515" topLeftY="185" type="text" id="boE">
+        <content fontSize="13" fontFamily="Consolas" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>ExerciseBase: update() / count() / valid() / reset()</p>
+        </content>
+      </shape>
+      <shape width="110" height="55" topLeftX="515" topLeftY="230" presetHandlers="6" type="rect" id="boP">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="110" height="28" topLeftX="515" topLeftY="245" type="text" id="boF">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>Squat</p>
+        </content>
+      </shape>
+      <shape width="110" height="55" topLeftX="645" topLeftY="230" presetHandlers="6" type="rect" id="bob">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="110" height="28" topLeftX="645" topLeftY="245" type="text" id="bou">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>JumpingJack</p>
+        </content>
+      </shape>
+      <shape width="110" height="55" topLeftX="775" topLeftY="230" presetHandlers="6" type="rect" id="boY">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="110" height="28" topLeftX="775" topLeftY="245" type="text" id="boC">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>Cycling</p>
+        </content>
+      </shape>
+      <shape width="870" height="60" topLeftX="45" topLeftY="350" type="text" id="boS">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" lineSpacing="multiple:1.6" textAlign="center">
+          <p>共享输入与接口，分别维护特征、状态和次数</p>
+          <p>采集、推理与动作选择解耦，扩展新动作只需实现统一接口</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bom">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bov">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>07 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bWm">
+      <content>
+        <p>建议用时 50 秒。指数移动平均让坐标更平稳，GUI 中 alpha 为 0.35，同时带来一定响应延迟。保留本帧置信度能防止历史坐标掩盖丢点。统一接口使采集、推理和动作选择解耦。图中数据纯属示意，不表示实测改善幅度。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pww">
+    <style>
+      <fill id="fww">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bYI" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="600" height="40" topLeftX="45" topLeftY="35" type="text" id="bYe">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>深蹲计数：膝角与状态机</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bYw">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>站直、下蹲、重新站直，完整往返计一次</p>
+        </content>
+      </shape>
+      <shape width="200" height="70" topLeftX="45" topLeftY="130" presetHandlers="8" type="rect" id="bYZ">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.6)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="25" topLeftX="45" topLeftY="145" type="text" id="bYo">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>Ready · 站直</p>
+        </content>
+      </shape>
+      <shape width="200" height="22" topLeftX="45" topLeftY="172" type="text" id="bYi">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>θ &gt; 155°</p>
+        </content>
+      </shape>
+      <line id="bYF" startX="245" startY="165" endX="285.0124980474851" endY="165">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="200" height="70" topLeftX="285" topLeftY="130" presetHandlers="8" type="rect" id="bYb">
+        <fill>
+          <fillColor color="rgba(251, 191, 36, 0.15)"/>
+        </fill>
+        <border color="rgba(251, 191, 36, 0.6)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="25" topLeftX="285" topLeftY="145" type="text" id="bYq">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="center">
+          <p>Down · 下蹲</p>
+        </content>
+      </shape>
+      <shape width="200" height="22" topLeftX="285" topLeftY="172" type="text" id="bYL">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>θ &lt; 140°</p>
+        </content>
+      </shape>
+      <line id="bYj" startX="485" startY="165" endX="525.0124980474851" endY="165">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="200" height="70" topLeftX="525" topLeftY="130" presetHandlers="8" type="rect" id="bYS">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.15)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.6)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="25" topLeftX="525" topLeftY="145" type="text" id="bYm">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="center">
+          <p>次数 +1</p>
+        </content>
+      </shape>
+      <shape width="200" height="22" topLeftX="525" topLeftY="172" type="text" id="bYv">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>恢复 Ready · θ &gt; 155°</p>
+        </content>
+      </shape>
+      <shape width="420" height="200" topLeftX="45" topLeftY="230" presetHandlers="8" type="rect" id="bYx">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="245" type="text" id="bYE">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>输入与几何关系</p>
+        </content>
+      </shape>
+      <shape width="380" height="130" topLeftX="65" topLeftY="285" type="text" id="bYP">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.8" textAlign="left">
+          <p>髋、膝、踝形成膝关节夹角 θ</p>
+          <p>两腿均有效时选择较小角度</p>
+          <p>140° ~ 155° 保留状态缓冲带</p>
+          <p>确认帧数 = 1（较敏感）</p>
+        </content>
+      </shape>
+      <shape width="420" height="200" topLeftX="495" topLeftY="230" presetHandlers="8" type="rect" id="bYX">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.25)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="515" topLeftY="245" type="text" id="bYz">
+        <content fontSize="13" fontFamily="Consolas" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>// 状态机判断</p>
+        </content>
+      </shape>
+      <shape width="380" height="130" topLeftX="515" topLeftY="285" type="text" id="bYA">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>if (state == Ready &amp;&amp; angle &lt; 140)</p>
+          <p>state = Down;</p>
+          <p>if (state == Down &amp;&amp; angle &gt; 155) {</p>
+          <p>count_++;</p>
+          <p>state = Ready;</p>
+          <p>}</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bYY">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bYC">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>08 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bWW">
+      <content>
+        <p>建议用时 65 秒。膝角由髋、膝、踝计算，左右腿均可靠时取较小值，单侧可靠时使用该侧。先确认站直，避免初始蹲姿被直接计数。140 与 155 度形成缓冲区。当前确认帧数为 1，不能宣称已验证所有误计场景。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwz">
+    <style>
+      <fill id="fwz">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bEC" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="600" height="40" topLeftX="45" topLeftY="35" type="text" id="bEm">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>开合跳计数：手脚联合判定</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bEJ">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>双臂和双腿同时满足条件，才进入展开状态</p>
+        </content>
+      </shape>
+      <shape width="480" height="200" topLeftX="45" topLeftY="130" presetHandlers="8" type="rect" id="bEa">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="145" type="text" id="bEd">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>判定阈值表</p>
+        </content>
+      </shape>
+      <shape width="440" height="32" topLeftX="65" topLeftY="185" presetHandlers="0" type="rect" id="bEi">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.2)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="25" topLeftX="75" topLeftY="190" type="text" id="bEX">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>特征</p>
+        </content>
+      </shape>
+      <shape width="110" height="25" topLeftX="265" topLeftY="190" type="text" id="bEp">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>展开</p>
+        </content>
+      </shape>
+      <shape width="110" height="25" topLeftX="385" topLeftY="190" type="text" id="bEf">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>合拢</p>
+        </content>
+      </shape>
+      <shape width="180" height="25" topLeftX="75" topLeftY="225" type="text" id="bEL">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>双臂抬升 / 肩宽</p>
+        </content>
+      </shape>
+      <shape width="110" height="25" topLeftX="265" topLeftY="225" type="text" id="bEe">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" textAlign="center">
+          <p>两侧均 &gt; 0.45</p>
+        </content>
+      </shape>
+      <shape width="110" height="25" topLeftX="385" topLeftY="225" type="text" id="bEs">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" textAlign="center">
+          <p>两侧均 &lt; -0.25</p>
+        </content>
+      </shape>
+      <line id="bEV" startX="65" startY="260" endX="505.001136362169" endY="260">
+        <border color="rgba(0, 212, 255, 0.15)" width="1"/>
+      </line>
+      <shape width="180" height="25" topLeftX="75" topLeftY="270" type="text" id="bEE">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>脚踝间距 / 肩宽</p>
+        </content>
+      </shape>
+      <shape width="110" height="25" topLeftX="265" topLeftY="270" type="text" id="bEF">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" textAlign="center">
+          <p>&gt; 1.25</p>
+        </content>
+      </shape>
+      <shape width="110" height="25" topLeftX="385" topLeftY="270" type="text" id="bEu">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" textAlign="center">
+          <p>&lt; 0.75</p>
+        </content>
+      </shape>
+      <shape width="360" height="200" topLeftX="555" topLeftY="130" presetHandlers="8" type="rect" id="bEn">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="575" topLeftY="145" type="text" id="bEY">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>计数状态机</p>
+        </content>
+      </shape>
+      <shape width="90" height="45" topLeftX="575" topLeftY="190" presetHandlers="6" type="rect" id="bES">
+        <fill>
+          <fillColor color="rgba(251, 191, 36, 0.15)"/>
+        </fill>
+        <border color="rgba(251, 191, 36, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="90" height="25" topLeftX="575" topLeftY="202" type="text" id="bEv">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="center">
+          <p>合拢</p>
+        </content>
+      </shape>
+      <line id="bEh" startX="665" startY="212" endX="690.0199920063936" endY="212">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="90" height="45" topLeftX="690" topLeftY="190" presetHandlers="6" type="rect" id="bEI">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="90" height="25" topLeftX="690" topLeftY="202" type="text" id="bEz">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>展开</p>
+        </content>
+      </shape>
+      <line id="bEc" startX="780" startY="212" endX="805.0199920063936" endY="212">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="90" height="45" topLeftX="805" topLeftY="190" presetHandlers="6" type="rect" id="bEj">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.15)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="90" height="25" topLeftX="805" topLeftY="202" type="text" id="bEw">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="center">
+          <p>再次合拢</p>
+        </content>
+      </shape>
+      <shape width="320" height="50" topLeftX="575" topLeftY="255" type="text" id="bEl">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="center">
+          <p>三个条件同时满足才进入展开</p>
+          <p>完整往返计一次</p>
+        </content>
+      </shape>
+      <shape width="870" height="110" topLeftX="45" topLeftY="360" presetHandlers="8" type="rect" id="bEt">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="375" type="text" id="bEP">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>特征归一化</p>
+        </content>
+      </shape>
+      <shape width="830" height="50" topLeftX="65" topLeftY="410" type="text" id="bEb">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>抬升比例 =（肩 y - 腕 y）/ 肩宽，所有距离以肩宽归一化，降低拍摄距离变化的影响</p>
+          <p>识别开合姿态循环，未单独检测双脚是否离地（迈步举手也可能满足条件）</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bEK">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bEM">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>09 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bWc">
+      <content>
+        <p>建议用时 60 秒。图像 y 轴向下，肩 y 减腕 y 越大表示手腕越高。所有距离以肩宽归一化，降低拍摄距离的影响。完整合拢、展开、再次合拢才加一。算法没有检测离地，因此迈步举手也可能满足条件。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwb">
+    <style>
+      <fill id="fwb">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bYc" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="bYd">
+        <content textType="title" fontSize="22" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>床上蹬腿：二维信号与自动标定</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bYN">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>膝、踝提供主要特征，每次稳定左右切换计一次</p>
+        </content>
+      </shape>
+      <shape width="420" height="160" topLeftX="45" topLeftY="125" presetHandlers="8" type="rect" id="bYu">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="140" type="text" id="bYJ">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>两种输入信号</p>
+        </content>
+      </shape>
+      <shape width="380" height="40" topLeftX="65" topLeftY="180" presetHandlers="6" type="rect" id="bYt">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="360" height="25" topLeftX="75" topLeftY="190" type="text" id="bYf">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>A = log(左小腿投影长度 / 右小腿投影长度)</p>
+        </content>
+      </shape>
+      <shape width="380" height="40" topLeftX="65" topLeftY="230" presetHandlers="6" type="rect" id="bYV">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="360" height="25" topLeftX="75" topLeftY="240" type="text" id="bYn">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>B = (左膝 y - 右膝 y) / 平均小腿长度</p>
+        </content>
+      </shape>
+      <shape width="420" height="160" topLeftX="495" topLeftY="125" presetHandlers="8" type="rect" id="bYM">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="28" topLeftX="515" topLeftY="140" type="text" id="bYp">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>自动标定与防误计</p>
+        </content>
+      </shape>
+      <shape width="380" height="100" topLeftX="515" topLeftY="180" type="text" id="bYl">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.7" textAlign="left">
+          <p>选择归一化动态范围较大的信号</p>
+          <p>2 帧确认，稳定相位间隔 ≥ 8 帧</p>
+          <p>两次计数间隔 ≥ 10 帧</p>
+          <p>触发阈值设绝对下限</p>
+        </content>
+      </shape>
+      <shape width="870" height="160" topLeftX="45" topLeftY="310" presetHandlers="8" type="rect" id="bYh">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.25)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="28" topLeftX="65" topLeftY="325" type="text" id="bYa">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>算法要点与限制</p>
+        </content>
+      </shape>
+      <shape width="830" height="95" topLeftX="65" topLeftY="365" type="text" id="bYQ">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.7" textAlign="left">
+          <p>髋点仅辅助显示，不作为计数必需条件；针对只拍到下半身的场景设计</p>
+          <p>每次稳定左右切换计一次（EachPedal 模式），完整往返计两次</p>
+          <p>标定结束后不会自动重新选择信号与阈值；二维投影受遮挡、视角及左右点误识别影响</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bYs">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bYK">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>10 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZo">
+      <content>
+        <p>建议用时 85 秒。这是最复杂的动作。A 是左右小腿投影长度的对数比，B 是左右膝 y 差除以平均小腿长度。初始收集变化范围后选归一化动态范围较大的信号，不能称为噪声最小的信号。根据基线与上下阈值判断左右相位。当前 EachPedal 每次切换计一，完整往返计两次。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwx">
+    <style>
+      <fill id="fwx">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bYR" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="bYG">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>后台识别与实时界面反馈</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bEB">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>耗时识别放在后台，主线程负责交互和显示</p>
+        </content>
+      </shape>
+      <shape width="380" height="220" topLeftX="45" topLeftY="130" presetHandlers="8" type="rect" id="bEx">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.1)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="145" type="text" id="bYr">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>主线程</p>
+        </content>
+      </shape>
+      <shape width="340" height="30" topLeftX="65" topLeftY="180" type="text" id="bYk">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" textAlign="left">
+          <p>MainWindow / CameraView</p>
+        </content>
+      </shape>
+      <shape width="340" height="110" topLeftX="65" topLeftY="225" type="text" id="bYO">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.8" textAlign="left">
+          <p>启动 / 暂停 / 停止控制</p>
+          <p>页面与按钮响应</p>
+          <p>画面、次数、进度渲染</p>
+          <p>错误提示与动画</p>
+        </content>
+      </shape>
+      <shape width="80" height="30" topLeftX="440" topLeftY="220" type="text" id="bEW">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>Qt 信号</p>
+        </content>
+      </shape>
+      <line id="bEq" startX="425" startY="260" endX="535.004545360635" endY="260">
+        <border color="rgba(0, 212, 255, 0.7)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <line id="bYH" startX="534.9999999999999" startY="280" endX="424.99545463936494" endY="280">
+        <border color="rgba(0, 212, 255, 0.4)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="380" height="220" topLeftX="535" topLeftY="130" presetHandlers="8" type="rect" id="bYg">
+        <fill>
+          <fillColor color="rgba(251, 191, 36, 0.1)"/>
+        </fill>
+        <border color="rgba(251, 191, 36, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="555" topLeftY="145" type="text" id="bYU">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="left">
+          <p>识别线程</p>
+        </content>
+      </shape>
+      <shape width="340" height="30" topLeftX="555" topLeftY="180" type="text" id="bEZ">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" textAlign="left">
+          <p>MotionWorker</p>
+        </content>
+      </shape>
+      <shape width="340" height="110" topLeftX="555" topLeftY="225" type="text" id="bEo">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.8" textAlign="left">
+          <p>视频读取 → 推理 → 平滑 → 计数</p>
+          <p>发送画面、次数、有效性</p>
+          <p>原子标志控制暂停/停止</p>
+          <p>发送错误信号</p>
+        </content>
+      </shape>
+      <shape width="870" height="90" topLeftX="45" topLeftY="380" presetHandlers="8" type="rect" id="bYT">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="830" height="60" topLeftX="65" topLeftY="395" type="text" id="bYy">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>framePending 原子标志限制待显示帧，避免预览事件积压；QImage.copy() 保证数据独立</p>
+          <p>暂停：摄像头模式继续预览识别停止；测试视频模式停止推进</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bED">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bEA">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>11 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZI">
+      <content>
+        <p>建议用时 55 秒。MotionWorker 迁移到 QThread，后台读取、推理、平滑、计数，以信号发送结果。原子标志控制暂停停止及待显示帧。framePending 限制积压，QImage copy 保证数据独立。摄像头暂停识别时仍预览，视频暂停则停止推进。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwy">
+    <style>
+      <fill id="fwy">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bET" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="bEy">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>达标控制、记录与成就</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bLD">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>达标只触发一次，保存重试不重复累计</p>
+        </content>
+      </shape>
+      <shape width="200" height="60" topLeftX="45" topLeftY="125" presetHandlers="6" type="rect" id="bLB">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.15)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="45" topLeftY="143" type="text" id="bLA">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>达到目标</p>
+        </content>
+      </shape>
+      <line id="bLY" startX="245" startY="155" endX="275.01666203960724" endY="155">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="200" height="60" topLeftX="275" topLeftY="125" presetHandlers="6" type="rect" id="bLC">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="275" topLeftY="143" type="text" id="bEN">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="center">
+          <p>停止识别</p>
+        </content>
+      </shape>
+      <line id="bEg" startX="475" startY="155" endX="505.01666203960724" endY="155">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="200" height="60" topLeftX="505" topLeftY="125" presetHandlers="6" type="rect" id="bEU">
+        <fill>
+          <fillColor color="rgba(251, 191, 36, 0.15)"/>
+        </fill>
+        <border color="rgba(251, 191, 36, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="505" topLeftY="143" type="text" id="bLo">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="center">
+          <p>点击完成</p>
+        </content>
+      </shape>
+      <line id="bLi" startX="705" startY="155" endX="735.0166620396072" endY="155">
+        <border color="rgba(0, 212, 255, 0.6)"/>
+        <endArrow type="arrow"/>
+      </line>
+      <shape width="180" height="60" topLeftX="735" topLeftY="125" presetHandlers="6" type="rect" id="bEH">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.15)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.5)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="180" height="28" topLeftX="735" topLeftY="143" type="text" id="bEk">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="center">
+          <p>停止铃声</p>
+        </content>
+      </shape>
+      <shape width="420" height="180" topLeftX="45" topLeftY="215" presetHandlers="8" type="rect" id="bEO">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="28" topLeftX="65" topLeftY="230" type="text" id="bLZ">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>会话保护机制</p>
+        </content>
+      </shape>
+      <shape width="380" height="110" topLeftX="65" topLeftY="270" type="text" id="bLq">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.7" textAlign="left">
+          <p>count_ = max(count_, value) 次数不倒退</p>
+          <p>reached_ 门控，达标只触发一次</p>
+          <p>sessionId 唯一索引，重试不重复累计</p>
+          <p>界面与闹钟对象双重检查完成条件</p>
+        </content>
+      </shape>
+      <shape width="420" height="180" topLeftX="495" topLeftY="215" presetHandlers="8" type="rect" id="bLL">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="515" topLeftY="230" type="text" id="bLj">
+        <content fontSize="15" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>五项成就</p>
+        </content>
+      </shape>
+      <shape width="180" height="25" topLeftX="515" topLeftY="270" type="text" id="bEr">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>● 首次成功</p>
+        </content>
+      </shape>
+      <shape width="180" height="25" topLeftX="515" topLeftY="298" type="text" id="bER">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>● 连续 3 天</p>
+        </content>
+      </shape>
+      <shape width="180" height="25" topLeftX="515" topLeftY="326" type="text" id="bEG">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>● 连续 7 天</p>
+        </content>
+      </shape>
+      <shape width="180" height="25" topLeftX="710" topLeftY="270" type="text" id="bLW">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>● 累计 100 个动作</p>
+        </content>
+      </shape>
+      <shape width="180" height="25" topLeftX="710" topLeftY="298" type="text" id="bLx">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>● 累计成功 30 次</p>
+        </content>
+      </shape>
+      <shape width="870" height="40" topLeftX="45" topLeftY="420" type="text" id="bLE">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>统计只计算成功记录；连续天数按成功日期去重后逐日回溯</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bLP">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bEQ">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>12 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZf">
+      <content>
+        <p>建议用时 65 秒。WorkoutSession 用 active 和 reached 门控计数，max 保证不倒退。首次达标停止识别并启用完成按钮，用户点击后停铃保存。sessionId 对应数据库唯一索引，避免重试重复记录。历史主要保存成功任务，因此不能据此计算完整成功率。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwC">
+    <style>
+      <fill id="fwC">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bLb" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="bLu">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>铃声管理与交互设计</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bLJ">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>设置、反馈与个性化功能共同支持完整使用过程</p>
+        </content>
+      </shape>
+      <shape width="270" height="200" topLeftX="45" topLeftY="125" presetHandlers="8" type="rect" id="bLh">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" dashArray="dash" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="270" height="50" topLeftX="45" topLeftY="200" type="text" id="bLF">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>真实截图待补充</p>
+          <p>闹钟编辑</p>
+        </content>
+      </shape>
+      <shape width="270" height="200" topLeftX="345" topLeftY="125" presetHandlers="8" type="rect" id="bLm">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" dashArray="dash" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="270" height="50" topLeftX="345" topLeftY="200" type="text" id="bLv">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>真实截图待补充</p>
+          <p>铃声选择 / 试听</p>
+        </content>
+      </shape>
+      <shape width="270" height="200" topLeftX="645" topLeftY="125" presetHandlers="8" type="rect" id="bLf">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" dashArray="dash" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="270" height="50" topLeftX="645" topLeftY="200" type="text" id="bLc">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>真实截图待补充</p>
+          <p>完成页面</p>
+        </content>
+      </shape>
+      <shape width="270" height="110" topLeftX="45" topLeftY="350" presetHandlers="8" type="rect" id="bLS">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="230" height="28" topLeftX="65" topLeftY="365" type="text" id="bLz">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>页面切换</p>
+        </content>
+      </shape>
+      <shape width="230" height="50" topLeftX="65" topLeftY="400" type="text" id="bLp">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>QStackedWidget 管理</p>
+          <p>多页面流畅切换</p>
+        </content>
+      </shape>
+      <shape width="270" height="110" topLeftX="345" topLeftY="350" presetHandlers="8" type="rect" id="bLl">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="230" height="28" topLeftX="365" topLeftY="365" type="text" id="bLV">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>铃声播放</p>
+        </content>
+      </shape>
+      <shape width="230" height="50" topLeftX="365" topLeftY="400" type="text" id="bLX">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>导入、试听、音量调整</p>
+          <p>QMediaPlayer 循环播放</p>
+        </content>
+      </shape>
+      <shape width="270" height="110" topLeftX="645" topLeftY="350" presetHandlers="8" type="rect" id="bLe">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="230" height="28" topLeftX="665" topLeftY="365" type="text" id="bLw">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>交互动画</p>
+        </content>
+      </shape>
+      <shape width="230" height="50" topLeftX="665" topLeftY="400" type="text" id="bLs">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>进度与次数动画</p>
+          <p>QPainter / 属性动画</p>
+        </content>
+      </shape>
+      <shape width="870" height="20" topLeftX="45" topLeftY="480" type="text" id="bLK">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>部分内置铃声由正弦波叠加合成 WAV 音频文件</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bLn">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bLI">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>13 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZG">
+      <content>
+        <p>建议用时 45 秒。铃声支持内置、自定义导入、试听、音量和删除。部分内置音频通过正弦波合成 WAV，QMediaPlayer 循环播放。页面用 QStackedWidget 管理，QPainter 和属性动画提供骨架、进度和次数反馈。展示时替换为实际截图。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwh">
+    <style>
+      <fill id="fwh">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bPo" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="bPi">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>开发中的问题与解决（一）</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bPI">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>环境配置与团队协作：从踩坑到填坑的真实过程</p>
+        </content>
+      </shape>
+      <shape width="420" height="280" topLeftX="45" topLeftY="120" presetHandlers="8" type="rect" id="bCg">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.6)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="30" topLeftX="65" topLeftY="135" type="text" id="bCU">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>问题一：环境配置</p>
+        </content>
+      </shape>
+      <shape width="380" height="25" topLeftX="65" topLeftY="175" type="text" id="bPW">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="left">
+          <p>OpenCV 与新版 MSVC 不兼容</p>
+        </content>
+      </shape>
+      <shape width="380" height="45" topLeftX="65" topLeftY="200" type="text" id="bPq">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>现象：find_package(OpenCV) 失败，版本映射表识别不到 vc16</p>
+        </content>
+      </shape>
+      <shape width="380" height="45" topLeftX="65" topLeftY="248" type="text" id="bPL">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>解决：手动 set(OpenCV_RUNTIME vc16)，利用 MSVC 二进制兼容性链接</p>
+        </content>
+      </shape>
+      <shape width="380" height="25" topLeftX="65" topLeftY="305" type="text" id="bPj">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="left">
+          <p>QtMultimedia 模块缺失</p>
+        </content>
+      </shape>
+      <shape width="380" height="45" topLeftX="65" topLeftY="330" type="text" id="bCk">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>现象：find_package(Qt6 Multimedia) 失败，基础安装包不含</p>
+        </content>
+      </shape>
+      <shape width="380" height="25" topLeftX="65" topLeftY="370" type="text" id="bCO">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" textAlign="left">
+          <p>解决：MaintenanceTool 补装 Qt6 Multimedia 模块</p>
+        </content>
+      </shape>
+      <shape width="420" height="280" topLeftX="495" topLeftY="120" presetHandlers="8" type="rect" id="bPx">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.6)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="30" topLeftX="515" topLeftY="135" type="text" id="bPE">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>问题二：团队协作</p>
+        </content>
+      </shape>
+      <shape width="380" height="25" topLeftX="515" topLeftY="175" type="text" id="bPP">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="left">
+          <p>Git 分支反复合并冲突</p>
+        </content>
+      </shape>
+      <shape width="380" height="60" topLeftX="515" topLeftY="200" type="text" id="bCG">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>现象：多人改公共文件（CMakeLists、MainWindow），主分支多次 Revert</p>
+        </content>
+      </shape>
+      <shape width="380" height="55" topLeftX="515" topLeftY="265" type="text" id="bPB">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>解决：fetch + merge + 人工逐文件解决，保留双方有效改动</p>
+        </content>
+      </shape>
+      <shape width="380" height="25" topLeftX="515" topLeftY="330" type="text" id="bPA">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="left">
+          <p>&quot;删除/修改&quot;类型冲突</p>
+        </content>
+      </shape>
+      <shape width="380" height="45" topLeftX="515" topLeftY="355" type="text" id="bPY">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>解决：保留带集成的版本，避免功能丢失；公共文件变更提前组内沟通</p>
+        </content>
+      </shape>
+      <shape width="870" height="55" topLeftX="45" topLeftY="425" presetHandlers="8" type="rect" id="bPC">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.1)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="830" height="30" topLeftX="65" topLeftY="438" type="text" id="bPS">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="center">
+          <p>经验：编译器错误码直接指向根因；公共接口变更须提前沟通，降低合并成本</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bCy">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bPD">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>15 / 18</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bPZ">
+      <content>
+        <p>建议用时 50 秒。这一页讲环境配置和团队协作两类问题。强调真实开发过程中遇到的具体问题，不是纸上谈兵。</p>
+        <p>左边讲环境：OpenCV 版本兼容问题和 Qt 模块缺失。右边讲协作：Git 合并冲突。底部总结经验。</p>
+        <p>重点是体现我们真实踩过坑、解决了问题，增强答辩可信度。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwu">
+    <style>
+      <fill id="fwu">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bCM" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="bCr">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>开发中的问题与解决（二）</p>
+        </content>
+      </shape>
+      <shape width="700" height="25" topLeftX="45" topLeftY="78" type="text" id="bCK">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>代码调试与测试验证：从编译器报错到核心规则验证</p>
+        </content>
+      </shape>
+      <shape width="530" height="290" topLeftX="45" topLeftY="120" presetHandlers="8" type="rect" id="bCV">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.6)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="30" topLeftX="65" topLeftY="135" type="text" id="bCt">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>问题三：代码层面（附错误码）</p>
+        </content>
+      </shape>
+      <shape width="490" height="220" topLeftX="65" topLeftY="175" type="text" id="bCH">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.7" textAlign="left">
+          <p><strong><span color="rgba(251, 191, 36, 1)">C2672</span></strong> std::min 类型不匹配 → static_cast&lt;double&gt;()</p>
+          <p><strong><span color="rgba(251, 191, 36, 1)">C2065</span></strong> M_PI 未定义 → constexpr kPi 自定义常量</p>
+          <p><strong><span color="rgba(251, 191, 36, 1)">LNK2019</span></strong> Q_OBJECT moc 未生成 → 头文件加入源文件列表</p>
+          <p><strong><span color="rgba(251, 191, 36, 1)">LNK2019</span></strong> ExerciseUtils.cpp 漏加 → 补进 CMakeLists</p>
+          <p><strong><span color="rgba(251, 191, 36, 1)">运行时</span></strong> 数据库参数不匹配 → 删旧 db + gitignore *.db</p>
+          <p><strong><span color="rgba(251, 191, 36, 1)">C4819</span></strong> 中文编码问题 → add_compile_options(/utf-8)</p>
+        </content>
+      </shape>
+      <shape width="315" height="290" topLeftX="600" topLeftY="120" presetHandlers="8" type="rect" id="bCl">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.08)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="250" height="30" topLeftX="620" topLeftY="135" type="text" id="bCc">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="left">
+          <p>问题四：测试验证</p>
+        </content>
+      </shape>
+      <shape width="275" height="25" topLeftX="620" topLeftY="180" type="text" id="bCd">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="left">
+          <p>QTimer 测试不触发</p>
+        </content>
+      </shape>
+      <shape width="275" height="60" topLeftX="620" topLeftY="205" type="text" id="bCN">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>现象：测试程序未运行事件循环，定时器事件不派发</p>
+        </content>
+      </shape>
+      <shape width="275" height="55" topLeftX="620" topLeftY="270" type="text" id="bCT">
+        <content fontSize="12" fontFamily="Consolas" color="rgba(34, 197, 94, 1)" lineSpacing="multiple:1.4" textAlign="left">
+          <p>解决：QEventLoop + singleShot(1200, quit)</p>
+        </content>
+      </shape>
+      <shape width="275" height="60" topLeftX="620" topLeftY="335" presetHandlers="6" type="rect" id="bCf">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.15)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="245" height="40" topLeftX="635" topLeftY="345" type="text" id="bCh">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" lineSpacing="multiple:1.3" textAlign="center">
+          <p>验证通过：未完成→stop()拒绝</p>
+          <p>完成→stop()成功 · 10项自测全过</p>
+        </content>
+      </shape>
+      <shape width="870" height="55" topLeftX="45" topLeftY="425" presetHandlers="8" type="rect" id="bCa">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.1)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="830" height="30" topLeftX="65" topLeftY="438" type="text" id="bCQ">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="center">
+          <p>经验：善用错误码定位根因 · 最小复现缩小范围 · 关注环境差异 · 规范团队协作</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bCR">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bCJ">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>16 / 18</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bCn">
+      <content>
+        <p>建议用时 50 秒。这一页讲代码层面的具体问题，全部带真实的编译器错误码，非常有说服力。</p>
+        <p>左边列 6 个典型问题，右边讲测试验证的坑和解决。重点强调：我们不是空谈，是真的一行一行调试过来的。</p>
+        <p>最后那个&quot;10项自测全过&quot;很重要，证明我们真的验证过核心功能。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwv">
+    <style>
+      <fill id="fwv">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bix" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="38" topLeftX="45" topLeftY="30" type="text" id="biP">
+        <content textType="title" fontSize="22" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>测试方案与结果展示</p>
+        </content>
+      </shape>
+      <shape width="700" height="22" topLeftX="45" topLeftY="70" type="text" id="bib">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>业务正确性与动作识别效果分开验证</p>
+        </content>
+      </shape>
+      <shape width="300" height="130" topLeftX="45" topLeftY="110" presetHandlers="8" type="rect" id="biJ">
+        <fill>
+          <fillColor color="rgba(51, 65, 85, 0.5)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.2)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="125" type="text" id="biZ">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>已有测试代码</p>
+        </content>
+      </shape>
+      <shape width="260" height="70" topLeftX="65" topLeftY="160" type="text" id="biA">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.6" textAlign="left">
+          <p>会话约束、数据库迁移与去重</p>
+          <p>成就统计、响铃与稍后提醒</p>
+        </content>
+      </shape>
+      <shape width="500" height="25" topLeftX="370" topLeftY="115" type="text" id="biC">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>识别测试计划</p>
+        </content>
+      </shape>
+      <shape width="545" height="30" topLeftX="370" topLeftY="145" presetHandlers="0" type="rect" id="bim">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.2)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="160" height="22" topLeftX="378" topLeftY="150" type="text" id="bif">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>测试场景</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="540" topLeftY="150" type="text" id="bia">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>人工次数</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="625" topLeftY="150" type="text" id="biW">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>程序次数</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="710" topLeftY="150" type="text" id="biI">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>误计/漏计</p>
+        </content>
+      </shape>
+      <shape width="115" height="22" topLeftX="795" topLeftY="150" type="text" id="biz">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>观察结论</p>
+        </content>
+      </shape>
+      <shape width="160" height="22" topLeftX="378" topLeftY="185" type="text" id="bil">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>深蹲：标准动作</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="540" topLeftY="185" type="text" id="bid">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待标注</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="625" topLeftY="185" type="text" id="bio">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="710" topLeftY="185" type="text" id="bij">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="115" height="22" topLeftX="795" topLeftY="185" type="text" id="biw">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <line id="biK" startX="370" startY="212" endX="915.0009174304205" endY="212">
+        <border color="rgba(0, 212, 255, 0.1)" width="1"/>
+      </line>
+      <shape width="160" height="22" topLeftX="378" topLeftY="220" type="text" id="bit">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>开合跳：标准动作</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="540" topLeftY="220" type="text" id="biq">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待标注</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="625" topLeftY="220" type="text" id="biE">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="710" topLeftY="220" type="text" id="biF">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="115" height="22" topLeftX="795" topLeftY="220" type="text" id="biu">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <line id="bih" startX="370" startY="247" endX="915.0009174304205" endY="247">
+        <border color="rgba(0, 212, 255, 0.1)" width="1"/>
+      </line>
+      <shape width="160" height="22" topLeftX="378" topLeftY="255" type="text" id="biM">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>蹬腿：局部身体入镜</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="540" topLeftY="255" type="text" id="bLU">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待标注</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="625" topLeftY="255" type="text" id="biS">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="710" topLeftY="255" type="text" id="biv">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="115" height="22" topLeftX="795" topLeftY="255" type="text" id="bic">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <line id="biY" startX="370" startY="282" endX="915.0009174304205" endY="282">
+        <border color="rgba(0, 212, 255, 0.1)" width="1"/>
+      </line>
+      <shape width="160" height="22" topLeftX="378" topLeftY="290" type="text" id="bii">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="left">
+          <p>遮挡 / 幅度 / 角度变化</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="540" topLeftY="290" type="text" id="biX">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待标注</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="625" topLeftY="290" type="text" id="bip">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="80" height="22" topLeftX="710" topLeftY="290" type="text" id="biV">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="115" height="22" topLeftX="795" topLeftY="290" type="text" id="biN">
+        <content fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>待测试</p>
+        </content>
+      </shape>
+      <shape width="870" height="80" topLeftX="45" topLeftY="340" presetHandlers="8" type="rect" id="biB">
+        <fill>
+          <fillColor color="rgba(15, 23, 42, 0.8)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.25)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="28" topLeftX="65" topLeftY="355" type="text" id="biL">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="left">
+          <p>测试流程</p>
+        </content>
+      </shape>
+      <shape width="830" height="25" topLeftX="65" topLeftY="390" type="text" id="bie">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" textAlign="center">
+          <p>固定视频 → 人工标注 → 程序计数 → 逐帧对比 → 定位误计/漏计原因</p>
+        </content>
+      </shape>
+      <shape width="870" height="30" topLeftX="45" topLeftY="445" type="text" id="bis">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="center">
+          <p>相同总次数也可能同时存在误计和漏计，不能只看总差值判断准确性</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bin">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="biD">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>14 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bAe">
+      <content>
+        <p>建议用时 65 秒。已有测试代码覆盖会话、数据库迁移和去重、连续天数和成就以及闹钟调度。但当前材料没有执行结果。识别测试应固定视频并人工标注，对照 CSV 逐帧定位误计漏计，增加遮挡、幅度不足和角度变化场景。相同总次数也可能同时有误计和漏计，不能只看差值。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwk">
+    <style>
+      <fill id="fwk">
+        <fillColor color="linear-gradient(135deg,rgba(15, 23, 42, 1) 0%,rgba(30, 41, 59, 1) 100%)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bLt" startX="0" startY="0" endX="960.0005208331919" endY="-2.220446049250313e-16">
+        <border color="rgba(0, 212, 255, 0.8)" width="3"/>
+      </line>
+      <shape width="700" height="40" topLeftX="45" topLeftY="35" type="text" id="bLH">
+        <content textType="title" fontSize="24" fontFamily="Noto Sans" color="rgba(255, 255, 255, 1)" bold="true" textAlign="left">
+          <p>项目总结与后续改进</p>
+        </content>
+      </shape>
+      <shape width="800" height="25" topLeftX="45" topLeftY="78" type="text" id="bLg">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" textAlign="left">
+          <p>实现姿态计数与闹钟业务闭环，下一步补齐适应性与实测证据</p>
+        </content>
+      </shape>
+      <shape width="420" height="260" topLeftX="45" topLeftY="125" presetHandlers="8" type="rect" id="bLd">
+        <fill>
+          <fillColor color="rgba(34, 197, 94, 0.08)"/>
+        </fill>
+        <border color="rgba(34, 197, 94, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="30" topLeftX="65" topLeftY="140" type="text" id="bLN">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(34, 197, 94, 1)" bold="true" textAlign="left">
+          <p>已实现</p>
+        </content>
+      </shape>
+      <shape width="380" height="20" topLeftX="65" topLeftY="170" type="text" id="bLT">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" textAlign="left">
+          <p>（依据静态代码分析）</p>
+        </content>
+      </shape>
+      <shape width="380" height="170" topLeftX="65" topLeftY="205" type="text" id="bLy">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.9" textAlign="left">
+          <p>● 多闹钟与运动解锁完整流程</p>
+          <p>● 三种动作的规则和状态机</p>
+          <p>● 后台识别、暂停与实时反馈</p>
+          <p>● 本地记录、统计与成就系统</p>
+        </content>
+      </shape>
+      <shape width="420" height="260" topLeftX="495" topLeftY="125" presetHandlers="8" type="rect" id="bLa">
+        <fill>
+          <fillColor color="rgba(251, 191, 36, 0.08)"/>
+        </fill>
+        <border color="rgba(251, 191, 36, 0.4)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="200" height="30" topLeftX="515" topLeftY="140" type="text" id="bLQ">
+        <content fontSize="16" fontFamily="Noto Sans" color="rgba(251, 191, 36, 1)" bold="true" textAlign="left">
+          <p>后续改进</p>
+        </content>
+      </shape>
+      <shape width="380" height="190" topLeftX="515" topLeftY="185" type="text" id="bLR">
+        <content fontSize="13" fontFamily="Noto Sans" color="rgba(203, 213, 225, 1)" lineSpacing="multiple:1.8" textAlign="left">
+          <p>● 多人：稳定人物跟踪</p>
+          <p>● 视角：改进自适应标定</p>
+          <p>● 帧率：用时间替代部分帧数限制</p>
+          <p>● 验证：建立人工标注视频集</p>
+          <p>● 运行：评估系统级唤醒与后台支持</p>
+        </content>
+      </shape>
+      <shape width="870" height="60" topLeftX="45" topLeftY="410" presetHandlers="8" type="rect" id="bLG">
+        <fill>
+          <fillColor color="rgba(0, 212, 255, 0.1)"/>
+        </fill>
+        <border color="rgba(0, 212, 255, 0.3)" width="1"/>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="830" height="35" topLeftX="65" topLeftY="425" type="text" id="bLM">
+        <content fontSize="14" fontFamily="Noto Sans" color="rgba(0, 212, 255, 1)" bold="true" textAlign="center">
+          <p>可解释的计数规则 + 会话约束 + 数据库去重</p>
+        </content>
+      </shape>
+      <shape width="870" height="25" topLeftX="45" topLeftY="475" type="text" id="bLr">
+        <content fontSize="12" fontFamily="Noto Sans" color="rgba(148, 163, 184, 1)" italic="true" textAlign="center">
+          <p>让姿态识别从画面中的关键点，变成真实可用的唤醒助手</p>
+        </content>
+      </shape>
+      <shape width="100" height="20" topLeftX="45" topLeftY="505" type="text" id="bLk">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="left">
+          <p>WakeAI</p>
+        </content>
+      </shape>
+      <shape width="95" height="20" topLeftX="820" topLeftY="505" type="text" id="bLO">
+        <content textType="caption" fontSize="11" fontFamily="Noto Sans" color="rgba(100, 116, 139, 1)" textAlign="right">
+          <p>15 / 15</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bAC">
+      <content>
+        <p>建议用时 55 秒。总结完成的应用闭环、三种动作、后台识别和本地记录。技术亮点是模型关键点结合几何规则、蹬腿局部输入与标定、线程分离和业务去重。未来补充稳定人物跟踪、自适应标定、时间约束、带标注数据集和系统级运行支持。可在此后进行 30 秒左右的闭环演示。</p>
+        <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+      </content>
+    </note>
+  </slide>
+</presentation>

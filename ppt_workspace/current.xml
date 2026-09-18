@@ -1,0 +1,1945 @@
+<presentation id="DPUosmcpDl71W4d3xCKcgwGqnXc" xmlns="https://www.larkoffice.com/sml/2.0" width="960" height="540">
+  <title>WakeAI_课程答辩</title>
+  <theme>
+    <background>
+      <fillColor color="rgba(255, 255, 255, 1)"/>
+    </background>
+    <textStyles>
+      <headline fontColor="rgba(31, 35, 41, 1)"/>
+      <sub-headline fontColor="rgba(31, 35, 41, 1)"/>
+      <body fontColor="rgba(31, 35, 41, 1)"/>
+      <caption fontColor="rgba(155, 158, 162, 1)" fontSize="14"/>
+    </textStyles>
+  </theme>
+  <slide id="pwd">
+    <style>
+      <fill id="fwd">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bDI">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">WakeAI 智能运动唤醒助手</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bDF">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">基于人体姿态识别的运动闹钟系统</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bDX">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bDm">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">01 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="517.5" height="108.75" topLeftX="45" topLeftY="176.25" type="rect" id="bDw">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="32.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">用一组运动，</span></strong></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="32.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">完成一次清醒的开始。</span></strong></p>
+        </content>
+      </shape>
+      <shape width="495" height="63.75" topLeftX="46.5" topLeftY="315" type="rect" id="bDj">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">C++17   /   Qt   /   OpenCV</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">YOLO Pose   /   SQLite</span></p>
+        </content>
+      </shape>
+      <shape width="825" height="52.5" topLeftX="46.5" topLeftY="425.25" type="rect" id="bDS">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">课程：[待填写]    姓名：[待填写]    学号：[待填写]</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">班级：[待填写]    指导教师：[待填写]</span></p>
+        </content>
+      </shape>
+      <shape width="307.5" height="221.25" topLeftX="600" topLeftY="165" type="rect" id="bDe">
+        <fill>
+          <fillColor color="rgba(237, 242, 240, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">真实截图待补充</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">项目首页或运动识别界面</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bDb">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 30 秒。介绍项目定位：把闹钟与摄像头动作计数结合，完成指定运动后通过正常流程关闭铃声。接下来按为什么做、实现什么、如何实现和如何验证展开。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwJ">
+    <style>
+      <fill id="fwJ">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bDU">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">项目背景与设计目标</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bBZ">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">把关闭闹钟与运动任务关联，增加起床后的主动参与</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bBW">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bBo">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">02 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="360" height="28.5" topLeftX="48.75" topLeftY="153.75" type="rect" id="bDg">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">使用场景</span></strong></p>
+        </content>
+      </shape>
+      <shape width="360" height="157.5" topLeftX="48.75" topLeftY="189" type="rect" id="bDO">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">铃声可以快速关闭</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">用户可能继续入睡</span></p>
+        </content>
+      </shape>
+      <shape width="390" height="28.5" topLeftX="495" topLeftY="153.75" type="rect" id="bBB">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">设计目标</span></strong></p>
+        </content>
+      </shape>
+      <shape width="390" height="157.5" topLeftX="495" topLeftY="189" type="rect" id="bBq">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">灵活设置闹钟，自动统计动作</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">保存完成记录，提供持续反馈</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="48.75" topLeftY="307.5" type="rect" id="bDk">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">响铃</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="267" topLeftY="307.5" type="rect" id="bDG">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">完成运动</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="485.25" topLeftY="307.5" type="rect" id="bBD">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">达到目标</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="703.5" topLeftY="307.5" type="rect" id="bBx">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">点击关闭</span></p>
+        </content>
+      </shape>
+      <line id="bBY" startX="249" startY="345" endX="267" endY="346">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bBE" startX="467.25" startY="345" endX="485.25" endY="346">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bDR" startX="685.5" startY="345" endX="703.5" endY="346">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="855" height="41.25" topLeftX="48.75" topLeftY="432" type="rect" id="bDy">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">功能边界：运动唤醒辅助工具，实际唤醒效果仍需用户体验验证。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bBA">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 45 秒。普通闹钟容易关闭，关闭后可能继续入睡。项目尝试增加一个可见的运动任务，并用自动计数降低用户手动操作负担。这里只能说明设计意图，不能宣称已验证清醒或健康效果。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwo">
+    <style>
+      <fill id="fwo">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bDH">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">功能总览与使用流程</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bDs">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">达标后点击完成，才会停止铃声</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bDK">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bDV">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">03 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="58.5" topLeftX="48.75" topLeftY="150" type="rect" id="bDc">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">设置闹钟</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="58.5" topLeftX="267" topLeftY="150" type="rect" id="bDd">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">到时响铃</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="58.5" topLeftX="485.25" topLeftY="150" type="rect" id="bDN">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">开始识别</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="58.5" topLeftX="703.5" topLeftY="150" type="rect" id="bDT">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">达到目标</span></p>
+        </content>
+      </shape>
+      <line id="bDz" startX="249" startY="179.25" endX="267" endY="180.25">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bDp" startX="467.25" startY="179.25" endX="485.25" endY="180.25">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bDl" startX="685.5" startY="179.25" endX="703.5" endY="180.25">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="166.75" height="55.5" topLeftX="367.5" topLeftY="243" type="rect" id="bDa">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">点击完成</span></p>
+        </content>
+      </shape>
+      <shape width="166.75" height="55.5" topLeftX="552.25" topLeftY="243" type="rect" id="bDQ">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">停铃</span></p>
+        </content>
+      </shape>
+      <shape width="166.75" height="55.5" topLeftX="737" topLeftY="243" type="rect" id="bDv">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">保存记录</span></p>
+        </content>
+      </shape>
+      <line id="bDf" startX="534.25" startY="270.75" endX="552.25" endY="271.75">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bDh" startX="719" startY="270.75" endX="737" endY="271.75">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="300" height="67.5" topLeftX="48.75" topLeftY="244.5" type="rect" id="bDM">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(0, 141, 128, 1)" fontSize="19.5" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">深蹲  /  开合跳  /  床上蹬腿</span></strong></p>
+        </content>
+      </shape>
+      <shape width="487.5" height="28.5" topLeftX="48.75" topLeftY="337.5" type="rect" id="bDr">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">闹钟与音频</span></strong></p>
+        </content>
+      </shape>
+      <shape width="487.5" height="157.5" topLeftX="48.75" topLeftY="372.75" type="rect" id="bDu">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">新增、编辑、删除、启停、重复日期</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">稍后提醒、铃声导入、试听与音量</span></p>
+        </content>
+      </shape>
+      <shape width="315" height="28.5" topLeftX="592.5" topLeftY="337.5" type="rect" id="bDJ">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">持续反馈</span></strong></p>
+        </content>
+      </shape>
+      <shape width="315" height="157.5" topLeftX="592.5" topLeftY="372.75" type="rect" id="bDn">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">历史记录、连续完成天数、成就</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">实时次数与目标进度</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bDt">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 55 秒。沿主流程说明用户如何使用。运动挑战有三种动作，主界面显示画面、骨架、次数、进度与提示。重点解释达到次数和完成任务是两个事件，防止把达标说成自动停铃。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwQ">
+    <style>
+      <fill id="fwQ">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bDq">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">系统架构与技术选型</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bDL">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">界面、识别、动作规则与系统服务分开组织</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bDB">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bDx">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">04 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="120" height="54" topLeftX="48.75" topLeftY="142.5" type="rect" id="bDE">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">界面层</span></p>
+        </content>
+      </shape>
+      <shape width="675" height="41.25" topLeftX="191.25" topLeftY="153.75" type="rect" id="bDP">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Qt Widgets · MainWindow · CameraView</span></p>
+        </content>
+      </shape>
+      <shape width="120" height="54" topLeftX="48.75" topLeftY="214.5" type="rect" id="bDD">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">识别层</span></p>
+        </content>
+      </shape>
+      <shape width="675" height="41.25" topLeftX="191.25" topLeftY="225.75" type="rect" id="bDA">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">MotionWorker · PoseDetector · PoseSmoother</span></p>
+        </content>
+      </shape>
+      <shape width="120" height="54" topLeftX="48.75" topLeftY="286.5" type="rect" id="bDY">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">动作层</span></p>
+        </content>
+      </shape>
+      <shape width="675" height="41.25" topLeftX="191.25" topLeftY="297.75" type="rect" id="bDC">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Squat · JumpingJack · Cycling · WorkoutSession</span></p>
+        </content>
+      </shape>
+      <shape width="120" height="54" topLeftX="48.75" topLeftY="358.5" type="rect" id="bDZ">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">系统层</span></p>
+        </content>
+      </shape>
+      <shape width="675" height="41.25" topLeftX="191.25" topLeftY="369.75" type="rect" id="bDo">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">AlarmManager · DatabaseManager · AchievementEngine</span></p>
+        </content>
+      </shape>
+      <shape width="862.5" height="30" topLeftX="48.75" topLeftY="451.5" type="rect" id="bDi">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="16.5" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">C++17 实现逻辑    Qt 协调界面/线程/音频    OpenCV DNN 推理    SQLite 存储</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bDW">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 55 秒。沿数据流解释四层结构。后台将姿态交给统一动作接口，再通过信号更新界面和会话。CMake 构建 GUI 与独立调试程序，两者复用核心识别代码。架构图是职责示意，不代表严格分层依赖约束。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwa">
+    <style>
+      <fill id="fwa">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bBd">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">闹钟调度与任务状态管理</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bBN">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">统一调度最近事件，状态检查避免重复触发</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bBg">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bBh">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">05 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="156.6" height="54" topLeftX="48.75" topLeftY="151.5" type="rect" id="bBa">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Idle</span></p>
+        </content>
+      </shape>
+      <shape width="156.6" height="54" topLeftX="223.34999999999997" topLeftY="151.5" type="rect" id="bBQ">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Ringing</span></p>
+        </content>
+      </shape>
+      <shape width="156.6" height="54" topLeftX="397.95" topLeftY="151.5" type="rect" id="bBT">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Preparing</span></p>
+        </content>
+      </shape>
+      <shape width="156.6" height="54" topLeftX="572.55" topLeftY="151.5" type="rect" id="bBy">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Exercising</span></p>
+        </content>
+      </shape>
+      <shape width="156.6" height="54" topLeftX="747.15" topLeftY="151.5" type="rect" id="bBG">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Done</span></p>
+        </content>
+      </shape>
+      <line id="bBO" startX="205.35" startY="178.5" endX="223.35" endY="179.5">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bBK" startX="379.95" startY="178.5" endX="397.95" endY="179.5">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bBn" startX="554.55" startY="178.5" endX="572.55" endY="179.5">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bBM" startX="729.15" startY="178.5" endX="747.15" endY="179.5">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="172.5" height="26.25" topLeftX="219" topLeftY="213" type="rect" id="bBr">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="15" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">到时触发</span></p>
+        </content>
+      </shape>
+      <shape width="217.5" height="26.25" topLeftX="684" topLeftY="213" type="rect" id="bBR">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="15" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">达标后点击完成</span></p>
+        </content>
+      </shape>
+      <shape width="360" height="28.5" topLeftX="48.75" topLeftY="261" type="rect" id="bBU">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">调度规则</span></strong></p>
+        </content>
+      </shape>
+      <shape width="360" height="157.5" topLeftX="48.75" topLeftY="296.25" type="rect" id="bBl">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">七位掩码保存重复日期</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">遍历闹钟，选择最近触发时间</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">每 250 ms 检查一次</span></p>
+        </content>
+      </shape>
+      <shape width="420" height="127.5" topLeftX="483.75" topLeftY="262.5" type="rect" id="bBV">
+        <fill>
+          <fillColor color="rgba(234, 240, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"/>
+        </content>
+      </shape>
+      <shape width="390" height="105" topLeftX="498.75" topLeftY="274.5" type="rect" id="bBt">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">if (now &lt; next_) return;</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">ringing_ = true;</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">completed_ = false;</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">emit alarmTriggered();</span></p>
+        </content>
+      </shape>
+      <shape width="416.25" height="52.5" topLeftX="487.5" topLeftY="403.5" type="rect" id="bBH">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">代码节选（now 代表当前时间）</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">时间判断 → 更新状态 → 信号通知界面</span></p>
+        </content>
+      </shape>
+      <shape width="412.5" height="45" topLeftX="48.75" topLeftY="442.5" type="rect" id="bBk">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="16.5" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">稍后提醒延后触发；单次闹钟完成后停用。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bBc">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 60 秒。七位掩码表示一周，0 表示单次，0x1F 为工作日，0x60 为周末，0x7F 为每天。遍历闹钟选择最近一次交给 AlarmManager，每 250 毫秒检查。稍后提醒延后触发，单次完成后停用。当前依赖应用进程运行。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwL">
+    <style>
+      <fill id="fwL">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bBv">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">人体姿态识别流程</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bBf">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">模型提取 17 个关键点，后续规则负责动作计数</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bBC">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bBS">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">06 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="48.75" topLeftY="151.5" type="rect" id="bBb">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">读取画面</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="267" topLeftY="151.5" type="rect" id="bBu">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">640×640</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">缩放与填充</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="485.25" topLeftY="151.5" type="rect" id="bBJ">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">RGB / 归一化</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="703.5" topLeftY="151.5" type="rect" id="bBP">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">YOLO Pose</span></p>
+        </content>
+      </shape>
+      <line id="bBF" startX="249" startY="189" endX="267" endY="190">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bBe" startX="467.25" startY="189" endX="485.25" endY="190">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bBw" startX="685.5" startY="189" endX="703.5" endY="190">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="273" height="58.5" topLeftX="48.75" topLeftY="264" type="rect" id="bBs">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">置信度过滤 / NMS</span></p>
+        </content>
+      </shape>
+      <shape width="273" height="58.5" topLeftX="339.75" topLeftY="264" type="rect" id="bBL">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">选择置信度最高的人</span></p>
+        </content>
+      </shape>
+      <shape width="273" height="58.5" topLeftX="630.75" topLeftY="264" type="rect" id="bBj">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">还原 17 点坐标</span></p>
+        </content>
+      </shape>
+      <line id="bBX" startX="321.75" startY="293.25" endX="339.75" endY="294.25">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bBz" startX="612.75" startY="293.25" endX="630.75" endY="294.25">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="570" height="99.75" topLeftX="48.75" topLeftY="361.5" type="rect" id="bBp">
+        <fill>
+          <fillColor color="rgba(234, 240, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"/>
+        </content>
+      </shape>
+      <shape width="540" height="77.25" topLeftX="63.75" topLeftY="373.5" type="rect" id="bBi">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">net_ = cv::dnn::readNetFromONNX(modelPath);</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">net_.setInput(blob);</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">cv::Mat output = net_.forward();</span></p>
+        </content>
+      </shape>
+      <shape width="255" height="93.75" topLeftX="648.75" topLeftY="365.25" type="rect" id="bBI">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">内部使用 33 点编号接口</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">实际来自 YOLO 的 17 点</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">多人场景可能切换对象</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bBm">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 55 秒。等比例缩放和填充避免拉伸人体。输入 640×640，转换 RGB 并归一化，OpenCV DNN 执行 ONNX 模型。低置信度过滤和 NMS 后选置信度最高的人，并还原坐标。33 点仅是内部编号接口，没有额外完整 33 点，也没有真实三维深度。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwR">
+    <style>
+      <fill id="fwR">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bWv">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">关键点平滑与统一动作接口</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bWf">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">坐标做平滑，置信度保留本帧值</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bWS">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bWX">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">07 / 15</span></p>
+        </content>
+      </shape>
+      <undefined id="bWz" type="chart_refer_host_perm"/>
+      <shape width="465" height="26.25" topLeftX="54" topLeftY="133.5" type="rect" id="bWp">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="15" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">平滑曲线示意，非实测</span></p>
+        </content>
+      </shape>
+      <shape width="472.5" height="63" topLeftX="48.75" topLeftY="411" type="rect" id="bWl">
+        <fill>
+          <fillColor color="rgba(234, 240, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"/>
+        </content>
+      </shape>
+      <shape width="442.5" height="40.5" topLeftX="63.75" topLeftY="423" type="rect" id="bWI">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">history.x = 0.35f * current.x</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">          + 0.65f * history.x;</span></p>
+        </content>
+      </shape>
+      <shape width="333.75" height="78.75" topLeftX="562.5" topLeftY="156" type="rect" id="bWw">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">ExerciseBase</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">update / count / valid / reset</span></p>
+        </content>
+      </shape>
+      <shape width="108.75" height="52.5" topLeftX="552.75" topLeftY="307.5" type="rect" id="bWs">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Squat</span></p>
+        </content>
+      </shape>
+      <shape width="142.5" height="52.5" topLeftX="669.75" topLeftY="307.5" type="rect" id="bWK">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">JumpingJack</span></p>
+        </content>
+      </shape>
+      <shape width="97.5" height="52.5" topLeftX="819" topLeftY="307.5" type="rect" id="bWe">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Cycling</span></p>
+        </content>
+      </shape>
+      <line id="bWb" startX="607.1250393700788" startY="307.5" endX="729.3750393700788" endY="234.75">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bWu" startX="741.0000787401575" startY="307.5" endX="729.3750393700788" endY="234.75">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bWJ" startX="867.7500787401574" startY="307.5" endX="729.3750393700786" endY="234.75">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="322.5" height="67.5" topLeftX="573.75" topLeftY="400.5" type="rect" id="bWF">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">共享输入与接口</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">分别维护特征、状态和次数</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bWm">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 50 秒。指数移动平均让坐标更平稳，GUI 中 alpha 为 0.35，同时带来一定响应延迟。保留本帧置信度能防止历史坐标掩盖丢点。统一接口使采集、推理和动作选择解耦。图中数据纯属示意，不表示实测改善幅度。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pww">
+    <style>
+      <fill id="fww">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bWq">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">深蹲计数：膝角与状态机</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bWL">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">站直、下蹲、重新站直，完整往返计一次</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bWj">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bWZ">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">08 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="273" height="90" topLeftX="48.75" topLeftY="158.25" type="rect" id="bWo">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">先确认站直</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">θ &gt; 155°</span></p>
+        </content>
+      </shape>
+      <shape width="273" height="90" topLeftX="339.75" topLeftY="158.25" type="rect" id="bWi">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">下蹲 Down</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">θ &lt; 140°</span></p>
+        </content>
+      </shape>
+      <shape width="273" height="90" topLeftX="630.75" topLeftY="158.25" type="rect" id="bWD">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">恢复 Ready</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">θ &gt; 155°，次数 +1</span></p>
+        </content>
+      </shape>
+      <line id="bWA" startX="321.75" startY="203.25" endX="339.75" endY="204.25">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bWY" startX="612.75" startY="203.25" endX="630.75" endY="204.25">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="390" height="28.5" topLeftX="48.75" topLeftY="292.5" type="rect" id="bWC">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">输入与几何关系</span></strong></p>
+        </content>
+      </shape>
+      <shape width="390" height="157.5" topLeftX="48.75" topLeftY="327.75" type="rect" id="bWB">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">髋、膝、踝形成膝关节夹角 θ</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">两腿均有效时选择较小角度</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">140°～155°保留状态缓冲</span></p>
+        </content>
+      </shape>
+      <shape width="420" height="157.5" topLeftX="487.5" topLeftY="292.5" type="rect" id="bWx">
+        <fill>
+          <fillColor color="rgba(234, 240, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"/>
+        </content>
+      </shape>
+      <shape width="390" height="135" topLeftX="502.5" topLeftY="304.5" type="rect" id="bWE">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">if (state == Ready &amp;&amp; angle &lt; 140)</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">    state = Down;</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">if (state == Down &amp;&amp; angle &gt; 155) {</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">    ++count;</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">    state = Ready;</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">}</span></p>
+        </content>
+      </shape>
+      <shape width="412.5" height="26.25" topLeftX="490.5" topLeftY="459" type="rect" id="bWP">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="13.5" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">逻辑简化，省略初始化与有效性检查</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bWW">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 65 秒。膝角由髋、膝、踝计算，左右腿均可靠时取较小值，单侧可靠时使用该侧。先确认站直，避免初始蹲姿被直接计数。140 与 155 度形成缓冲区。当前确认帧数为 1，不能宣称已验证所有误计场景。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwz">
+    <style>
+      <fill id="fwz">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bWd">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">开合跳计数：手脚联合判定</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bWN">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">双臂和双腿同时满足条件，才进入展开状态</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bWT">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bWy">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">09 / 15</span></p>
+        </content>
+      </shape>
+      <table id="bZD" width="855" height="144" topLeftX="48.75" topLeftY="146.25">
+        <colgroup>
+          <col span="1" width="390"/>
+          <col span="2" width="232.5"/>
+        </colgroup>
+        <tr height="48">
+          <td id="bWr">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">特征</span></strong></p>
+            </content>
+          </td>
+          <td id="bWk">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">展开</span></strong></p>
+            </content>
+          </td>
+          <td id="bWO">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">合拢</span></strong></p>
+            </content>
+          </td>
+        </tr>
+        <tr height="48">
+          <td id="bWh">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">双臂抬升 / 肩宽</span></p>
+            </content>
+          </td>
+          <td id="bWa">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">两侧均 &gt; 0.45</span></p>
+            </content>
+          </td>
+          <td id="bWQ">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">两侧均 &lt; −0.25</span></p>
+            </content>
+          </td>
+        </tr>
+        <tr height="48">
+          <td id="bWR">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">脚踝间距 / 肩宽</span></p>
+            </content>
+          </td>
+          <td id="bWG">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">&gt; 1.25</span></p>
+            </content>
+          </td>
+          <td id="bZB">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">&lt; 0.75</span></p>
+            </content>
+          </td>
+        </tr>
+      </table>
+      <shape width="273" height="57.75" topLeftX="48.75" topLeftY="318.75" type="rect" id="bWV">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">合拢</span></p>
+        </content>
+      </shape>
+      <shape width="273" height="57.75" topLeftX="339.75" topLeftY="318.75" type="rect" id="bWt">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">展开</span></p>
+        </content>
+      </shape>
+      <shape width="273" height="57.75" topLeftX="630.75" topLeftY="318.75" type="rect" id="bWH">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">再次合拢，次数 +1</span></p>
+        </content>
+      </shape>
+      <line id="bWg" startX="321.75" startY="347.62503937007875" endX="339.75" endY="348.62503937007875">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bWU" startX="612.75" startY="347.62503937007875" endX="630.75" endY="348.62503937007875">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="532.5" height="30" topLeftX="48.75" topLeftY="402.75" type="rect" id="bWn">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">抬升比例 =（肩 y − 腕 y）/ 肩宽</span></p>
+        </content>
+      </shape>
+      <shape width="855" height="33.75" topLeftX="48.75" topLeftY="446.25" type="rect" id="bWM">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">识别开合姿态循环，未单独检测双脚是否离地。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bWc">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 60 秒。图像 y 轴向下，肩 y 减腕 y 越大表示手腕越高。所有距离以肩宽归一化，降低拍摄距离的影响。完整合拢、展开、再次合拢才加一。算法没有检测离地，因此迈步举手也可能满足条件。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwb">
+    <style>
+      <fill id="fwb">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bZE">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">床上蹬腿：二维信号与自动标定</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bZi">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">膝、踝提供主要特征，每次稳定左右切换计一次</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bZW">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bZx">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">10 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="855" height="63.75" topLeftX="48.75" topLeftY="142.5" type="rect" id="bZq">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">A = log（左小腿投影长度 / 右小腿投影长度）</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">B =（左膝 y − 右膝 y）/ 平均小腿长度</span></p>
+        </content>
+      </shape>
+      <undefined id="bZY" type="chart_refer_host_perm"/>
+      <shape width="525" height="26.25" topLeftX="52.5" topLeftY="210.75" type="rect" id="bZL">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="15" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">算法示意，非实测；信号为二维变化</span></p>
+        </content>
+      </shape>
+      <shape width="292.5" height="28.5" topLeftX="611.25" topLeftY="239.25" type="rect" id="bZC">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">自动标定与防误计</span></strong></p>
+        </content>
+      </shape>
+      <shape width="292.5" height="157.5" topLeftX="611.25" topLeftY="274.5" type="rect" id="bZZ">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">选择归一化动态范围较大的信号</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">2 帧确认，稳定相位间隔 ≥ 8 帧</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">两次计数间隔 ≥ 10 帧</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">触发阈值设下限</span></p>
+        </content>
+      </shape>
+      <shape width="292.5" height="60" topLeftX="611.25" topLeftY="405" type="rect" id="bZA">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">髋点仅辅助显示</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">不作为计数必需条件</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZo">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 85 秒。这是最复杂的动作。A 是左右小腿投影长度的对数比，B 是左右膝 y 差除以平均小腿长度。初始收集变化范围后选归一化动态范围较大的信号，不能称为噪声最小的信号。根据基线与上下阈值判断左右相位。当前 EachPedal 每次切换计一，完整往返计两次。图仅示意信号跨阈值，真实计数还必须满足所有帧间隔约束。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwx">
+    <style>
+      <fill id="fwx">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bZX">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">后台识别与实时界面反馈</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bZz">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">耗时识别放在后台，主线程负责交互和显示</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bZp">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bZj">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">11 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="337.5" height="71.25" topLeftX="48.75" topLeftY="153.75" type="rect" id="bZe">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">主线程</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">MainWindow / CameraView</span></p>
+        </content>
+      </shape>
+      <shape width="356.25" height="71.25" topLeftX="547.5" topLeftY="153.75" type="rect" id="bZw">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">识别线程</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">MotionWorker</span></p>
+        </content>
+      </shape>
+      <line id="bZs" startX="386.25" startY="189.37503937007875" endX="547.5" endY="190.37503937007875">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="165" height="41.25" topLeftX="391.5" topLeftY="140.25" type="rect" id="bZP">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="14.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">启动 / 暂停 / 停止</span></p>
+        </content>
+      </shape>
+      <shape width="337.5" height="86.25" topLeftX="48.75" topLeftY="286.5" type="rect" id="bZF">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">页面与按钮</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">画面、次数、进度、错误提示</span></p>
+        </content>
+      </shape>
+      <shape width="356.25" height="86.25" topLeftX="547.5" topLeftY="286.5" type="rect" id="bZb">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">视频读取 → 推理 → 平滑 → 计数</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">发送画面、次数、有效性与错误</span></p>
+        </content>
+      </shape>
+      <line id="bZu" startX="547.5" startY="329.62503937007875" endX="386.25" endY="330.62503937007875">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="120" height="30" topLeftX="408" topLeftY="331.5" type="rect" id="bZS">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="15" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">Qt 信号</span></p>
+        </content>
+      </shape>
+      <shape width="847.5" height="32.25" topLeftX="48.75" topLeftY="407.25" type="rect" id="bZm">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">原子标志限制待显示帧，避免预览事件积压</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="30" topLeftX="48.75" topLeftY="450.75" type="rect" id="bZv">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">暂停：摄像头继续预览；测试视频停止推进。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZI">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 55 秒。MotionWorker 迁移到 QThread，后台读取、推理、平滑、计数，以信号发送结果。原子标志控制暂停停止及待显示帧。framePending 限制积压，QImage copy 保证数据独立。摄像头暂停识别时仍预览，视频暂停则停止推进。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwy">
+    <style>
+      <fill id="fwy">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bZc">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">达标控制、记录与成就</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bZd">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">达标只触发一次，保存重试不重复累计</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bZT">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bZl">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">12 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="48.75" topLeftY="151.5" type="rect" id="bZV">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">达到目标</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">停止识别</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="267" topLeftY="151.5" type="rect" id="bZt">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">点击完成</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">停止铃声</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="485.25" topLeftY="151.5" type="rect" id="bZH">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">sessionId</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">保存去重</span></p>
+        </content>
+      </shape>
+      <shape width="200.25" height="75" topLeftX="703.5" topLeftY="151.5" type="rect" id="bZK">
+        <fill>
+          <fillColor color="rgba(226, 242, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">统计与成就</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">累计反馈</span></p>
+        </content>
+      </shape>
+      <line id="bZn" startX="249" startY="189" endX="267" endY="190">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bZM" startX="467.25" startY="189" endX="485.25" endY="190">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <line id="bZr" startX="685.5" startY="189" endX="703.5" endY="190">
+        <border color="rgba(0, 141, 128, 1)" width="1" lineCap="square" lineJoin="miter" miterLimit="10"/>
+        <startArrow widthScale="med" heightScale="med"/>
+        <endArrow type="solid-triangle" widthScale="sm" heightScale="sm"/>
+      </line>
+      <shape width="855" height="95.25" topLeftX="48.75" topLeftY="270" type="rect" id="bZJ">
+        <fill>
+          <fillColor color="rgba(234, 240, 238, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"/>
+        </content>
+      </shape>
+      <shape width="825" height="72.75" topLeftX="63.75" topLeftY="282" type="rect" id="bZh">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">if (!active_ || reached_) return false;</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">count_ = std::max(count_, std::max(0, value));</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">// 首次达到目标时标记 reached_</span></p>
+        </content>
+      </shape>
+      <shape width="165" height="31.5" topLeftX="48.75" topLeftY="393.75" type="rect" id="bZa">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">五项成就</span></strong></p>
+        </content>
+      </shape>
+      <shape width="656.25" height="60" topLeftX="243.75" topLeftY="394.5" type="rect" id="bZN">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">首次成功     连续 3 天     连续 7 天</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">累计 100 个动作     累计成功 30 次</span></p>
+        </content>
+      </shape>
+      <shape width="855" height="24" topLeftX="48.75" topLeftY="474" type="rect" id="bZQ">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="15" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">记录的是任务完成情况，不能直接等同于实际早起或唤醒效果。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZf">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 65 秒。WorkoutSession 用 active 和 reached 门控计数，max 保证不倒退。首次达标停止识别并启用完成按钮，用户点击后停铃保存。sessionId 对应数据库唯一索引，避免重试重复记录。历史主要保存成功任务，因此不能据此计算完整成功率。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwC">
+    <style>
+      <fill id="fwC">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bZU">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">铃声管理与交互设计</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bAB">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">设置、反馈与个性化功能共同支持完整使用过程</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bAZ">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bAW">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">13 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="266.25" height="195" topLeftX="48.75" topLeftY="146.25" type="rect" id="bAA">
+        <fill>
+          <fillColor color="rgba(237, 242, 240, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">真实截图待补充</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">闹钟编辑</span></p>
+        </content>
+      </shape>
+      <shape width="266.25" height="195" topLeftX="346.5" topLeftY="146.25" type="rect" id="bZR">
+        <fill>
+          <fillColor color="rgba(237, 242, 240, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">真实截图待补充</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">铃声选择 / 试听</span></p>
+        </content>
+      </shape>
+      <shape width="266.25" height="195" topLeftX="644.25" topLeftY="146.25" type="rect" id="bZk">
+        <fill>
+          <fillColor color="rgba(237, 242, 240, 1)"/>
+        </fill>
+        <border color="rgba(197, 216, 210, 1)" width="1" lineJoin="miter" miterLimit="10"/>
+        <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)">
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">真实截图待补充</span></p>
+          <p textAlign="center" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">完成页面</span></p>
+        </content>
+      </shape>
+      <shape width="266.25" height="78.75" topLeftX="48.75" topLeftY="366.75" type="rect" id="bZg">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">闹钟设置与多页面切换</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">QStackedWidget</span></p>
+        </content>
+      </shape>
+      <shape width="266.25" height="78.75" topLeftX="346.5" topLeftY="366.75" type="rect" id="bZy">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">导入、试听、音量调整</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">QMediaPlayer 循环播放</span></p>
+        </content>
+      </shape>
+      <shape width="266.25" height="78.75" topLeftX="644.25" topLeftY="366.75" type="rect" id="bZO">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">进度与次数动画</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">QPainter / 属性动画</span></p>
+        </content>
+      </shape>
+      <shape width="855" height="26.25" topLeftX="48.75" topLeftY="462.75" type="rect" id="bAD">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">部分内置铃声由正弦波合成 WAV。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bZG">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 45 秒。铃声支持内置、自定义导入、试听、音量和删除。部分内置音频通过正弦波合成 WAV，QMediaPlayer 循环播放。页面用 QStackedWidget 管理，QPainter 和属性动画提供骨架、进度和次数反馈。展示时替换为实际截图。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwv">
+    <style>
+      <fill id="fwv">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bAs">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">测试方案与结果展示</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bAn">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">业务正确性与动作识别效果分开验证</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bAr">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bAX">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">14 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="855" height="41.25" topLeftX="48.75" topLeftY="135.75" type="rect" id="bAp">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">已有测试代码：会话约束、数据库迁移与去重、成就统计、响铃与稍后提醒</span></p>
+        </content>
+      </shape>
+      <table id="bAV" width="855" height="214.5" topLeftX="48.75" topLeftY="196.5">
+        <colgroup>
+          <col span="1" width="270"/>
+          <col span="2" width="120"/>
+          <col span="1" width="150"/>
+          <col span="1" width="195"/>
+        </colgroup>
+        <tr height="42.9">
+          <td id="bAf">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">测试场景</span></strong></p>
+            </content>
+          </td>
+          <td id="bAd">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">人工次数</span></strong></p>
+            </content>
+          </td>
+          <td id="bAT">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">程序次数</span></strong></p>
+            </content>
+          </td>
+          <td id="bAb">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">误计 / 漏计</span></strong></p>
+            </content>
+          </td>
+          <td id="bAJ">
+            <borderTop color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(0, 141, 128, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(255, 255, 255, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">观察结论</span></strong></p>
+            </content>
+          </td>
+        </tr>
+        <tr height="42.9">
+          <td id="bAa">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">深蹲：标准动作</span></p>
+            </content>
+          </td>
+          <td id="bAR">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待标注</span></p>
+            </content>
+          </td>
+          <td id="bAw">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAK">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAM">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+        </tr>
+        <tr height="42.9">
+          <td id="bAk">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">开合跳：标准动作</span></p>
+            </content>
+          </td>
+          <td id="bAz">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待标注</span></p>
+            </content>
+          </td>
+          <td id="bAl">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAt">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAg">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+        </tr>
+        <tr height="42.9">
+          <td id="bAy">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">蹬腿：局部身体入镜</span></p>
+            </content>
+          </td>
+          <td id="bAS">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待标注</span></p>
+            </content>
+          </td>
+          <td id="bAv">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAc">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAN">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+        </tr>
+        <tr height="42.9">
+          <td id="bAG">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderLeft color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">遮挡 / 幅度 / 角度变化</span></p>
+            </content>
+          </td>
+          <td id="bAF">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待标注</span></p>
+            </content>
+          </td>
+          <td id="bAu">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAh">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+          <td id="bAQ">
+            <borderRight color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <borderBottom color="rgba(0, 0, 0, 1)" lineJoin="miter" miterLimit="10"/>
+            <fill>
+              <fillColor color="rgba(226, 242, 238, 1)"/>
+            </fill>
+            <content paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="14" fontFamily="思源黑体" textAlign="left">
+              <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="15.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">待测试</span></p>
+            </content>
+          </td>
+        </tr>
+      </table>
+      <shape width="855" height="31.5" topLeftX="48.75" topLeftY="432" type="rect" id="bAH">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18.75" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">固定视频 → 人工标注 → 程序计数 → CSV 定位误计与漏计</span></p>
+        </content>
+      </shape>
+      <shape width="855" height="26.25" topLeftX="48.75" topLeftY="471" type="rect" id="bAm">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(162, 108, 36, 1)" fontSize="16.5" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">执行状态：待测试。现有测试代码不能证明识别准确率。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bAe">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 65 秒。已有测试代码覆盖会话、数据库迁移和去重、连续天数和成就以及闹钟调度。但当前材料没有执行结果。识别测试应固定视频并人工标注，对照 CSV 逐帧定位误计漏计，增加遮挡、幅度不足和角度变化场景。相同总次数也可能同时有误计和漏计，不能只看差值。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pwk">
+    <style>
+      <fill id="fwk">
+        <fillColor color="rgba(247, 250, 249, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <shape width="870" height="48" topLeftX="43.5" topLeftY="28.5" type="rect" id="bAj">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="30" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">项目总结与后续改进</span></strong></p>
+        </content>
+      </shape>
+      <shape width="855" height="34.5" topLeftX="45" topLeftY="84" type="rect" id="bAq">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(0, 141, 128, 1)" fontSize="18" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">实现姿态计数与闹钟业务闭环，下一步补齐适应性与实测证据</span></p>
+        </content>
+      </shape>
+      <shape width="300" height="18.75" topLeftX="45" topLeftY="505.5" type="rect" id="bAY">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">WakeAI</span></p>
+        </content>
+      </shape>
+      <shape width="75" height="18.75" topLeftX="843.75" topLeftY="505.5" type="rect" id="bAL">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="12" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">15 / 15</span></p>
+        </content>
+      </shape>
+      <shape width="401.25" height="28.5" topLeftX="48.75" topLeftY="153.75" type="rect" id="bAi">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">已实现（依据静态分析）</span></strong></p>
+        </content>
+      </shape>
+      <shape width="401.25" height="157.5" topLeftX="48.75" topLeftY="189" type="rect" id="bAP">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">多闹钟与运动解锁流程</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">三种动作的规则和状态机</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">后台识别、暂停与实时反馈</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">本地记录、统计与成就</span></p>
+        </content>
+      </shape>
+      <shape width="408.75" height="28.5" topLeftX="498.75" topLeftY="153.75" type="rect" id="bAI">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(36, 57, 54, 1)" fontSize="20.25" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">后续改进</span></strong></p>
+        </content>
+      </shape>
+      <shape width="408.75" height="157.5" topLeftX="498.75" topLeftY="189" type="rect" id="bAx">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">多人：稳定人物跟踪</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">视角：改进自适应标定</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">帧率：用时间替代部分帧数限制</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">验证：建立人工标注视频集</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(96, 117, 111, 1)" fontSize="17.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">运行：评估系统级唤醒与后台支持</span></p>
+        </content>
+      </shape>
+      <shape width="847.5" height="41.25" topLeftX="48.75" topLeftY="368.25" type="rect" id="bAo">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><strong><span color="rgba(0, 141, 128, 1)" fontSize="24" fontFamily="Noto Sans CJK SC" italic="false" strikethrough="false" underline="false">可解释的计数规则 + 会话约束 + 数据库去重</span></strong></p>
+        </content>
+      </shape>
+      <shape width="840" height="67.5" topLeftX="48.75" topLeftY="423.75" type="rect" id="bAE">
+        <content verticalAlign="top" paddingTop="3.6" paddingBottom="3.6" paddingLeft="7.2" paddingRight="7.2" fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)" textAlign="left">
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="23.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">让姿态识别从画面中的关键点，</span></p>
+          <p textAlign="left" lineSpacing="multiple:1.2"><span color="rgba(36, 57, 54, 1)" fontSize="23.25" fontFamily="Noto Sans CJK SC" bold="false" italic="false" strikethrough="false" underline="false">走向一个完整的日常应用。</span></p>
+        </content>
+      </shape>
+    </data>
+    <note id="bAC">
+      <content>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">建议用时 55 秒。总结完成的应用闭环、三种动作、后台识别和本地记录。技术亮点是模型关键点结合几何规则、蹬腿局部输入与标定、线程分离和业务去重。未来补充稳定人物跟踪、自适应标定、时间约束、带标注数据集和系统级运行支持。可在此后进行 30 秒左右的闭环演示。</span></p>
+        <p textAlign="left" lineSpacing="multiple:1.2"/>
+        <p textAlign="left" lineSpacing="multiple:1.2"><span fontSize="12" bold="false" italic="false" strikethrough="false" underline="false">内容依据：用户提供的制作大纲及《粘贴的 markdown (1)。md》静态代码分析。未独立运行程序。</span></p>
+      </content>
+    </note>
+  </slide>
+</presentation>

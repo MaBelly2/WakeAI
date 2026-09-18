@@ -1,0 +1,109 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="700" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>项目总结与后续改进</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="800" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>实现姿态计数与闹钟业务闭环，下一步补齐适应性与实测证据</p>
+      </content>
+    </shape>
+
+    <!-- 左侧卡片 - 已实现 -->
+    <shape type="rect" topLeftX="45" topLeftY="125" width="420" height="260" presetHandlers="8">
+      <fill><fillColor color="rgba(34,197,94,0.08)"/></fill>
+      <border color="rgba(34,197,94,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="140" width="200" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(34,197,94,1)" textAlign="left" bold="true">
+        <p>已实现</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="170" width="380" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="left">
+        <p>（依据静态代码分析）</p>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="65" topLeftY="205" width="380" height="170">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.9">
+        <p>● 多闹钟与运动解锁完整流程</p>
+        <p>● 三种动作的规则和状态机</p>
+        <p>● 后台识别、暂停与实时反馈</p>
+        <p>● 本地记录、统计与成就系统</p>
+      </content>
+    </shape>
+
+    <!-- 右侧卡片 - 后续改进 -->
+    <shape type="rect" topLeftX="495" topLeftY="125" width="420" height="260" presetHandlers="8">
+      <fill><fillColor color="rgba(251,191,36,0.08)"/></fill>
+      <border color="rgba(251,191,36,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="140" width="200" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(251,191,36,1)" textAlign="left" bold="true">
+        <p>后续改进</p>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="515" topLeftY="185" width="380" height="190">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.8">
+        <p>● 多人：稳定人物跟踪</p>
+        <p>● 视角：改进自适应标定</p>
+        <p>● 帧率：用时间替代部分帧数限制</p>
+        <p>● 验证：建立人工标注视频集</p>
+        <p>● 运行：评估系统级唤醒与后台支持</p>
+      </content>
+    </shape>
+
+    <!-- 底部技术亮点条 -->
+    <shape type="rect" topLeftX="45" topLeftY="410" width="870" height="60" presetHandlers="8">
+      <fill><fillColor color="rgba(0,212,255,0.1)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="425" width="830" height="35">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>可解释的计数规则 + 会话约束 + 数据库去重</p>
+      </content>
+    </shape>
+
+    <!-- 结尾标语 -->
+    <shape type="text" topLeftX="45" topLeftY="475" width="870" height="25">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center" italic="true">
+        <p>让姿态识别从画面中的关键点，变成真实可用的唤醒助手</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>15 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 55 秒。总结完成的应用闭环、三种动作、后台识别和本地记录。技术亮点是模型关键点结合几何规则、蹬腿局部输入与标定、线程分离和业务去重。未来补充稳定人物跟踪、自适应标定、时间约束、带标注数据集和系统级运行支持。可在此后进行 30 秒左右的闭环演示。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

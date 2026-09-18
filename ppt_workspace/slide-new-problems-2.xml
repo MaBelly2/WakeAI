@@ -1,0 +1,119 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="700" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>开发中的问题与解决（二）</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>代码调试与测试验证：从编译器报错到核心规则验证</p>
+      </content>
+    </shape>
+
+    <!-- 左侧卡片 - 代码层面 -->
+    <shape type="rect" topLeftX="45" topLeftY="120" width="530" height="290" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.6)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="135" width="250" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>问题三：代码层面（附错误码）</p>
+      </content>
+    </shape>
+
+    <!-- 错误码列表 -->
+    <shape type="text" topLeftX="65" topLeftY="175" width="490" height="220">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.7">
+        <p><span color="rgba(251,191,36,1)" bold="true">C2672</span> std::min 类型不匹配 → static_cast&lt;double&gt;()</p>
+        <p><span color="rgba(251,191,36,1)" bold="true">C2065</span> M_PI 未定义 → constexpr kPi 自定义常量</p>
+        <p><span color="rgba(251,191,36,1)" bold="true">LNK2019</span> Q_OBJECT moc 未生成 → 头文件加入源文件列表</p>
+        <p><span color="rgba(251,191,36,1)" bold="true">LNK2019</span> ExerciseUtils.cpp 漏加 → 补进 CMakeLists</p>
+        <p><span color="rgba(251,191,36,1)" bold="true">运行时</span> 数据库参数不匹配 → 删旧 db + gitignore *.db</p>
+        <p><span color="rgba(251,191,36,1)" bold="true">C4819</span> 中文编码问题 → add_compile_options(/utf-8)</p>
+      </content>
+    </shape>
+
+    <!-- 右侧卡片 - 测试验证 -->
+    <shape type="rect" topLeftX="600" topLeftY="120" width="315" height="290" presetHandlers="8">
+      <fill><fillColor color="rgba(34,197,94,0.08)"/></fill>
+      <border color="rgba(34,197,94,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="620" topLeftY="135" width="250" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(34,197,94,1)" textAlign="left" bold="true">
+        <p>问题四：测试验证</p>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="620" topLeftY="180" width="275" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(251,191,36,1)" textAlign="left" bold="true">
+        <p>QTimer 测试不触发</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="620" topLeftY="205" width="275" height="60">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.4">
+        <p>现象：测试程序未运行事件循环，定时器事件不派发</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="620" topLeftY="270" width="275" height="55">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(34,197,94,1)" textAlign="left" lineSpacing="multiple:1.4">
+        <p>解决：QEventLoop + singleShot(1200, quit)</p>
+      </content>
+    </shape>
+
+    <!-- 验证结果 -->
+    <shape type="rect" topLeftX="620" topLeftY="335" width="275" height="60" presetHandlers="6">
+      <fill><fillColor color="rgba(34,197,94,0.15)"/></fill>
+      <border color="rgba(34,197,94,0.4)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="635" topLeftY="345" width="245" height="40">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(34,197,94,1)" textAlign="center" lineSpacing="multiple:1.3">
+        <p>验证通过：未完成→stop()拒绝</p>
+        <p>完成→stop()成功 · 10项自测全过</p>
+      </content>
+    </shape>
+
+    <!-- 底部经验条 -->
+    <shape type="rect" topLeftX="45" topLeftY="425" width="870" height="55" presetHandlers="8">
+      <fill><fillColor color="rgba(0,212,255,0.1)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="438" width="830" height="30">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="center">
+        <p>经验：善用错误码定位根因 · 最小复现缩小范围 · 关注环境差异 · 规范团队协作</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>16 / 18</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 50 秒。这一页讲代码层面的具体问题，全部带真实的编译器错误码，非常有说服力。</p>
+      <p>左边列 6 个典型问题，右边讲测试验证的坑和解决。重点强调：我们不是空谈，是真的一行一行调试过来的。</p>
+      <p>最后那个"10项自测全过"很重要，证明我们真的验证过核心功能。</p>
+    </content>
+  </note>
+</slide>

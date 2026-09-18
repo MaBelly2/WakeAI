@@ -1,0 +1,101 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="700" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>创新点：直击早八起床痛点</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>为什么普通闹钟叫不醒大学生？我们用运动来解决</p>
+      </content>
+    </shape>
+
+    <!-- 左侧卡片 - 痛点 -->
+    <shape type="rect" topLeftX="45" topLeftY="125" width="420" height="220" presetHandlers="8">
+      <fill><fillColor color="rgba(239,68,68,0.08)"/></fill>
+      <border color="rgba(239,68,68,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="140" width="200" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(239,68,68,1)" textAlign="left" bold="true">
+        <p>痛点：早八困局</p>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="65" topLeftY="185" width="380" height="140">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.8">
+        <p>● 闹钟一响，随手关掉继续睡</p>
+        <p>● "再睡5分钟" → 迟到半小时</p>
+        <p>● 睡眠惯性：大脑还没开机</p>
+        <p>● 普通闹钟只能"响"，不能"醒"</p>
+      </content>
+    </shape>
+
+    <!-- 右侧卡片 - 解决方案 -->
+    <shape type="rect" topLeftX="495" topLeftY="125" width="420" height="220" presetHandlers="8">
+      <fill><fillColor color="rgba(34,197,94,0.08)"/></fill>
+      <border color="rgba(34,197,94,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="140" width="250" height="30">
+      <content textType="body" fontSize="16" fontFamily="Noto Sans CJK SC" color="rgba(34,197,94,1)" textAlign="left" bold="true">
+        <p>解法：运动唤醒</p>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="515" topLeftY="185" width="380" height="140">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.8">
+        <p>● 必须完成运动才能关闹钟</p>
+        <p>● 身体动起来 → 心率提升 → 真正清醒</p>
+        <p>● 摄像头自动计数，不用手动操作</p>
+        <p>● 从"被动响铃"到"主动唤醒"</p>
+      </content>
+    </shape>
+
+    <!-- 底部创新价值条 -->
+    <shape type="rect" topLeftX="45" topLeftY="375" width="870" height="100" presetHandlers="8">
+      <fill><fillColor color="rgba(0,212,255,0.1)"/></fill>
+      <border color="rgba(0,212,255,0.3)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="390" width="200" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>创新价值</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="425" width="830" height="40">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="center" lineSpacing="multiple:1.5">
+        <p>运动唤醒 + 自动计数 + 成就激励 = 让起床从"痛苦"变成"有成就感的小挑战"</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>03 / 18</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 40 秒。从大学生最熟悉的早八场景切入，讲清楚为什么普通闹钟叫不醒人，以及我们的运动唤醒方案如何解决这个问题。强调从"被动响铃"到"主动唤醒"的转变。</p>
+      <p>这个创新点贴近大学生生活，容易引起共鸣。</p>
+    </content>
+  </note>
+</slide>

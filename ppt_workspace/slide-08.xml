@@ -1,0 +1,146 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="600" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>深蹲计数：膝角与状态机</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>站直、下蹲、重新站直，完整往返计一次</p>
+      </content>
+    </shape>
+
+    <!-- 状态机流程 - 3个状态 -->
+    <!-- Ready 状态 -->
+    <shape type="rect" topLeftX="45" topLeftY="130" width="200" height="70" presetHandlers="8">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.6)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="145" width="200" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>Ready · 站直</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="45" topLeftY="172" width="200" height="22">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>θ &gt; 155°</p>
+      </content>
+    </shape>
+
+    <!-- 箭头1 -->
+    <line startX="245" startY="165" endX="285" endY="165">
+      <border color="rgba(0,212,255,0.7)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <!-- Down 状态 -->
+    <shape type="rect" topLeftX="285" topLeftY="130" width="200" height="70" presetHandlers="8">
+      <fill><fillColor color="rgba(251,191,36,0.15)"/></fill>
+      <border color="rgba(251,191,36,0.6)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="285" topLeftY="145" width="200" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(251,191,36,1)" textAlign="center" bold="true">
+        <p>Down · 下蹲</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="285" topLeftY="172" width="200" height="22">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>θ &lt; 140°</p>
+      </content>
+    </shape>
+
+    <!-- 箭头2 -->
+    <line startX="485" startY="165" endX="525" endY="165">
+      <border color="rgba(0,212,255,0.7)" width="2"/>
+      <endArrow type="arrow"/>
+    </line>
+
+    <!-- 计数状态 -->
+    <shape type="rect" topLeftX="525" topLeftY="130" width="200" height="70" presetHandlers="8">
+      <fill><fillColor color="rgba(34,197,94,0.15)"/></fill>
+      <border color="rgba(34,197,94,0.6)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="525" topLeftY="145" width="200" height="25">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(34,197,94,1)" textAlign="center" bold="true">
+        <p>次数 +1</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="525" topLeftY="172" width="200" height="22">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center">
+        <p>恢复 Ready · θ &gt; 155°</p>
+      </content>
+    </shape>
+
+    <!-- 左侧卡片 - 输入与几何关系 -->
+    <shape type="rect" topLeftX="45" topLeftY="230" width="420" height="200" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="245" width="200" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>输入与几何关系</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="285" width="380" height="130">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.8">
+        <p>髋、膝、踝形成膝关节夹角 θ</p>
+        <p>两腿均有效时选择较小角度</p>
+        <p>140° ~ 155° 保留状态缓冲带</p>
+        <p>确认帧数 = 1（较敏感）</p>
+      </content>
+    </shape>
+
+    <!-- 右侧卡片 - 代码片段 -->
+    <shape type="rect" topLeftX="495" topLeftY="230" width="420" height="200" presetHandlers="8">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.25)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="245" width="200" height="28">
+      <content textType="body" fontSize="13" fontFamily="Consolas" color="rgba(0,212,255,1)" textAlign="left">
+        <p>// 状态机判断</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="285" width="380" height="130">
+      <content textType="body" fontSize="12" fontFamily="Consolas" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.6">
+        <p>if (state == Ready &amp;&amp; angle &lt; 140)</p>
+        <p>    state = Down;</p>
+        <p>if (state == Down &amp;&amp; angle &gt; 155) {</p>
+        <p>    count_++;</p>
+        <p>    state = Ready;</p>
+        <p>}</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>08 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 65 秒。膝角由髋、膝、踝计算，左右腿均可靠时取较小值，单侧可靠时使用该侧。先确认站直，避免初始蹲姿被直接计数。140 与 155 度形成缓冲区。当前确认帧数为 1，不能宣称已验证所有误计场景。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>

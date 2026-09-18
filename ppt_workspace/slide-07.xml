@@ -1,0 +1,131 @@
+<slide>
+  <style>
+    <fill>
+      <fillColor color="linear-gradient(135deg,rgba(15,23,42,1) 0%,rgba(30,41,59,1) 100%)"/>
+    </fill>
+  </style>
+  <data>
+    <!-- 顶部装饰线 -->
+    <line startX="0" startY="0" endX="960" endY="0">
+      <border color="rgba(0,212,255,0.8)" width="3"/>
+    </line>
+
+    <!-- 标题 -->
+    <shape type="text" topLeftX="45" topLeftY="35" width="700" height="40">
+      <content textType="title" fontSize="24" fontFamily="Noto Sans CJK SC" color="rgba(255,255,255,1)" textAlign="left" bold="true">
+        <p>关键点平滑与统一动作接口</p>
+      </content>
+    </shape>
+
+    <!-- 副标题 -->
+    <shape type="text" topLeftX="45" topLeftY="78" width="700" height="25">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left">
+        <p>坐标做平滑，置信度保留本帧值</p>
+      </content>
+    </shape>
+
+    <!-- 左侧卡片 - 平滑算法 -->
+    <shape type="rect" topLeftX="45" topLeftY="130" width="420" height="180" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="65" topLeftY="145" width="200" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>指数移动平均平滑</p>
+      </content>
+    </shape>
+
+    <!-- 平滑公式 -->
+    <shape type="rect" topLeftX="65" topLeftY="185" width="380" height="50" presetHandlers="6">
+      <fill><fillColor color="rgba(15,23,42,0.8)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="75" topLeftY="197" width="360" height="30">
+      <content textType="body" fontSize="13" fontFamily="Consolas" color="rgba(0,212,255,1)" textAlign="center">
+        <p>history.x = 0.35×current.x + 0.65×history.x</p>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="65" topLeftY="250" width="380" height="50">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(203,213,225,1)" textAlign="left" lineSpacing="multiple:1.6">
+        <p>GUI 中 alpha = 0.35，当前坐标占 35%</p>
+        <p>坐标平滑，置信度保留本帧值（避免丢点误判）</p>
+      </content>
+    </shape>
+
+    <!-- 右侧卡片 - 统一接口 -->
+    <shape type="rect" topLeftX="495" topLeftY="130" width="420" height="180" presetHandlers="8">
+      <fill><fillColor color="rgba(51,65,85,0.5)"/></fill>
+      <border color="rgba(0,212,255,0.2)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="145" width="200" height="28">
+      <content textType="body" fontSize="15" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="left" bold="true">
+        <p>统一动作接口</p>
+      </content>
+    </shape>
+
+    <!-- 接口方法列表 -->
+    <shape type="text" topLeftX="515" topLeftY="185" width="380" height="30">
+      <content textType="body" fontSize="13" fontFamily="Consolas" color="rgba(203,213,225,1)" textAlign="left">
+        <p>ExerciseBase: update() / count() / valid() / reset()</p>
+      </content>
+    </shape>
+
+    <!-- 三种动作节点 -->
+    <shape type="rect" topLeftX="515" topLeftY="230" width="110" height="55" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="515" topLeftY="245" width="110" height="28">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>Squat</p>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="645" topLeftY="230" width="110" height="55" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="645" topLeftY="245" width="110" height="28">
+      <content textType="body" fontSize="12" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>JumpingJack</p>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="775" topLeftY="230" width="110" height="55" presetHandlers="6">
+      <fill><fillColor color="rgba(0,212,255,0.15)"/></fill>
+      <border color="rgba(0,212,255,0.5)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="775" topLeftY="245" width="110" height="28">
+      <content textType="body" fontSize="13" fontFamily="Noto Sans CJK SC" color="rgba(0,212,255,1)" textAlign="center" bold="true">
+        <p>Cycling</p>
+      </content>
+    </shape>
+
+    <!-- 底部说明 -->
+    <shape type="text" topLeftX="45" topLeftY="350" width="870" height="60">
+      <content textType="body" fontSize="14" fontFamily="Noto Sans CJK SC" color="rgba(148,163,184,1)" textAlign="center" lineSpacing="multiple:1.6">
+        <p>共享输入与接口，分别维护特征、状态和次数</p>
+        <p>采集、推理与动作选择解耦，扩展新动作只需实现统一接口</p>
+      </content>
+    </shape>
+
+    <!-- 页脚 -->
+    <shape type="text" topLeftX="45" topLeftY="505" width="100" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="left">
+        <p>WakeAI</p>
+      </content>
+    </shape>
+    <shape type="text" topLeftX="820" topLeftY="505" width="95" height="20">
+      <content textType="caption" fontSize="11" fontFamily="Noto Sans CJK SC" color="rgba(100,116,139,1)" textAlign="right">
+        <p>07 / 15</p>
+      </content>
+    </shape>
+  </data>
+  <note>
+    <content textType="body">
+      <p>建议用时 50 秒。指数移动平均让坐标更平稳，GUI 中 alpha 为 0.35，同时带来一定响应延迟。保留本帧置信度能防止历史坐标掩盖丢点。统一接口使采集、推理和动作选择解耦。图中数据纯属示意，不表示实测改善幅度。</p>
+      <p>内容依据：用户提供的制作大纲及静态代码分析。未独立运行程序。</p>
+    </content>
+  </note>
+</slide>
